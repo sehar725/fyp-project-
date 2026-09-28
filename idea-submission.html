@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Initial Idea Submission - GIMS FYP Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/idea-submission.css">
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div>
+        <div class="sidebar-brand">
+          <div class="brand-logo">
+            <img src="assets/images/gims-logo.png" alt="University Logo" class="uni-logo-img">
+          </div>
+          <div class="brand-info">
+            <h3>Gujrat Institute of Management Sciences</h3>
+            <span>FYP Portal</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="dashboard.html"><i class="fa-solid fa-house"></i> <span>Dashboard</span></a>
+            </li>
+            <li class="active">
+              <a href="idea-submission.html"><i class="fa-solid fa-lightbulb"></i> <span>Initial Idea Submission</span></a>
+            </li>
+            <li>
+              <a href="idea-checker.html"><i class="fa-solid fa-wand-magic-sparkles"></i> <span>AI Idea Submission</span></a>
+            </li>
+            <li>
+              <a href="proposals.html"><i class="fa-solid fa-file-contract"></i> <span>Proposals & Progress</span></a>
+            </li>
+            <li>
+              <a href="repository.html"><i class="fa-solid fa-folder-open"></i> <span>Repository</span></a>
+            </li>
+            <li>
+              <a href="notifications.html"><i class="fa-solid fa-bell"></i> <span>Notifications</span> <span class="badge">3</span></a>
+            </li>
+            <li>
+              <a href="settings.html"><i class="fa-solid fa-gear"></i> <span>Settings</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <p>Better Ideas<br><strong>Brighter Future</strong></p>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search anything...">
+        </div>
+
+        <div class="topbar-user">
+          <button class="top-icon-btn"><i class="fa-solid fa-bell"></i><span class="dot"></span></button>
+          <button class="top-icon-btn"><i class="fa-solid fa-gear"></i></button>
+          <div class="user-chip">
+            <div class="avatar-badge">SB</div>
+            <div class="user-meta">
+              <span class="user-name">Sehar Babar</span>
+              <span class="user-role">Student</span>
+            </div>
+            <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- Page Content -->
+      <div class="page-content">
+
+        <!-- Header -->
+        <div class="page-header">
+          <div class="header-icon-box">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <div class="header-text">
+            <h2>Initial Idea Submission</h2>
+            <p>Share up to 3 project ideas with a brief description. This will help us understand your interests and suggest the best possible matches.</p>
+          </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="content-grid">
+
+          <!-- Left Form Section -->
+          <div class="form-section">
+            <div class="section-title">
+              <h3>Your Project Ideas</h3>
+              <p>You can submit up to 3 ideas. Please provide a clear and concise title and description for each idea.</p>
+            </div>
+
+            <form id="idea-form">
+              <!-- Idea 1 -->
+              <div class="idea-card">
+                <div class="idea-badge">1</div>
+                <div class="idea-fields">
+                  <span class="idea-label">Idea 1</span>
+                  <input type="text" id="idea1-title" class="input-field" placeholder="Enter idea title (e.g. AI based attendance system)">
+                  <div class="textarea-wrapper">
+                    <textarea id="idea1-desc" class="textarea-field" placeholder="Write a brief description of your idea..."></textarea>
+                    <span class="char-count">0/500</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Idea 2 -->
+              <div class="idea-card">
+                <div class="idea-badge">2</div>
+                <div class="idea-fields">
+                  <span class="idea-label">Idea 2</span>
+                  <input type="text" id="idea2-title" class="input-field" placeholder="Enter idea title (e.g. Smart energy management system)">
+                  <div class="textarea-wrapper">
+                    <textarea id="idea2-desc" class="textarea-field" placeholder="Write a brief description of your idea..."></textarea>
+                    <span class="char-count">0/500</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Idea 3 -->
+              <div class="idea-card">
+                <div class="idea-badge">3</div>
+                <div class="idea-fields">
+                  <span class="idea-label">Idea 3</span>
+                  <input type="text" id="idea3-title" class="input-field" placeholder="Enter idea title (e.g. AR interior design app)">
+                  <div class="textarea-wrapper">
+                    <textarea id="idea3-desc" class="textarea-field" placeholder="Write a brief description of your idea..."></textarea>
+                    <span class="char-count">0/500</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" id="submit-ideas-btn" class="submit-btn">
+                  <i class="fa-solid fa-paper-plane"></i> Submit Ideas
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Right Tips Panel -->
+          <div class="tips-panel">
+            <div class="tips-header">
+              <i class="fa-solid fa-lightbulb"></i>
+              <h3>Tips for a Good Idea</h3>
+            </div>
+            
+            <ul class="tips-list">
+              <li>
+                <i class="fa-regular fa-circle-check"></i>
+                <span>Keep your ideas relevant to your field of study.</span>
+              </li>
+              <li>
+                <i class="fa-regular fa-circle-check"></i>
+                <span>Write a clear and simple title.</span>
+              </li>
+              <li>
+                <i class="fa-regular fa-circle-check"></i>
+                <span>Provide a brief but meaningful description.</span>
+              </li>
+              <li>
+                <i class="fa-regular fa-circle-check"></i>
+                <span>Think about real-world problems or innovative solutions.</span>
+              </li>
+              <li>
+                <i class="fa-regular fa-circle-check"></i>
+                <span>You can update your ideas later if needed.</span>
+              </li>
+            </ul>
+
+            <div class="tips-illustration">
+              <div class="bulb-glow">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+<script src="js/idea-submission.js"></script>
+</body>
+</html>

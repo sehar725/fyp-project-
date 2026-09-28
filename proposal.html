@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposal Submission - GIMS FYP Portal</title>
+  
+  <!-- Font Awesome & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  
+  <!-- CSS Links -->
+  <link rel="stylesheet" href="css/proposal.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="sidebar-header">
+          <div class="brand-logo">
+            <img src="assets/images/gims-logo.png" alt="GIMS Logo" class="uni-logo-img">
+          </div>
+          <div class="brand-text">
+            <h3>Gujrat Institute of</h3>
+            <h3>Management Sciences</h3>
+            <p>AI-Powered FYP Management Portal</p>
+          </div>
+        </div>
+
+        <nav class="sidebar-menu">
+          <a href="dashboard.html" class="menu-item">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="idea-submission.html" class="menu-item">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span>Idea Submission</span>
+          </a>
+          <a href="idea-checker.html" class="menu-item">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <span>AI Idea Checker</span>
+          </a>
+          <a href="proposal.html" class="menu-item active">
+            <i class="fa-regular fa-file-lines"></i>
+            <span>Proposals</span>
+          </a>
+          <a href="supervisors.html" class="menu-item">
+            <i class="fa-regular fa-user"></i>
+            <span>Supervisor Recommendation</span>
+          </a>
+          <a href="questionnaire.html" class="menu-item">
+            <i class="fa-regular fa-clipboard"></i>
+            <span>Feasibility Questionnaire</span>
+          </a>
+          <a href="progress.html" class="menu-item">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Project Progress</span>
+          </a>
+          <a href="repository.html" class="menu-item">
+            <i class="fa-solid fa-database"></i>
+            <span>Repository</span>
+          </a>
+
+          <div class="menu-divider"></div>
+
+          <a href="notifications.html" class="menu-item">
+            <i class="fa-regular fa-bell"></i>
+            <span>Notifications</span>
+          </a>
+          <a href="settings.html" class="menu-item">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <p class="font-handwriting">Your Ideas</p>
+        <p class="font-handwriting">Build Tomorrow</p>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search for projects, supervisors, or anything...">
+        </div>
+
+        <div class="top-actions">
+          <a href="notifications.html" class="icon-btn">
+            <i class="fa-regular fa-bell"></i>
+          </a>
+          <div class="icon-btn">
+            <i class="fa-regular fa-sun"></i>
+          </div>
+
+          <div class="user-profile">
+            <div class="avatar" id="userAvatar">SB</div>
+            <div class="info">
+              <span class="name" id="userName">Sehar Babar</span>
+              <span class="role">Student</span>
+            </div>
+            <i class="fa-solid fa-chevron-down" style="font-size:10px; color:#94a3b8;"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT BODY -->
+      <div class="content-body">
+        
+        <div class="proposal-card">
+          
+          <div class="proposal-header">
+            <h2>Proposal Submission</h2>
+            <p>Upload your project proposal for review and approval.</p>
+          </div>
+
+          <!-- INFO ALERT BOX -->
+          <div class="info-alert">
+            <i class="fa-regular fa-circle-question"></i>
+            <p>Make sure your proposal includes clear objectives, methodology, and expected outcomes.</p>
+          </div>
+
+          <!-- PROPOSAL FORM -->
+          <form id="proposalForm">
+            
+            <div class="form-group">
+              <label class="form-label">Project Title <span class="req">*</span></label>
+              <input type="text" id="projectTitle" class="form-control" value="AI powered travel planning app" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Project Domain <span class="req">*</span></label>
+              <select id="projectDomain" class="form-control" required>
+                <option value="" disabled>Select domain</option>
+                <option value="Artificial Intelligence" selected>Artificial Intelligence</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Mobile App Development">Mobile App Development</option>
+                <option value="Cyber Security">Cyber Security</option>
+                <option value="Healthcare">Healthcare</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Project Description <span class="req">*</span></label>
+              <textarea id="projectDescription" class="form-control" placeholder="Provide a brief overview of your project, its purpose, and core functionality..." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Technologies / Tools</label>
+              <textarea id="projectTech" class="form-control tech-textarea" placeholder="e.g. React, Node.js, Firebase, etc."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Upload Proposal (PDF) <span class="req">*</span></label>
+              <div class="file-drop-zone" id="dropZone">
+                <div class="upload-icon-circle">
+                  <i class="fa-solid fa-upload"></i>
+                </div>
+                <div class="drop-text">Drag & drop file here or click to upload</div>
+                <div class="drop-subtext">(Max 10MB)</div>
+                <input type="file" id="proposalPdfInput" accept=".pdf" class="file-input-hidden" required>
+              </div>
+              <div id="fileDisplay" class="selected-file-name"></div>
+            </div>
+
+            <div class="form-actions-row">
+              <a href="dashboard.html" class="btn-secondary">Back</a>
+              <button type="submit" class="btn-primary-action">Submit</button>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="js/proposal.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Progress - GIMS FYP Portal</title>
+  
+  <!-- FontAwesome & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/progress.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div>
+        <div class="sidebar-header">
+          <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="brand-text">
+            <h3>Gujrat Institute of</h3>
+            <h3>Management Sciences</h3>
+            <p>AI-Powered FYP Management Portal</p>
+          </div>
+        </div>
+
+        <nav class="sidebar-menu">
+          <a href="dashboard.html" class="menu-item"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+          <a href="idea-submission.html" class="menu-item"><i class="fa-solid fa-percent"></i><span>Idea Submission</span></a>
+          <a href="idea-checker.html" class="menu-item"><i class="fa-solid fa-percent"></i><span>AI Idea Checker</span></a>
+          <a href="proposal.html" class="menu-item"><i class="fa-regular fa-file-lines"></i><span>Proposals</span></a>
+          <a href="questionnaire.html" class="menu-item"><i class="fa-regular fa-file-lines"></i><span>Feasibility Questionnaire</span></a>
+          <a href="progress.html" class="menu-item active"><i class="fa-solid fa-chart-line"></i><span>Project Progress</span></a>
+          <a href="repository.html" class="menu-item"><i class="fa-solid fa-database"></i><span>Repository</span></a>
+          <a href="notifications.html" class="menu-item"><i class="fa-regular fa-bell"></i><span>Notifications</span></a>
+          <a href="settings.html" class="menu-item"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <p class="font-handwriting">Your Ideas</p>
+        <p class="font-handwriting">Build Tomorrow</p>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass" style="color:#94a3b8;"></i>
+          <input type="text" placeholder="Search for projects, supervisors, or anything...">
+        </div>
+
+        <div class="top-actions">
+          <i class="fa-regular fa-bell" style="color:#64748b; cursor:pointer;"></i>
+          <i class="fa-regular fa-sun" style="color:#64748b; cursor:pointer;"></i>
+          <div class="user-profile">
+            <div class="avatar">SB</div>
+            <div>
+              <div style="font-weight:600; font-size:12px; color:#0f172a;">Sehar Babar</div>
+              <div style="font-size:10px; color:#94a3b8;">Student</div>
+            </div>
+            <i class="fa-solid fa-chevron-down" style="font-size:10px; color:#94a3b8;"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT BODY -->
+      <div class="content-body">
+
+        <div class="page-title-box">
+          <h2>Project Progress</h2>
+          <p>Monitor your milestones and completion status.</p>
+        </div>
+
+        <!-- HORIZONTAL TIMELINE CARD (IMAGE 1 STYLE) -->
+        <div class="card">
+          <div class="card-title">Overall Timeline</div>
+          <div class="horizontal-timeline">
+            <div class="timeline-track">
+              <div class="timeline-track-fill"></div>
+            </div>
+
+            <div class="timeline-step completed">
+              <div class="step-node"><i class="fa-solid fa-check"></i></div>
+              <div class="step-label">Idea</div>
+              <div class="step-subtext">Completed</div>
+            </div>
+
+            <div class="timeline-step completed">
+              <div class="step-node"><i class="fa-solid fa-check"></i></div>
+              <div class="step-label">Proposal</div>
+              <div class="step-subtext">Completed</div>
+            </div>
+
+            <div class="timeline-step active">
+              <div class="step-node">3</div>
+              <div class="step-label">Review</div>
+              <div class="step-subtext">In Progress</div>
+            </div>
+
+            <div class="timeline-step">
+              <div class="step-node">4</div>
+              <div class="step-label">Development</div>
+              <div class="step-subtext">Pending</div>
+            </div>
+
+            <div class="timeline-step">
+              <div class="step-node">5</div>
+              <div class="step-label">Final</div>
+              <div class="step-subtext">Pending</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DETAILED MILESTONES CARD -->
+        <div class="card">
+          <div class="card-title">Milestones Breakdown</div>
+          
+          <div class="vertical-milestones">
+            
+            <!-- Step 1 -->
+            <div class="milestone-item">
+              <div class="milestone-line"></div>
+              <div class="milestone-badge-node node-completed"><i class="fa-solid fa-check"></i></div>
+              <div class="milestone-content">
+                <div class="milestone-info">
+                  <h4>1. Initial Idea Collection</h4>
+                  <span class="status-tag tag-completed">Completed</span>
+                </div>
+                <div class="milestone-date">15 Sep 2026</div>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="milestone-item">
+              <div class="milestone-line"></div>
+              <div class="milestone-badge-node node-completed"><i class="fa-solid fa-check"></i></div>
+              <div class="milestone-content">
+                <div class="milestone-info">
+                  <h4>2. Proposal Submission</h4>
+                  <span class="status-tag tag-completed">Completed</span>
+                </div>
+                <div class="milestone-date">22 Sep 2026</div>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="milestone-item">
+              <div class="milestone-line"></div>
+              <div class="milestone-badge-node node-progress">3</div>
+              <div class="milestone-content">
+                <div class="milestone-info">
+                  <h4>3. Supervisor Review</h4>
+                  <span class="status-tag tag-progress">In Progress</span>
+                </div>
+                <div class="milestone-date">28 Sep 2026</div>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="milestone-item">
+              <div class="milestone-line"></div>
+              <div class="milestone-badge-node node-pending">4</div>
+              <div class="milestone-content">
+                <div class="milestone-info">
+                  <h4>4. Development / Research</h4>
+                  <span class="status-tag tag-pending">Pending</span>
+                </div>
+                <div class="milestone-date">-</div>
+              </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="milestone-item">
+              <div class="milestone-line"></div>
+              <div class="milestone-badge-node node-pending">5</div>
+              <div class="milestone-content">
+                <div class="milestone-info">
+                  <h4>5. Final Report & Submission</h4>
+                  <span class="status-tag tag-pending">Pending</span>
+                </div>
+                <div class="milestone-date">-</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- External JS -->
+  <script src="js/progress.js"></script>
+</body>
+</html>

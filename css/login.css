@@ -58,14 +58,7 @@ body {
   justify-content: center;
 }
 
-.top-nav-links {
-  text-align: right;
-  font-size: 11px;
-  color: #94a3b8;
-  font-weight: 500;
-  margin-bottom: 25px;
-  letter-spacing: 0.5px;
-}
+
 
 .welcome-title {
   font-size: 24px;
@@ -169,7 +162,7 @@ body {
 
 .role-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
 }
 
@@ -228,60 +221,5 @@ body {
   color: #ffffff;
 }
 
-/* Divider */
-.divider-text {
-  text-align: center;
-  margin: 18px 0;
-  position: relative;
-}
 
-.divider-text::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 100%;
-  height: 1px;
-  background: #e2e8f0;
-}
 
-.divider-text span {
-  background: #ffffff;
-  padding: 0 12px;
-  position: relative;
-  font-size: 10px;
-  color: #94a3b8;
-}
-
-/* Portal Button */
-.btn-portal {
-  border: 1px solid #e2e8f0;
-  background: #ffffff;
-  color: #334155;
-  font-size: 11px;
-  font-weight: 600;
-  height: 40px;
-  border-radius: 8px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 22px;
-  transition: all 0.2s ease;
-}
-
-.btn-portal:hover {
-  background: #f8fafc;
-}
-
-/* Footer Info */
-.footer-security {
-  text-align: center;
-  font-size: 10px;
-  color: #94a3b8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-}

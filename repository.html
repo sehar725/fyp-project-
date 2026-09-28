@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final Submission & Repository - GIMS FYP Portal</title>
+  
+  <!-- FontAwesome & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/final-submission.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div>
+        <div class="sidebar-header">
+          <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="brand-text">
+            <h3>Gujrat Institute of</h3>
+            <h3>Management Sciences</h3>
+            <p>AI-Powered FYP Management Portal</p>
+          </div>
+        </div>
+
+        <nav class="sidebar-menu">
+          <a href="dashboard.html" class="menu-item"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+          <a href="idea-submission.html" class="menu-item"><i class="fa-solid fa-percent"></i><span>Idea Submission</span></a>
+          <a href="idea-checker.html" class="menu-item"><i class="fa-solid fa-percent"></i><span>AI Idea Checker</span></a>
+          <a href="proposal.html" class="menu-item"><i class="fa-regular fa-file-lines"></i><span>Proposals</span></a>
+          <a href="questionnaire.html" class="menu-item"><i class="fa-regular fa-file-lines"></i><span>Feasibility Questionnaire</span></a>
+          <a href="progress.html" class="menu-item"><i class="fa-solid fa-chart-line"></i><span>Project Progress</span></a>
+          <a href="repository.html" class="menu-item active"><i class="fa-solid fa-cloud-arrow-up"></i><span>Final Submission</span></a>
+          <a href="settings.html" class="menu-item"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <p class="font-handwriting">Your Ideas</p>
+        <p class="font-handwriting">Build Tomorrow</p>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass" style="color:#94a3b8;"></i>
+          <input type="text" placeholder="Search for projects, supervisors, or anything...">
+        </div>
+
+        <div class="top-actions">
+          <i class="fa-regular fa-bell" style="color:#64748b; cursor:pointer;"></i>
+          <i class="fa-regular fa-sun" style="color:#64748b; cursor:pointer;"></i>
+          <div class="user-profile">
+            <div class="avatar">SB</div>
+            <div>
+              <div style="font-weight:600; font-size:12px; color:#0f172a;">Sehar Babar</div>
+              <div style="font-size:10px; color:#94a3b8;">Student</div>
+            </div>
+            <i class="fa-solid fa-chevron-down" style="font-size:10px; color:#94a3b8;"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT BODY -->
+      <div class="content-body">
+
+        <div class="page-title-box">
+          <div class="title-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+          <div>
+            <h2>Final Submission & Repository</h2>
+            <p>Upload your final documents, submit source code, and link it with our AI repository for future learning.</p>
+          </div>
+        </div>
+
+        <form id="finalSubmissionForm">
+          <div class="grid-container">
+            
+            <!-- LEFT COLUMN: UPLOADS -->
+            <div>
+              <!-- 1. FINAL DOCUMENT UPLOAD -->
+              <div class="card">
+                <div class="card-title">Final Document Upload</div>
+                <div class="upload-box">
+                  <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                  <div class="upload-text">Upload Final Thesis / Report</div>
+                  <div class="upload-subtext">Drag & drop or click to browse</div>
+                  <div class="upload-subtext">Supported formats: PDF, DOCX (Max size: 20MB)</div>
+                  <button type="button" class="btn-choose"><i class="fa-solid fa-file-pdf"></i> Choose File</button>
+                </div>
+              </div>
+
+              <!-- 2. SOURCE CODE UPLOAD -->
+              <div class="card">
+                <div class="card-title">Source Code Upload</div>
+                <div class="source-code-grid">
+                  <div class="upload-box" style="padding: 16px 10px;">
+                    <i class="fa-solid fa-file-zipper upload-icon" style="font-size:22px;"></i>
+                    <div class="upload-text" style="font-size:11px;">Upload Zip File</div>
+                    <button type="button" class="btn-choose" style="padding:5px 12px; font-size:10px;">Choose File</button>
+                  </div>
+
+                  <div class="or-divider">OR</div>
+
+                  <div class="github-input">
+                    <label style="font-weight:600; font-size:11px; color:#334155;">GitHub Repository Link</label>
+                    <input type="url" placeholder="https://github.com/username/repo">
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3. PROJECT SUMMARY -->
+              <div class="card">
+                <div class="card-title">Project Summary</div>
+                <textarea class="summary-box" placeholder="Briefly describe your final work and key deliverables..."></textarea>
+              </div>
+            </div>
+
+            <!-- RIGHT COLUMN: CONFIRMATION & AI REPOSITORY -->
+            <div>
+              <!-- SUBMISSION CONFIRMATION CARD -->
+              <div class="card confirmation-card">
+                <div class="check-icon"><i class="fa-solid fa-check"></i></div>
+                <div class="confirm-title">Your project has been submitted successfully!</div>
+                <div class="confirm-meta">
+                  <div><strong>Submission ID:</strong> #FYP-2026-041</div>
+                  <div><strong>Date:</strong> 28 Sep 2026, 04:30 PM</div>
+                </div>
+                <button type="button" class="btn-receipt"><i class="fa-solid fa-download"></i> Download Receipt</button>
+              </div>
+
+              <!-- AI REPOSITORY LEARNING LINKAGE CARD -->
+              <div class="ai-repo-card">
+                <div class="ai-icon-box"><i class="fa-solid fa-brain"></i></div>
+                <div class="ai-content">
+                  <h4>AI Repository Learning Linkage</h4>
+                  <p>Your project data will be added to our AI repository to help improve future similarity checks and recommendations.</p>
+                  <span class="badge-connected"><i class="fa-solid fa-circle-check"></i> Connected</span>
+                </div>
+              </div>
+
+              <div style="margin-top:20px; text-align:right;">
+                <button type="submit" class="btn-choose" style="padding:10px 24px; font-size:13px;">Submit Final Project</button>
+              </div>
+            </div>
+
+          </div>
+        </form>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- External JS -->
+  <script src="js/final-submission.js"></script>
+</body>
+</html>

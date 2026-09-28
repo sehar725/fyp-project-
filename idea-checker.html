@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Idea Checker - GIMS FYP Portal</title>
+  
+  <!-- Font Awesome & Google Fonts Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/idea-checker.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <div class="sidebar-header">
+          <div class="brand-logo">
+            <img src="assets/images/gims-logo.png" alt="GIMS Logo" class="uni-logo-img">
+          </div>
+          <div class="brand-text">
+            <h3>Gujrat Institute of</h3>
+            <h3>Management Sciences</h3>
+            <p>AI-Powered FYP Management Portal</p>
+          </div>
+        </div>
+
+        <nav class="sidebar-menu">
+          <a href="dashboard.html" class="menu-item">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+          </a>
+          <a href="idea-submission.html" class="menu-item">
+          <i class="fa-solid fa-lightbulb"></i>
+          <span>Idea Submission</span>
+          </a>
+          <a href="ai-checker.html" class="menu-item active">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <span>AI Idea Checker</span>
+          </a>
+          <a href="proposal.html" class="menu-item">
+            <i class="fa-regular fa-file-lines"></i>
+            <span>Proposals</span>
+          </a>
+          <a href="supervisors.html" class="menu-item">
+            <i class="fa-regular fa-user"></i>
+            <span>Supervisor Recommendation</span>
+          </a>
+          <a href="questionnaire.html" class="menu-item">
+            <i class="fa-regular fa-clipboard"></i>
+            <span>Feasibility Questionnaire</span>
+          </a>
+          <a href="progress.html" class="menu-item">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Project Progress</span>
+          </a>
+          <a href="repository.html" class="menu-item">
+            <i class="fa-solid fa-database"></i>
+            <span>Repository</span>
+          </a>
+
+          <div class="menu-divider"></div>
+
+          <a href="notifications.html" class="menu-item">
+            <i class="fa-regular fa-bell"></i>
+            <span>Notifications</span>
+            <span class="badge" id="notifBadge" style="display:none;">0</span>
+          </a>
+          <a href="settings.html" class="menu-item">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <p class="font-handwriting">Better Ideas</p>
+        <p class="font-handwriting">Brighter Future</p>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search anything...">
+        </div>
+
+        <div class="top-actions">
+          <a href="notifications.html" class="icon-btn">
+            <i class="fa-regular fa-bell"></i>
+          </a>
+          <div class="icon-btn">
+            <i class="fa-regular fa-sun"></i>
+          </div>
+
+          <div class="user-profile">
+            <div class="avatar" id="userAvatar">--</div>
+            <div class="info">
+              <span class="name" id="userName">Student</span>
+              <span class="role">Student</span>
+            </div>
+            <i class="fa-solid fa-chevron-down" style="font-size:10px; color:#94a3b8;"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT BODY -->
+      <div class="content-body">
+        
+        <!-- BANNER -->
+        <div class="page-header-banner">
+          <div class="header-left">
+            <div class="header-title-row">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <h1>AI FYP Idea Checker</h1>
+              <span class="ai-badge"><i class="fa-solid fa-bolt"></i> AI Powered</span>
+            </div>
+            <p class="header-subtitle">Check your idea's uniqueness using AI and find the best path for your FYP.</p>
+          </div>
+          <div class="header-right-tag">
+            <span>Smarter Ideas.<br>Less Duplicates.</span>
+          </div>
+        </div>
+
+        <!-- 2 COLUMN GRID -->
+        <div class="checker-grid">
+          
+          <!-- LEFT: INPUT FORM -->
+          <div class="card">
+            <div class="card-title-row">
+              <i class="fa-regular fa-file-code"></i>
+              <h3>Enter Your FYP Idea</h3>
+            </div>
+            <p class="card-desc">Provide detailed information about your project idea. The more details you give, the better the results.</p>
+
+            <form id="ideaCheckerForm">
+              <div class="form-group">
+                <label class="form-label">Project Title <span class="req">*</span></label>
+                <div class="input-wrapper">
+                  <input type="text" id="projectTitleInput" class="form-control" style="padding-left:12px;" placeholder="e.g. AI-Powered Health Monitoring System" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Project Description <span class="req">*</span></label>
+                <textarea id="projectDescInput" class="form-control" placeholder="Describe your project, objectives, key features..." maxlength="1000" required></textarea>
+                <div class="char-count" id="charCounter">0/1000</div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Domain <span class="req">*</span></label>
+                  <select id="domainSelect" class="form-control" required>
+                    <option value="">Select Domain</option>
+                    <option value="Healthcare">Healthcare</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Cyber Security">Cyber Security</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    <option value="IoT & Embedded Systems">IoT & Embedded Systems</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Technologies / Tools</label>
+                  <input type="text" id="techInput" class="form-control" style="padding-left:12px;" placeholder="e.g. Python, ML, React Native">
+                </div>
+              </div>
+
+              <button type="submit" id="btnCheckIdea" class="btn-submit">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Check Idea &rarr;
+              </button>
+            </form>
+
+            <div class="tips-box">
+              <div class="tips-header">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>Tips for better results:</span>
+              </div>
+              <ul class="tips-list">
+                <li>Provide a clear and detailed description of your idea.</li>
+                <li>Mention the technologies you plan to use.</li>
+                <li>Be specific about your project domain and objectives.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- RIGHT: DYNAMIC SIMILARITY RESULTS -->
+          <div class="result-section">
+            
+            <!-- RESULT CARD -->
+            <div class="card">
+              <div class="card-title-row">
+                <i class="fa-solid fa-shield-halved" style="color:#10b981;"></i>
+                <h3>Similarity Result</h3>
+              </div>
+
+              <!-- EMPTY / INITIAL STATE -->
+              <div id="initialStateBox" style="text-align:center; padding:30px 10px; color:#94a3b8;">
+                <i class="fa-regular fa-lightbulb" style="font-size:36px; margin-bottom:8px; color:#cbd5e1;"></i>
+                <p style="font-size:13px; margin:0;">Enter your idea details on the left and click "Check Idea" to generate AI similarity results.</p>
+              </div>
+
+              <!-- DYNAMIC RESULT CONTENT -->
+              <div id="resultContentBox" style="display:none;">
+                <div class="similarity-header-box">
+                  <!-- Dynamic Progress Circle -->
+                  <div class="circle-chart" id="resultCircleChart">
+                    <div class="circle-inner">
+                      <span id="scoreText" class="score-value">0%</span>
+                      <span class="score-label">Similarity</span>
+                    </div>
+                  </div>
+
+                  <!-- Dynamic Status Message -->
+                  <div id="statusBadgeContainer" class="status-alert">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                      <h4 id="statusHeading">--</h4>
+                      <p id="statusSubtext">--</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="metrics-row">
+                  <div class="metric-card">
+                    <div class="metric-info">
+                      <p>Uniqueness</p>
+                      <h6 id="statVerdict">--</h6>
+                    </div>
+                  </div>
+                  <div class="metric-card">
+                    <div class="metric-info">
+                      <p>Checked Projects</p>
+                      <h6 id="statCheckedCount">--</h6>
+                    </div>
+                  </div>
+                  <div class="metric-card">
+                    <div class="metric-info">
+                      <p>Analysis Time</p>
+                      <h6 id="statTime">--</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SIMILAR PROJECTS FOUND -->
+            <div class="card">
+              <div class="card-title-row" style="justify-content:space-between;">
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <h3>Similar Projects Found</h3>
+                </div>
+                <a href="repository.html" style="font-size:12px; color:#2563eb; text-decoration:none;">View All &rarr;</a>
+              </div>
+              <div id="similarProjectsContainer" style="padding:10px 0;">
+                <div style="text-align:center; color:#94a3b8; font-size:12px; padding:15px 0;">
+                  No analysis performed yet.
+                </div>
+              </div>
+            </div>
+
+            <!-- AI SUGGESTIONS -->
+            <div class="card">
+              <div class="card-title-row">
+                <i class="fa-regular fa-lightbulb" style="color:#eab308;"></i>
+                <h3>AI Suggestions</h3>
+              </div>
+              <p style="font-size:11px; color:#64748b; margin-bottom:10px;">Alternative ideas or enhancements you might consider:</p>
+              <div id="aiSuggestionsContainer">
+                <div style="text-align:center; color:#94a3b8; font-size:12px; padding:10px 0;">
+                  Submit an idea to view AI recommendations.
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- JS Script -->
+  <script src="js/ai-checker.js"></script>
+</body>
+</html>

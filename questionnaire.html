@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feasibility Questionnaire - GIMS FYP Portal</title>
+  
+  <!-- FontAwesome & Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  
+  <!-- External CSS File -->
+  <link rel="stylesheet" href="css/questionnaire.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div>
+        <div class="sidebar-header">
+          <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="brand-text">
+            <h3>Gujrat Institute of</h3>
+            <h3>Management Sciences</h3>
+            <p>AI-Powered FYP Management Portal</p>
+          </div>
+        </div>
+
+        <nav class="sidebar-menu">
+          <a href="dashboard.html" class="menu-item"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+          <a href="idea-submission.html" class="menu-item"><i class="fa-solid fa-percent"></i><span>Idea Submission</span></a>
+          <a href="ai-checker.html" class="menu-item"><i class="fa-solid fa-percent"></i><span>AI Idea Checker</span></a>
+          <a href="proposal.html" class="menu-item"><i class="fa-regular fa-file-lines"></i><span>Proposals</span></a>
+          <a href="questionnaire.html" class="menu-item active"><i class="fa-regular fa-file-lines"></i><span>Feasibility Questionnaire</span></a>
+          <a href="progress.html" class="menu-item"><i class="fa-solid fa-chart-line"></i><span>Project Progress</span></a>
+          <a href="repository.html" class="menu-item"><i class="fa-solid fa-database"></i><span>Repository</span></a>
+          <a href="notifications.html" class="menu-item"><i class="fa-regular fa-bell"></i><span>Notifications</span></a>
+          <a href="settings.html" class="menu-item"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <p class="font-handwriting">Your Ideas</p>
+        <p class="font-handwriting">Build Tomorrow</p>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass" style="color:#94a3b8;"></i>
+          <input type="text" placeholder="Search for projects, supervisors, or anything...">
+        </div>
+
+        <div class="top-actions">
+          <i class="fa-regular fa-bell" style="color:#64748b; cursor:pointer;"></i>
+          <i class="fa-regular fa-sun" style="color:#64748b; cursor:pointer;"></i>
+          <div class="user-profile">
+            <div class="avatar">SB</div>
+            <div>
+              <div style="font-weight:600; font-size:12px; color:#0f172a;">Sehar Babar</div>
+              <div style="font-size:10px; color:#94a3b8;">Student</div>
+            </div>
+            <i class="fa-solid fa-chevron-down" style="font-size:10px; color:#94a3b8;"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT BODY -->
+      <div class="content-body">
+
+        <div class="page-title-box">
+          <h2>Feasibility Questionnaire</h2>
+          <p>Answer the following questions to evaluate your project's feasibility.</p>
+        </div>
+
+        <!-- MAIN CARD FORM -->
+        <div class="main-card">
+          <form id="feasibilityForm">
+            
+            <!-- 1. TECHNICAL FEASIBILITY -->
+            <div class="section-block">
+              <div class="section-header">
+                <div class="icon-box icon-tech"><i class="fa-regular fa-file-code"></i></div>
+                <div class="section-title">
+                  <h4>Technical Feasibility</h4>
+                  <p>Required tech stack, tools, and team skills availability.</p>
+                </div>
+              </div>
+
+              <div class="q-item">
+                <div class="q-title">
+                  <span>1. Is the required technology stack and tools available?</span>
+                  <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q1" value="Yes" checked> Yes</label>
+                    <label class="radio-label"><input type="radio" name="q1" value="No"> No</label>
+                    <label class="radio-label"><input type="radio" name="q1" value="Partially"> Partially</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="q-item">
+                <div class="q-title">
+                  <span>2. Do you have the technical skills to build this project?</span>
+                  <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q2" value="Yes" checked> Yes</label>
+                    <label class="radio-label"><input type="radio" name="q2" value="No"> No</label>
+                    <label class="radio-label"><input type="radio" name="q2" value="Partially"> Partially</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="q-item">
+                <div class="q-title">3. Describe any technical challenges or complex algorithms involved:</div>
+                <textarea placeholder="Write technical hurdles if any..."></textarea>
+              </div>
+            </div>
+
+            <!-- 2. FINANCIAL FEASIBILITY -->
+            <div class="section-block">
+              <div class="section-header">
+                <div class="icon-box icon-fin"><i class="fa-solid fa-dollar-sign"></i></div>
+                <div class="section-title">
+                  <h4>Financial Feasibility</h4>
+                  <p>Estimated project costs (APIs, Cloud Hosting, Hardware).</p>
+                </div>
+              </div>
+
+              <div class="q-item">
+                <div class="q-title">
+                  <span>4. Is the project cost manageable within student budget?</span>
+                  <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q4" value="Yes" checked> Yes</label>
+                    <label class="radio-label"><input type="radio" name="q4" value="No"> No</label>
+                    <label class="radio-label"><input type="radio" name="q4" value="Partially"> Partially</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="q-item">
+                <div class="q-title">5. Are paid cloud services or APIs required?</div>
+                <textarea placeholder="Mention paid services if applicable..."></textarea>
+              </div>
+            </div>
+
+            <!-- 3. OPERATIONAL FEASIBILITY -->
+            <div class="section-block">
+              <div class="section-header">
+                <div class="icon-box icon-op"><i class="fa-solid fa-gear"></i></div>
+                <div class="section-title">
+                  <h4>Operational & Time Feasibility</h4>
+                  <p>User adoption, data availability, and 2-semester timeline capability.</p>
+                </div>
+              </div>
+
+              <div class="q-item">
+                <div class="q-title">
+                  <span>6. Can all core features be completed within the 2-semester timeframe?</span>
+                  <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="q6" value="Yes" checked> Yes</label>
+                    <label class="radio-label"><input type="radio" name="q6" value="No"> No</label>
+                    <label class="radio-label"><input type="radio" name="q6" value="Partially"> Partially</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="q-item">
+                <div class="q-title">7. Is required dataset or data source accessible for training/testing?</div>
+                <textarea placeholder="Describe data availability..."></textarea>
+              </div>
+            </div>
+
+            <!-- ACTION BUTTON -->
+            <div class="action-buttons">
+              <button type="submit" class="btn-submit"><i class="fa-regular fa-paper-plane"></i> Submit Form</button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- External JS File -->
+  <script src="js/questionnaire.js"></script>
+</body>
+</html>
