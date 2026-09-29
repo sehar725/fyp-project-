@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supervisor Dashboard - GIMS FYP Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/supervisor-dashboard.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div>
+        <div class="sidebar-header">
+          <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="brand-text">
+            <h3>Gujrat Institute of</h3>
+            <h3>Management Sciences</h3>
+            <p>FYP Portal</p>
+          </div>
+        </div>
+
+        <nav class="sidebar-menu">
+          <a href="supervisor-dashboard.html" class="menu-item active">
+            <div class="menu-link-content"><i class="fa-solid fa-house"></i><span>Dashboard</span></div>
+          </a>
+          <a href="supervisor-proposals.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-file-signature"></i><span>Proposals</span></div>
+          </a>
+          <a href="supervisor-progress.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-user-graduate"></i><span>Student Progress</span></div>
+          </a>
+          <a href="supervisor-evaluations.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-clipboard-check"></i><span>Evaluations</span></div>
+          </a>
+          <a href="#" class="menu-item">
+            <div class="menu-link-content"><i class="fa-regular fa-bell"></i><span>Notifications</span></div>
+            <span class="badge-count">3</span>
+          </a>
+          <a href="settings.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-gear"></i><span>Settings</span></div>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <p class="font-handwriting">Better Ideas</p>
+        <p class="font-handwriting">Brighter Future</p>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass" style="color:#94a3b8;"></i>
+          <input type="text" placeholder="Search anything...">
+        </div>
+
+        <div class="top-actions">
+          <i class="fa-regular fa-bell" style="color:#64748b; cursor:pointer;"></i>
+          <i class="fa-regular fa-sun" style="color:#64748b; cursor:pointer;"></i>
+          <div class="user-profile">
+            <div class="avatar">MS</div>
+            <div>
+              <div style="font-weight:600; font-size:12px; color:#0f172a;">Prof. Muhammad Salman</div>
+              <div style="font-size:10px; color:#94a3b8;">Supervisor</div>
+            </div>
+            <i class="fa-solid fa-chevron-down" style="font-size:10px; color:#94a3b8;"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT BODY -->
+      <div class="content-body">
+
+        <!-- WELCOME BANNER -->
+        <div class="welcome-banner">
+          <div>
+            <h2>Good Morning, Prof. Muhammad Salman!</h2>
+            <p>Review proposals, track student progress and evaluate final projects.</p>
+          </div>
+          <div class="banner-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        </div>
+
+        <!-- STATS GRID -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon stat-green"><i class="fa-solid fa-users"></i></div>
+            <div class="stat-details">
+              <h3>12</h3>
+              <p>Total Assigned Students</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon stat-amber"><i class="fa-regular fa-clock"></i></div>
+            <div class="stat-details">
+              <h3>5</h3>
+              <p>Pending Reviews</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon stat-blue"><i class="fa-solid fa-spinner"></i></div>
+            <div class="stat-details">
+              <h3>6</h3>
+              <p>In Progress</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon stat-emerald"><i class="fa-solid fa-circle-check"></i></div>
+            <div class="stat-details">
+              <h3>1</h3>
+              <p>Completed</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- DASHBOARD GRID -->
+        <div class="dashboard-grid">
+          
+          <!-- RECENT PROPOSALS TABLE -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Recent Proposals</div>
+              <a href="supervisor-proposals.html" class="view-all-link">View All</a>
+            </div>
+
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Student</th>
+                  <th>Title</th>
+                  <th>Status</th>
+                  <th>Submitted</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="student-info">
+                      <div class="student-avatar">AK</div>
+                      <span>Ayesha Khan</span>
+                    </div>
+                  </td>
+                  <td>AI-Powered Smart Attendance System</td>
+                  <td><span class="status-badge badge-pending">Pending</span></td>
+                  <td>18 Aug 2026</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="student-info">
+                      <div class="student-avatar">AR</div>
+                      <span>Ahmed Raza</span>
+                    </div>
+                  </td>
+                  <td>E-Learning Platform with AI</td>
+                  <td><span class="status-badge badge-pending">Pending</span></td>
+                  <td>17 Aug 2026</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="student-info">
+                      <div class="student-avatar">FN</div>
+                      <span>Fatima Noor</span>
+                    </div>
+                  </td>
+                  <td>Smart Energy Management System</td>
+                  <td><span class="status-badge badge-review">Under Review</span></td>
+                  <td>15 Aug 2026</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="student-info">
+                      <div class="student-avatar">UT</div>
+                      <span>Usman Tariq</span>
+                    </div>
+                  </td>
+                  <td>Personalized Learning Path</td>
+                  <td><span class="status-badge badge-approved">Approved</span></td>
+                  <td>12 Aug 2026</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="student-info">
+                      <div class="student-avatar">HS</div>
+                      <span>Hira Shah</span>
+                    </div>
+                  </td>
+                  <td>AR Interior Design App</td>
+                  <td><span class="status-badge badge-revision">Revision Requested</span></td>
+                  <td>10 Aug 2026</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- RIGHT COLUMN: QUICK ACTIONS & NOTIFICATIONS -->
+          <div>
+            <!-- QUICK ACTIONS -->
+            <div class="card">
+              <div class="card-title" style="margin-bottom: 12px;">Quick Actions</div>
+              <a href="supervisor-proposals.html" class="quick-action-btn">
+                <i class="fa-regular fa-file-lines"></i>
+                <span>View All Proposals</span>
+              </a>
+              <a href="supervisor-progress.html" class="quick-action-btn">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Check Student Progress</span>
+              </a>
+              <a href="#" class="quick-action-btn">
+                <i class="fa-regular fa-bell"></i>
+                <span>View Notifications</span>
+              </a>
+            </div>
+
+            <!-- RECENT NOTIFICATIONS -->
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">Recent Notifications</div>
+                <a href="#" class="view-all-link">View All</a>
+              </div>
+              <div class="notification-list">
+                <div class="notification-item">
+                  <div class="notification-bullet"></div>
+                  <div>New proposal submitted by <strong>Ayesha Khan</strong>.</div>
+                </div>
+                <div class="notification-item">
+                  <div class="notification-bullet"></div>
+                  <div>Revision requested for <strong>Ahmed Raza's</strong> proposal.</div>
+                </div>
+                <div class="notification-item">
+                  <div class="notification-bullet"></div>
+                  <div>Final report submitted by <strong>Usman Tariq</strong>.</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="js/supervisor-dashboard.js"></script>
+</body>
+</html>

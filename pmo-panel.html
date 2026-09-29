@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Assignment - GIMS FYP Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/pmo-panel.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div>
+        <div class="sidebar-header">
+          <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="brand-text">
+            <h3>Gujrat Institute of</h3>
+            <h3>Management Sciences</h3>
+            <p>PMO Portal</p>
+          </div>
+        </div>
+
+        <nav class="sidebar-menu">
+          <a href="pmo-dashboard.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-house"></i><span>Dashboard</span></div>
+          </a>
+          <a href="pmo-schedule.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-calendar-days"></i><span>Evaluation Schedule</span></div>
+          </a>
+          <a href="pmo-panel.html" class="menu-item active">
+            <div class="menu-link-content"><i class="fa-solid fa-users"></i><span>Panel Assignment</span></div>
+          </a>
+          <a href="pmo-slots.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-clock"></i><span>Slot Allocation</span></div>
+          </a>
+          <a href="pmo-approvals.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-square-check"></i><span>Projects & Approvals</span></div>
+          </a>
+          <a href="pmo-repository.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-database"></i><span>Repository</span></div>
+          </a>
+          <a href="pmo-analytics.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-chart-line"></i><span>Reports & Analytics</span></div>
+          </a>
+          <a href="pmo-users.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-user-gear"></i><span>User Management</span></div>
+          </a>
+          <a href="pmo-groups.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-people-group"></i><span>Group Management</span></div>
+          </a>
+          <a href="pmo-settings.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-gear"></i><span>Settings</span></div>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <p class="font-handwriting">Better Ideas</p>
+        <p class="font-handwriting">Brighter Future</p>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass" style="color:#94a3b8;"></i>
+          <input type="text" placeholder="Search panel assignment...">
+        </div>
+
+        <div class="top-actions">
+          <i class="fa-regular fa-bell" style="color:#64748b; cursor:pointer;"></i>
+          <i class="fa-regular fa-sun" style="color:#64748b; cursor:pointer;"></i>
+          <div class="user-profile">
+            <div class="avatar">AK</div>
+            <div>
+              <div style="font-weight:600; font-size:12px; color:#0f172a;">Dr. Ayesha Khan</div>
+              <div style="font-size:10px; color:#94a3b8;">PMO Head</div>
+            </div>
+            <i class="fa-solid fa-chevron-down" style="font-size:10px; color:#94a3b8;"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT BODY -->
+      <div class="content-body">
+
+        <div class="header-row">
+          <h2 class="page-title"><i class="fa-solid fa-users"></i> Assign Evaluation Panels</h2>
+          <button class="btn-primary" id="openPanelModalBtn"><i class="fa-solid fa-plus"></i> Assign Panel</button>
+        </div>
+
+        <div class="filter-bar">
+          <select class="filter-select">
+            <option>All Projects</option>
+            <option>AI-Powered Attendance</option>
+            <option>E-Learning Platform</option>
+          </select>
+          <select class="filter-select">
+            <option>All Teachers</option>
+            <option>Dr. Ayesha Khan</option>
+            <option>Dr. Usman Tariq</option>
+          </select>
+        </div>
+
+        <!-- TABLE -->
+        <div class="card-table">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Project Title</th>
+                <th>Student Group</th>
+                <th>Panel Members</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>AI-Powered Attendance</strong></td>
+                <td>Group 1</td>
+                <td class="panel-members">Dr. Ayesha Khan<br><span style="color:#94a3b8;">Dr. Imran Malik</span></td>
+                <td><span class="status-badge badge-assigned">Assigned</span></td>
+                <td><button class="action-btn">View</button></td>
+              </tr>
+              <tr>
+                <td><strong>E-Learning Platform</strong></td>
+                <td>Group 2</td>
+                <td class="panel-members">Dr. Usman Tariq<br><span style="color:#94a3b8;">Prof. Bilal Ahmad</span></td>
+                <td><span class="status-badge badge-assigned">Assigned</span></td>
+                <td><button class="action-btn">View</button></td>
+              </tr>
+              <tr>
+                <td><strong>Smart Energy System</strong></td>
+                <td>Group 3</td>
+                <td class="panel-members">Dr. Faisal Raza<br><span style="color:#94a3b8;">Dr. Nida Shah</span></td>
+                <td><span class="status-badge badge-assigned">Assigned</span></td>
+                <td><button class="action-btn">View</button></td>
+              </tr>
+              <tr>
+                <td><strong>Travel Booking App</strong></td>
+                <td>Group 4</td>
+                <td class="panel-members">Dr. Subhan Aslam<br><span style="color:#94a3b8;">Dr. Hina Hassan</span></td>
+                <td><span class="status-badge badge-pending">Pending</span></td>
+                <td><button class="action-btn">View</button></td>
+              </tr>
+              <tr>
+                <td><strong>Health Monitoring App</strong></td>
+                <td>Group 5</td>
+                <td class="panel-members">Dr. Zaria Khan<br><span style="color:#94a3b8;">Dr. Ali Raza</span></td>
+                <td><span class="status-badge badge-assigned">Assigned</span></td>
+                <td><button class="action-btn">View</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- ASSIGN PANEL MODAL -->
+  <div class="modal" id="panelModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">Assign Panel to Group</div>
+        <i class="fa-solid fa-xmark close-modal" id="closePanelModalBtn"></i>
+      </div>
+      <form id="panelForm">
+        <div class="form-group">
+          <label>Select Project / Group</label>
+          <select class="form-control" required>
+            <option value="">Choose Project...</option>
+            <option>AI-Powered Attendance (Group 1)</option>
+            <option>E-Learning Platform (Group 2)</option>
+            <option>Travel Booking App (Group 4)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Panel Lead (Evaluator 1)</label>
+          <select class="form-control" required>
+            <option value="">Select Faculty Member...</option>
+            <option>Dr. Ayesha Khan</option>
+            <option>Dr. Usman Tariq</option>
+            <option>Dr. Faisal Raza</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Panel Member (Evaluator 2)</label>
+          <select class="form-control" required>
+            <option value="">Select Faculty Member...</option>
+            <option>Dr. Imran Malik</option>
+            <option>Prof. Bilal Ahmad</option>
+            <option>Dr. Nida Shah</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 10px;">Assign Panel</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/pmo-panel.js"></script>
+</body>
+</html>

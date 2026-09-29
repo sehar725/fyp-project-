@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports & Analytics - GIMS FYP Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="css/pmo-analytics.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div>
+        <div class="sidebar-header">
+          <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="brand-text">
+            <h3>Gujrat Institute of</h3>
+            <h3>Management Sciences</h3>
+            <p>PMO Portal</p>
+          </div>
+        </div>
+
+        <nav class="sidebar-menu">
+          <a href="pmo-dashboard.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-house"></i><span>Dashboard</span></div>
+          </a>
+          <a href="pmo-schedule.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-calendar-days"></i><span>Evaluation Schedule</span></div>
+          </a>
+          <a href="pmo-panel.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-users"></i><span>Panel Assignment</span></div>
+          </a>
+          <a href="pmo-slots.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-clock"></i><span>Slot Allocation</span></div>
+          </a>
+          <a href="pmo-approvals.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-square-check"></i><span>Projects & Approvals</span></div>
+          </a>
+          <a href="pmo-repository.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-database"></i><span>Repository</span></div>
+          </a>
+          <a href="pmo-analytics.html" class="menu-item active">
+            <div class="menu-link-content"><i class="fa-solid fa-chart-line"></i><span>Reports & Analytics</span></div>
+          </a>
+          <a href="pmo-users.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-user-gear"></i><span>User Management</span></div>
+          </a>
+          <a href="pmo-groups.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-people-group"></i><span>Group Management</span></div>
+          </a>
+          <a href="pmo-settings.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-gear"></i><span>Settings</span></div>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <p class="font-handwriting">Better Ideas</p>
+        <p class="font-handwriting">Brighter Future</p>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass" style="color:#94a3b8;"></i>
+          <input type="text" placeholder="Search analytics metrics...">
+        </div>
+
+        <div class="top-actions">
+          <i class="fa-regular fa-bell" style="color:#64748b; cursor:pointer;"></i>
+          <i class="fa-regular fa-sun" style="color:#64748b; cursor:pointer;"></i>
+          <div class="user-profile">
+            <div class="avatar">AK</div>
+            <div>
+              <div style="font-weight:600; font-size:12px; color:#0f172a;">Dr. Ayesha Khan</div>
+              <div style="font-size:10px; color:#94a3b8;">PMO Head</div>
+            </div>
+            <i class="fa-solid fa-chevron-down" style="font-size:10px; color:#94a3b8;"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT BODY -->
+      <div class="content-body">
+
+        <div class="header-row">
+          <h2 class="page-title"><i class="fa-solid fa-chart-line"></i> Reports & Performance Analytics</h2>
+          <button class="btn-primary" id="exportReportBtn"><i class="fa-solid fa-file-export"></i> Export PDF Report</button>
+        </div>
+
+        <!-- STATS -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon icon-blue"><i class="fa-solid fa-folder-open"></i></div>
+            <div>
+              <div class="stat-val">68</div>
+              <div class="stat-label">Total Projects (2026)</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon icon-green"><i class="fa-solid fa-circle-check"></i></div>
+            <div>
+              <div class="stat-val">92%</div>
+              <div class="stat-label">Overall Pass Rate</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon icon-amber"><i class="fa-solid fa-hourglass-half"></i></div>
+            <div>
+              <div class="stat-val">12</div>
+              <div class="stat-label">Pending Evaluations</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon icon-purple"><i class="fa-solid fa-award"></i></div>
+            <div>
+              <div class="stat-val">3.42</div>
+              <div class="stat-label">Average Batch GPA</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHARTS -->
+        <div class="charts-grid">
+          <div class="chart-card">
+            <div class="chart-header">
+              <div class="chart-title">Yearly Project Completion Trend</div>
+            </div>
+            <div class="chart-container">
+              <canvas id="performanceChart"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-header">
+              <div class="chart-title">Grade Distribution</div>
+            </div>
+            <div class="chart-container">
+              <canvas id="gradeChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="js/pmo-analytics.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supervisor Dashboard - GIMS FYP Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/supervisor-proposals.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div>
+        <div class="sidebar-header">
+          <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="brand-text">
+            <h3>Gujrat Institute of</h3>
+            <h3>Management Sciences</h3>
+            <p>FYP Portal</p>
+          </div>
+        </div>
+
+        <nav class="sidebar-menu">
+          <a href="supervisor-dashboard.html" class="menu-item ">
+            <div class="menu-link-content"><i class="fa-solid fa-house"></i><span>Dashboard</span></div>
+          </a>
+          <a href="supervisor-proposals.html" class="menu-item active">
+            <div class="menu-link-content"><i class="fa-solid fa-file-signature"></i><span>Proposals</span></div>
+          </a>
+          <a href="supervisor-progress.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-user-graduate"></i><span>Student Progress</span></div>
+          </a>
+          <a href="supervisor-evaluations.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-clipboard-check"></i><span>Evaluations</span></div>
+          </a>
+          <a href="#" class="menu-item">
+            <div class="menu-link-content"><i class="fa-regular fa-bell"></i><span>Notifications</span></div>
+            <span class="badge-count">3</span>
+          </a>
+          <a href="settings.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-gear"></i><span>Settings</span></div>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <p class="font-handwriting">Better Ideas</p>
+        <p class="font-handwriting">Brighter Future</p>
+      </div>
+    </aside>
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass" style="color:#94a3b8;"></i>
+          <input type="text" placeholder="Search proposals...">
+        </div>
+
+        <div class="top-actions">
+          <i class="fa-regular fa-bell" style="color:#64748b; cursor:pointer;"></i>
+          <i class="fa-regular fa-sun" style="color:#64748b; cursor:pointer;"></i>
+          <div class="user-profile">
+            <div class="avatar">MS</div>
+            <div>
+              <div style="font-weight:600; font-size:12px; color:#0f172a;">Prof. Muhammad Salman</div>
+              <div style="font-size:10px; color:#94a3b8;">Supervisor</div>
+            </div>
+            <i class="fa-solid fa-chevron-down" style="font-size:10px; color:#94a3b8;"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT BODY -->
+      <div class="content-body">
+
+        <h2 class="page-title">Proposals for Review</h2>
+
+        <!-- FILTER TABS -->
+        <div class="filter-tabs">
+          <button class="tab-btn active" data-filter="all">All <span class="tab-count">5</span></button>
+          <button class="tab-btn" data-filter="pending">Pending <span class="tab-count">2</span></button>
+          <button class="tab-btn" data-filter="review">Under Review <span class="tab-count">1</span></button>
+          <button class="tab-btn" data-filter="revision">Revision Requested <span class="tab-count">1</span></button>
+          <button class="tab-btn" data-filter="approved">Approved <span class="tab-count">1</span></button>
+        </div>
+
+        <!-- TABLE CARD -->
+        <div class="card">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th>Student</th>
+                <th>Title</th>
+                <th>Domain</th>
+                <th>Submitted</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="proposal-row" data-status="pending">
+                <td>
+                  <div class="student-info">
+                    <div class="student-avatar">AK</div>
+                    <span>Ayesha Khan</span>
+                  </div>
+                </td>
+                <td><strong>AI-Powered Smart Attendance System</strong></td>
+                <td>Education</td>
+                <td>18 Aug 2026</td>
+                <td><span class="status-badge badge-pending">Pending</span></td>
+                <td><a href="supervisor-feedback.html" class="btn-review">Review</a></td>
+              </tr>
+
+              <tr class="proposal-row" data-status="pending">
+                <td>
+                  <div class="student-info">
+                    <div class="student-avatar" style="background:#0d9488;">AR</div>
+                    <span>Ahmed Raza</span>
+                  </div>
+                </td>
+                <td><strong>E-Learning Platform with AI</strong></td>
+                <td>Education</td>
+                <td>17 Aug 2026</td>
+                <td><span class="status-badge badge-pending">Pending</span></td>
+                <td><a href="supervisor-feedback.html" class="btn-review">Review</a></td>
+              </tr>
+
+              <tr class="proposal-row" data-status="review">
+                <td>
+                  <div class="student-info">
+                    <div class="student-avatar" style="background:#9333ea;">FN</div>
+                    <span>Fatima Noor</span>
+                  </div>
+                </td>
+                <td><strong>Smart Energy Management System</strong></td>
+                <td>IoT</td>
+                <td>15 Aug 2026</td>
+                <td><span class="status-badge badge-review">Under Review</span></td>
+                <td><a href="supervisor-feedback.html" class="btn-review">Review</a></td>
+              </tr>
+
+              <tr class="proposal-row" data-status="approved">
+                <td>
+                  <div class="student-info">
+                    <div class="student-avatar" style="background:#16a34a;">UT</div>
+                    <span>Usman Tariq</span>
+                  </div>
+                </td>
+                <td><strong>Personalized Learning Path</strong></td>
+                <td>Education</td>
+                <td>12 Aug 2026</td>
+                <td><span class="status-badge badge-approved">Approved</span></td>
+                <td><a href="supervisor-feedback.html" class="btn-view">View</a></td>
+              </tr>
+
+              <tr class="proposal-row" data-status="revision">
+                <td>
+                  <div class="student-info">
+                    <div class="student-avatar" style="background:#ea580c;">HS</div>
+                    <span>Hira Shah</span>
+                  </div>
+                </td>
+                <td><strong>AR Interior Design App</strong></td>
+                <td>Design</td>
+                <td>10 Aug 2026</td>
+                <td><span class="status-badge badge-revision">Revision Requested</span></td>
+                <td><a href="supervisor-feedback.html" class="btn-review">Review</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="js/supervisor-proposals.js"></script>
+</body>
+</html>

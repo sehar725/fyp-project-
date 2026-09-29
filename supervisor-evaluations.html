@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final Evaluation - GIMS FYP Portal</title>
+  
+  <!-- FontAwesome & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/supervisor-evaluations.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div>
+        <div class="sidebar-header">
+          <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="brand-text">
+            <h3>Gujrat Institute of</h3>
+            <h3>Management Sciences</h3>
+            <p>FYP Portal</p>
+          </div>
+        </div>
+
+        <nav class="sidebar-menu">
+          <a href="supervisor-dashboard.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-house"></i><span>Dashboard</span></div>
+          </a>
+          <a href="supervisor-proposals.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-file-signature"></i><span>Proposals</span></div>
+          </a>
+          <a href="supervisor-progress.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-user-graduate"></i><span>Student Progress</span></div>
+          </a>
+          <a href="supervisor-evaluations.html" class="menu-item active">
+            <div class="menu-link-content"><i class="fa-solid fa-clipboard-check"></i><span>Evaluations</span></div>
+          </a>
+          <a href="#" class="menu-item">
+            <div class="menu-link-content"><i class="fa-regular fa-bell"></i><span>Notifications</span></div>
+            <span class="badge-count">3</span>
+          </a>
+          <a href="settings.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-gear"></i><span>Settings</span></div>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <p class="font-handwriting">Better Ideas</p>
+        <p class="font-handwriting">Brighter Future</p>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass" style="color:#94a3b8;"></i>
+          <input type="text" placeholder="Search...">
+        </div>
+
+        <div class="top-actions">
+          <i class="fa-regular fa-bell" style="color:#64748b; cursor:pointer;"></i>
+          <i class="fa-regular fa-sun" style="color:#64748b; cursor:pointer;"></i>
+          <div class="user-profile">
+            <div class="avatar">MS</div>
+            <div>
+              <div style="font-weight:600; font-size:12px; color:#0f172a;">Prof. Muhammad Salman</div>
+              <div style="font-size:10px; color:#94a3b8;">Supervisor</div>
+            </div>
+            <i class="fa-solid fa-chevron-down" style="font-size:10px; color:#94a3b8;"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT BODY -->
+      <div class="content-body">
+
+        <h2 class="page-title">Final Project Evaluation</h2>
+
+        <form id="evaluationForm">
+          <div class="evaluation-grid">
+            
+            <!-- LEFT COLUMN: STUDENT SELECT & RUBRIC FORM -->
+            <div>
+              <div class="card">
+                <div class="card-title">Select Student</div>
+                <div class="form-group">
+                  <label for="studentSelect">Select Assigned Student</label>
+                  <select id="studentSelect" class="form-control">
+                    <option value="1">Usman Tariq - Personalized Learning Path (22012-0825-002)</option>
+                    <option value="2">Fatima Noor - Smart Energy Management System (22012-0825-021)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- RUBRICS CRITERIA -->
+              <div class="card">
+                <div class="card-title">Evaluation Rubrics</div>
+
+                <table class="rubric-table">
+                  <thead>
+                    <tr>
+                      <th>Criteria</th>
+                      <th>Max Marks</th>
+                      <th>Obtained Marks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <strong>Documentation & Proposal Quality</strong>
+                        <div style="font-size:10px; color:#64748b;">Clarity, structure, and literature review.</div>
+                      </td>
+                      <td>25</td>
+                      <td><input type="number" class="marks-input" max="25" min="0" value="22"></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Technical Implementation & Code</strong>
+                        <div style="font-size:10px; color:#64748b;">Code quality, architecture, and functionality.</div>
+                      </td>
+                      <td>35</td>
+                      <td><input type="number" class="marks-input" max="35" min="0" value="30"></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Presentation & Demonstration</strong>
+                        <div style="font-size:10px; color:#64748b;">Slide preparation, timing, and project demo.</div>
+                      </td>
+                      <td>20</td>
+                      <td><input type="number" class="marks-input" max="20" min="0" value="18"></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Q&A & Viva Performance</strong>
+                        <div style="font-size:10px; color:#64748b;">Defense quality and domain understanding.</div>
+                      </td>
+                      <td>20</td>
+                      <td><input type="number" class="marks-input" max="20" min="0" value="16"></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div class="form-group">
+                  <label for="evalRemarks">Supervisor Remarks / Final Notes</label>
+                  <textarea id="evalRemarks" class="form-control" style="height: 80px; resize: vertical;" placeholder="Add final remarks..."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT COLUMN: SCORE SUMMARY -->
+            <div>
+              <div class="score-summary">
+                <h3>Total Score</h3>
+                <div class="score-display" id="totalScore">86 / 100</div>
+                <span class="grade-badge" id="finalGrade">Grade: A</span>
+              </div>
+
+              <button type="submit" class="btn-submit-eval">
+                <i class="fa-solid fa-check"></i> Submit Evaluation
+              </button>
+            </div>
+
+          </div>
+        </form>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="js/supervisor-evaluations.js"></script>
+</body>
+</html>

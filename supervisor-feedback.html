@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supervisor Dashboard - GIMS FYP Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/supervisor-feedback.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div>
+        <div class="sidebar-header">
+          <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="brand-text">
+            <h3>Gujrat Institute of</h3>
+            <h3>Management Sciences</h3>
+            <p>FYP Portal</p>
+          </div>
+        </div>
+
+        <nav class="sidebar-menu">
+          <a href="supervisor-dashboard.html" class="menu-item ">
+            <div class="menu-link-content"><i class="fa-solid fa-house"></i><span>Dashboard</span></div>
+          </a>
+          <a href="supervisor-proposals.html" class="menu-item ">
+            <div class="menu-link-content"><i class="fa-solid fa-file-signature"></i><span>Proposals</span></div>
+          </a>
+          <a href="supervisor-feedback.html" class="menu-item active">
+            <div class="menu-link-content"><i class="fa-solid fa-file-signature"></i><span>feedback</span></div>
+          </a>
+          <a href="supervisor-progress.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-user-graduate"></i><span>Student Progress</span></div>
+          </a>
+          <a href="supervisor-evaluations.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-clipboard-check"></i><span>Evaluations</span></div>
+          </a>
+          <a href="#" class="menu-item">
+            <div class="menu-link-content"><i class="fa-regular fa-bell"></i><span>Notifications</span></div>
+            <span class="badge-count">3</span>
+          </a>
+          <a href="settings.html" class="menu-item">
+            <div class="menu-link-content"><i class="fa-solid fa-gear"></i><span>Settings</span></div>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <p class="font-handwriting">Better Ideas</p>
+        <p class="font-handwriting">Brighter Future</p>
+      </div>
+    </aside>
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass" style="color:#94a3b8;"></i>
+          <input type="text" placeholder="Search...">
+        </div>
+
+        <div class="top-actions">
+          <i class="fa-regular fa-bell" style="color:#64748b; cursor:pointer;"></i>
+          <i class="fa-regular fa-sun" style="color:#64748b; cursor:pointer;"></i>
+          <div class="user-profile">
+            <div class="avatar">MS</div>
+            <div>
+              <div style="font-weight:600; font-size:12px; color:#0f172a;">Prof. Muhammad Salman</div>
+              <div style="font-size:10px; color:#94a3b8;">Supervisor</div>
+            </div>
+            <i class="fa-solid fa-chevron-down" style="font-size:10px; color:#94a3b8;"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT BODY -->
+      <div class="content-body">
+
+        <a href="supervisor-proposals.html" class="back-link">
+          <i class="fa-solid fa-arrow-left"></i> Back to Proposals
+        </a>
+
+        <!-- HEADER CARD -->
+        <div class="header-card">
+          <div class="student-meta">
+            <div class="student-avatar-lg"><i class="fa-regular fa-user"></i></div>
+            <div>
+              <h2>AI-Powered Smart Attendance System</h2>
+              <p>Ayesha Khan &bull; Roll No: 22012-0825-014 &bull; Computer Science</p>
+            </div>
+          </div>
+          <div>
+            <span class="status-badge badge-pending">Pending</span>
+          </div>
+        </div>
+
+        <!-- FEEDBACK GRID -->
+        <div class="feedback-grid">
+          
+          <!-- LEFT CARD: DETAILS -->
+          <div class="card">
+            <div class="tab-nav">
+              <button class="tab-nav-btn active">Proposal Details</button>
+              <button class="tab-nav-btn">Comments & Feedback</button>
+              <button class="tab-nav-btn">History</button>
+            </div>
+
+            <div class="section-title">Project Overview</div>
+
+            <div class="info-group">
+              <div class="info-label">Domain</div>
+              <div class="info-value">Education</div>
+            </div>
+
+            <div class="info-group">
+              <div class="info-label">Technologies</div>
+              <div class="info-value">Python, Flask, Machine Learning</div>
+            </div>
+
+            <div class="info-group">
+              <div class="info-label">Description</div>
+              <div class="info-value">
+                This project aims to develop an AI-powered attendance system using facial recognition to mark attendance automatically in educational institutions.
+              </div>
+            </div>
+
+            <!-- DOCUMENT DOWNLOAD -->
+            <div class="document-box">
+              <div class="document-info">
+                <i class="fa-regular fa-file-pdf"></i>
+                <div>
+                  <div class="document-name">Proposal Document.pdf</div>
+                  <div class="document-size">2.4 MB</div>
+                </div>
+              </div>
+              <button class="btn-download" title="Download Document">
+                <i class="fa-solid fa-download"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- RIGHT CARD: DECISION FORM -->
+          <div class="card">
+            <div class="section-title">Your Decision</div>
+
+            <form id="decisionForm">
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="decision" value="Approve">
+                  <span>Approve</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="decision" value="Request Revisions" checked>
+                  <span>Request Revisions</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="decision" value="Reject">
+                  <span>Reject</span>
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label for="feedbackComments">Feedback / Comments</label>
+                <textarea id="feedbackComments" placeholder="Provide detailed feedback..."></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit">
+                <i class="fa-regular fa-paper-plane"></i> Submit Feedback & Decision
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+    <script src="js/supervisor-feedback.js"></script>
+</body>
+</html>
