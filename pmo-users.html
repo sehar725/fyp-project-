@@ -1,216 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Management - GIMS FYP Portal</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/pmo-users.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System User Management - GIMS FYP Portal</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: #f8fafc; overflow-x: hidden; }
+        .app-container { display: flex; min-height: 100vh; width: 100vw; }
+        
+        /* SIDEBAR */
+        .sidebar { width: 250px; background-color: #0b172a; color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; padding: 24px 16px; flex-shrink: 0; }
+        .brand-header { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; padding: 0 8px; }
+        .logo-icon { width: 38px; height: 38px; background-color: #2563eb; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #ffffff; }
+        .brand-title { font-size: 13px; font-weight: 700; line-height: 1.2; margin: 0; color: #ffffff; }
+        .brand-subtitle { font-size: 11px; color: #94a3b8; }
+        .sidebar-nav { gap: 4px; }
+        .sidebar-nav .nav-link { color: #94a3b8; font-size: 13px; font-weight: 500; padding: 9px 12px; border-radius: 8px; display: flex; align-items: center; gap: 10px; transition: all 0.2s; text-decoration: none; }
+        .sidebar-nav .nav-link:hover { color: #ffffff; background-color: rgba(255, 255, 255, 0.05); }
+        .sidebar-nav .nav-link.active { background-color: #2563eb; color: #ffffff; font-weight: 600; }
+        .sidebar-footer { font-family: 'Caveat', cursive; text-align: center; color: #cbd5e1; font-size: 20px; line-height: 1.2; padding-top: 20px; }
+
+        /* MAIN CONTENT AREA */
+        .main-content { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+        .topbar { height: 60px; background: #ffffff; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between; padding: 0 28px; }
+        .search-box { background: #f1f5f9; border-radius: 20px; padding: 6px 14px; display: flex; align-items: center; gap: 8px; width: 280px; }
+        .search-box input { border: none; background: transparent; outline: none; font-size: 12px; width: 100%; }
+        .top-actions { display: flex; align-items: center; gap: 20px; }
+        .user-profile { display: flex; align-items: center; gap: 8px; }
+        .avatar { width: 32px; height: 32px; background-color: #1e40af; color: white; font-size: 12px; font-weight: 700; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .content-body { padding: 28px; }
+
+        /* BADGES FOR ROLES */
+        .badge-pmo { color: #2563eb; font-weight: 600; }
+        .badge-faculty { color: #16a34a; font-weight: 600; }
+        .badge-student { color: #c026d3; font-weight: 600; }
+
+        .fs-7 { font-size: 13px !important; }
+        .fs-8 { font-size: 12px !important; }
+        .fs-9 { font-size: 11px !important; }
+        .action-link { font-size: 12px; text-decoration: none; cursor: pointer; }
+        .action-link:hover { text-decoration: underline; }
+    </style>
 </head>
 <body>
 
-  <div class="app-layout">
-    
-    <!-- SIDEBAR -->
+<div class="app-container">
+
+    <!-- LEFT SIDEBAR -->
     <aside class="sidebar">
-      <div>
-        <div class="sidebar-header">
-          <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
-          <div class="brand-text">
-            <h3>Gujrat Institute of</h3>
-            <h3>Management Sciences</h3>
-            <p>PMO Portal</p>
-          </div>
+        <div>
+            <div class="brand-header">
+                <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div>
+                    <h6 class="brand-title">Gujrat Institute of Management Sciences</h6>
+                    <span class="brand-subtitle">PMO Portal</span>
+                </div>
+            </div>
+
+            <ul class="nav flex-column sidebar-nav">
+                <li class="nav-item"><a href="pmo-dashboard.html" class="nav-link"><i class="fa-solid fa-house"></i><span>Dashboard</span></a></li>
+                <li class="nav-item"><a href="pmo-schedule.html" class="nav-link"><i class="fa-regular fa-calendar-days"></i><span>Evaluation Schedule</span></a></li>
+                <li class="nav-item"><a href="pmo-panel.html" class="nav-link"><i class="fa-solid fa-users-rectangle"></i><span>Panel Assignment</span></a></li>
+                <li class="nav-item"><a href="pmo-slots.html" class="nav-link"><i class="fa-solid fa-clock"></i><span>Slot Allocation</span></a></li>
+                <li class="nav-item"><a href="pmo-approvals.html" class="nav-link"><i class="fa-solid fa-square-check"></i><span>Projects & Approvals</span></a></li>
+                <li class="nav-item"><a href="pmo-supervisor-logs.html" class="nav-link"><i class="fa-solid fa-square-check"></i><span>Supervisor & Meetings </span></a></li>
+                <li class="nav-item"><a href="pmo-repository.html" class="nav-link"><i class="fa-solid fa-database"></i><span>Repository</span></a></li>
+                <li class="nav-item"><a href="pmo-analytics.html" class="nav-link"><i class="fa-solid fa-chart-line"></i><span>Reports & Analytics</span></a></li>
+                <li class="nav-item"><a href="pmo-users.html" class="nav-link active"><i class="fa-solid fa-user-gear"></i><span>User Management</span></a></li>
+                <li class="nav-item"><a href="pmo-groups.html" class="nav-link"><i class="fa-solid fa-people-group"></i><span>Group Management</span></a></li>
+                <li class="nav-item">
+    <a href="login.html" class="nav-link">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span>Logout</span>
+    </a>
+</li>
+            </ul>
         </div>
 
-        <nav class="sidebar-menu">
-          <a href="pmo-dashboard.html" class="menu-item">
-            <div class="menu-link-content"><i class="fa-solid fa-house"></i><span>Dashboard</span></div>
-          </a>
-          <a href="pmo-schedule.html" class="menu-item">
-            <div class="menu-link-content"><i class="fa-solid fa-calendar-days"></i><span>Evaluation Schedule</span></div>
-          </a>
-          <a href="pmo-panel.html" class="menu-item">
-            <div class="menu-link-content"><i class="fa-solid fa-users"></i><span>Panel Assignment</span></div>
-          </a>
-          <a href="pmo-slots.html" class="menu-item">
-            <div class="menu-link-content"><i class="fa-solid fa-clock"></i><span>Slot Allocation</span></div>
-          </a>
-          <a href="pmo-approvals.html" class="menu-item">
-            <div class="menu-link-content"><i class="fa-solid fa-square-check"></i><span>Projects & Approvals</span></div>
-          </a>
-          <a href="pmo-repository.html" class="menu-item">
-            <div class="menu-link-content"><i class="fa-solid fa-database"></i><span>Repository</span></div>
-          </a>
-          <a href="pmo-analytics.html" class="menu-item">
-            <div class="menu-link-content"><i class="fa-solid fa-chart-line"></i><span>Reports & Analytics</span></div>
-          </a>
-          <a href="pmo-users.html" class="menu-item active">
-            <div class="menu-link-content"><i class="fa-solid fa-user-gear"></i><span>User Management</span></div>
-          </a>
-          <a href="pmo-groups.html" class="menu-item">
-            <div class="menu-link-content"><i class="fa-solid fa-people-group"></i><span>Group Management</span></div>
-          </a>
-          <a href="pmo-settings.html" class="menu-item">
-            <div class="menu-link-content"><i class="fa-solid fa-gear"></i><span>Settings</span></div>
-          </a>
-        </nav>
-      </div>
-
-      <div class="sidebar-footer">
-        <p class="font-handwriting">Better Ideas</p>
-        <p class="font-handwriting">Brighter Future</p>
-      </div>
+        <div class="sidebar-footer">Better Ideas<br>Brighter Future</div>
     </aside>
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
-      
-      <!-- TOPBAR -->
-      <header class="topbar">
-        <div class="search-box">
-          <i class="fa-solid fa-magnifying-glass" style="color:#94a3b8;"></i>
-          <input type="text" placeholder="Search user accounts...">
-        </div>
-
-        <div class="top-actions">
-          <i class="fa-regular fa-bell" style="color:#64748b; cursor:pointer;"></i>
-          <i class="fa-regular fa-sun" style="color:#64748b; cursor:pointer;"></i>
-          <div class="user-profile">
-            <div class="avatar">AK</div>
-            <div>
-              <div style="font-weight:600; font-size:12px; color:#0f172a;">Dr. Ayesha Khan</div>
-              <div style="font-size:10px; color:#94a3b8;">PMO Head</div>
+        
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass text-muted"></i>
+                <input type="text" id="searchInput" onkeyup="filterUsers()" placeholder="Search user accounts...">
             </div>
-            <i class="fa-solid fa-chevron-down" style="font-size:10px; color:#94a3b8;"></i>
-          </div>
+            <div class="top-actions">
+                <i class="fa-regular fa-bell text-secondary fs-5"></i>
+                <i class="fa-solid fa-gear text-secondary fs-5"></i>
+                <div class="user-profile me-2">
+                    <div class="avatar">SB</div>
+                    <div>
+                        <div class="fw-bold fs-7 text-dark">Shahida Bilal</div>
+                        <div class="text-muted fs-8">PMO Head</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- CONTENT BODY -->
+        <div class="content-body">
+            
+            <!-- PAGE HEADER -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="fw-bold text-dark mb-0"><i class="fa-solid fa-user-gear me-2"></i>System User Management</h5>
+                <button class="btn btn-primary btn-sm px-3 rounded-2 fs-8 fw-semibold" onclick="openAddModal()">
+                    <i class="fa-solid fa-plus me-1"></i> Add User
+                </button>
+            </div>
+
+            <!-- FILTERS & TABLE CARD -->
+            <div class="card border-0 shadow-sm rounded-3 bg-white">
+                <div class="card-header bg-white border-bottom-0 pt-3 pb-2 px-3">
+                    <div class="d-flex gap-2">
+                        <select class="form-select form-select-sm w-auto fs-8" id="roleFilter" onchange="filterUsers()">
+                            <option value="">All Roles</option>
+                            <option value="PMO Head">PMO Head</option>
+                            <option value="Faculty">Faculty</option>
+                            <option value="Student">Student</option>
+                        </select>
+                        <select class="form-select form-select-sm w-auto fs-8">
+                            <option value="">All Statuses</option>
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table align-middle fs-8 mb-0" id="usersTable">
+                            <thead class="bg-light text-secondary border-top">
+                                <tr>
+                                    <th class="ps-3 py-2 fw-semibold">Full Name</th>
+                                    <th class="py-2 fw-semibold">Email Address</th>
+                                    <th class="py-2 fw-semibold">Role</th>
+                                    <th class="py-2 fw-semibold">Department</th>
+                                    <th class="text-end pe-4 py-2 fw-semibold">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="userTableBody">
+                                <!-- Initial Data -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
         </div>
-      </header>
-
-      <!-- CONTENT BODY -->
-      <div class="content-body">
-
-        <div class="header-row">
-          <h2 class="page-title"><i class="fa-solid fa-user-gear"></i> System User Management</h2>
-          <button class="btn-primary" id="openUserModalBtn"><i class="fa-solid fa-plus"></i> Add User</button>
-        </div>
-
-        <div class="filter-bar">
-          <select class="filter-select">
-            <option>All Roles</option>
-            <option>PMO Admin</option>
-            <option>Faculty / Teacher</option>
-            <option>Student</option>
-          </select>
-          <select class="filter-select">
-            <option>All Statuses</option>
-            <option>Active</option>
-            <option>Inactive</option>
-          </select>
-        </div>
-
-        <!-- TABLE -->
-        <div class="card-table">
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>Full Name</th>
-                <th>Email Address</th>
-                <th>Role</th>
-                <th>Department</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Dr. Ayesha Khan</strong></td>
-                <td>ayesha.khan@gims.edu.pk</td>
-                <td><span class="role-badge role-pmo">PMO Head</span></td>
-                <td>Computer Science</td>
-                <td>
-                  <button class="action-btn-edit">Edit</button>
-                  <button class="action-btn-delete">Delete</button>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Dr. Usman Tariq</strong></td>
-                <td>usman.tariq@gims.edu.pk</td>
-                <td><span class="role-badge role-teacher">Faculty</span></td>
-                <td>Software Engineering</td>
-                <td>
-                  <button class="action-btn-edit">Edit</button>
-                  <button class="action-btn-delete">Delete</button>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Ali Raza</strong></td>
-                <td>ali.raza@student.gims.edu.pk</td>
-                <td><span class="role-badge role-student">Student</span></td>
-                <td>Computer Science</td>
-                <td>
-                  <button class="action-btn-edit">Edit</button>
-                  <button class="action-btn-delete">Delete</button>
-                </td>
-              </tr>
-              <tr>
-                <td><strong>Dr. Imran Malik</strong></td>
-                <td>imran.malik@gims.edu.pk</td>
-                <td><span class="role-badge role-teacher">Faculty</span></td>
-                <td>Information Technology</td>
-                <td>
-                  <button class="action-btn-edit">Edit</button>
-                  <button class="action-btn-delete">Delete</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-      </div>
     </main>
 
-  </div>
+</div>
 
-  <!-- ADD USER MODAL -->
-  <div class="modal" id="userModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="modal-title">Add New User Account</div>
-        <i class="fa-solid fa-xmark close-modal" id="closeUserModalBtn"></i>
+<!-- USER MODAL (CREATE & EDIT) -->
+<div class="modal fade" id="userModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 rounded-4 shadow">
+      <div class="modal-header border-bottom-0 pb-0">
+        <h6 class="modal-title fw-bold" id="modalTitle">Add New User Account</h6>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form id="userForm">
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" class="form-control" placeholder="e.g. Dr. Hamza Ahmed" required>
-        </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" class="form-control" placeholder="e.g. name@gims.edu.pk" required>
-        </div>
-        <div class="form-group">
-          <label>User Role</label>
-          <select class="form-control" required>
-            <option value="">Select Role...</option>
-            <option>PMO Admin</option>
-            <option>Faculty / Evaluator</option>
-            <option>Student</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Department</label>
-          <select class="form-control" required>
-            <option value="">Select Department...</option>
-            <option>Computer Science</option>
-            <option>Software Engineering</option>
-            <option>Information Technology</option>
-          </select>
-        </div>
-        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 10px;">Create User</button>
+      <form id="userForm" onsubmit="saveUser(event)">
+          <div class="modal-body fs-8">
+            <input type="hidden" id="userId">
+            
+            <div class="mb-2">
+                <label class="form-label fw-semibold mb-1">Role</label>
+                <select class="form-select form-select-sm" id="userRole" required>
+                    <option value="Student">Student</option>
+                    <option value="Faculty">Faculty / Teacher</option>
+                    <option value="PMO Head">PMO Head</option>
+                </select>
+            </div>
+            <div class="mb-2">
+                <label class="form-label fw-semibold mb-1">Full Name</label>
+                <input type="text" class="form-control form-control-sm" id="userName" placeholder="e.g. Dr. Usman Tariq" required>
+            </div>
+            <div class="mb-2">
+                <label class="form-label fw-semibold mb-1">Email Address</label>
+                <input type="email" class="form-control form-control-sm" id="userEmail" placeholder="e.g. usman@gims.edu.pk" required>
+            </div>
+            <div class="mb-2">
+                <label class="form-label fw-semibold mb-1">Department</label>
+                <select class="form-select form-select-sm" id="userDept" required>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Software Engineering">Software Engineering</option>
+                    <option value="Information Technology">Information Technology</option>
+                </select>
+            </div>
+            <div class="mb-2">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                    <label class="form-label fw-semibold mb-0">Password</label>
+                    <span class="text-primary fs-9 cursor-pointer" style="cursor: pointer;" onclick="generatePassword()">Auto Generate</span>
+                </div>
+                <input type="text" class="form-control form-control-sm" id="userPass" placeholder="Enter or generate password" required>
+            </div>
+          </div>
+          <div class="modal-footer border-top-0 pt-0">
+            <button type="button" class="btn btn-light btn-sm fs-8" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary btn-sm fs-8 px-3">Save Account</button>
+          </div>
       </form>
     </div>
   </div>
+</div>
 
-  <script src="js/pmo-users.js"></script>
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // INITIAL DUMMY DATA MATCHING YOUR IMAGE
+    let users = [
+        { id: 1, name: "Dr. Ayesha Khan", email: "ayesha.khan@gims.edu.pk", role: "PMO Head", dept: "Computer Science" },
+        { id: 2, name: "Dr. Usman Tariq", email: "usman.tariq@gims.edu.pk", role: "Faculty", dept: "Software Engineering" },
+        { id: 3, name: "Ali Raza", email: "ali.raza@student.gims.edu.pk", role: "Student", dept: "Computer Science" },
+        { id: 4, name: "Dr. Imran Malik", email: "imran.malik@gims.edu.pk", role: "Faculty", dept: "Information Technology" }
+    ];
+
+    let userModalBS;
+
+    document.addEventListener("DOMContentLoaded", function() {
+        userModalBS = new bootstrap.Modal(document.getElementById('userModal'));
+        renderUsers(users);
+    });
+
+    // READ (Render Users in Table)
+    function renderUsers(data) {
+        const tbody = document.getElementById('userTableBody');
+        tbody.innerHTML = '';
+
+        data.forEach(user => {
+            let roleClass = 'badge-student';
+            if(user.role === 'PMO Head') roleClass = 'badge-pmo';
+            else if(user.role === 'Faculty') roleClass = 'badge-faculty';
+
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td class="ps-3 py-3 fw-bold text-dark">${user.name}</td>
+                <td class="py-3 text-secondary">${user.email}</td>
+                <td class="py-3"><span class="${roleClass}">${user.role}</span></td>
+                <td class="py-3 text-secondary">${user.dept}</td>
+                <td class="text-end pe-4 py-3">
+                    <span class="action-link text-primary me-3" onclick="editUser(${user.id})">Edit</span>
+                    <span class="action-link text-danger" onclick="deleteUser(${user.id})">Delete</span>
+                </td>
+            `;
+            tbody.appendChild(tr);
+        });
+    }
+
+    // CREATE (Open Modal)
+    function openAddModal() {
+        document.getElementById('modalTitle').innerText = "Add New User Account";
+        document.getElementById('userForm').reset();
+        document.getElementById('userId').value = "";
+        generatePassword();
+        userModalBS.show();
+    }
+
+    // GENERATE PASSWORD
+    function generatePassword() {
+        const pass = "GIMS-" + Math.floor(1000 + Math.random() * 9000);
+        document.getElementById('userPass').value = pass;
+    }
+
+    // CREATE / UPDATE (Save User)
+    function saveUser(e) {
+        e.preventDefault();
+        const id = document.getElementById('userId').value;
+        const name = document.getElementById('userName').value;
+        const email = document.getElementById('userEmail').value;
+        const role = document.getElementById('userRole').value;
+        const dept = document.getElementById('userDept').value;
+
+        if(id) {
+            // Update existing user
+            const index = users.findIndex(u => u.id == id);
+            users[index] = { id: parseInt(id), name, email, role, dept };
+        } else {
+            // Create new user
+            const newId = users.length ? Math.max(...users.map(u => u.id)) + 1 : 1;
+            users.push({ id: newId, name, email, role, dept });
+        }
+
+        renderUsers(users);
+        userModalBS.hide();
+    }
+
+    // UPDATE (Fill Modal Form)
+    function editUser(id) {
+        const user = users.find(u => u.id == id);
+        if(!user) return;
+
+        document.getElementById('modalTitle').innerText = "Edit User Account";
+        document.getElementById('userId').value = user.id;
+        document.getElementById('userName').value = user.name;
+        document.getElementById('userEmail').value = user.email;
+        document.getElementById('userRole').value = user.role;
+        document.getElementById('userDept').value = user.dept;
+        document.getElementById('userPass').value = "********";
+
+        userModalBS.show();
+    }
+
+    // DELETE
+    function deleteUser(id) {
+        if(confirm("Are you sure you want to delete this user account?")) {
+            users = users.filter(u => u.id != id);
+            renderUsers(users);
+        }
+    }
+
+    // SEARCH & FILTER
+    function filterUsers() {
+        const searchVal = document.getElementById('searchInput').value.toLowerCase();
+        const roleVal = document.getElementById('roleFilter').value;
+
+        const filtered = users.filter(u => {
+            const matchesSearch = u.name.toLowerCase().includes(searchVal) || u.email.toLowerCase().includes(searchVal);
+            const matchesRole = roleVal === "" || u.role === roleVal;
+            return matchesSearch && matchesRole;
+        });
+
+        renderUsers(filtered);
+    }
+</script>
+
 </body>
 </html>

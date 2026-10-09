@@ -22,85 +22,118 @@
     
     <!-- LEFT PANEL: BACKGROUND IMAGE WITH OVERLAY LOGO -->
     <div class="col-lg-6 left-section-img">
-      
+      <div class="custom-logo-overlay">
+      </div>
     </div>
 
     <!-- RIGHT PANEL: LOGIN FORM -->
     <div class="col-lg-6 right-section">
-      <!-- Top Navigation Text -->
-      
 
       <!-- Welcome Heading -->
       <div class="login-header">
-        <h2 class="welcome-title">Welcome </h2>
+        <h2 class="welcome-title">Welcome</h2>
         <p class="welcome-sub">Sign in to your access portal</p>
       </div>
 
       <form id="loginForm">
-  <!-- Dynamic Error/Success Alert Box -->
-  <div id="loginAlert" class="alert d-none py-2 px-3 mb-3" role="alert" style="font-size: 11.5px;"></div>
+        <!-- Dynamic Error/Success Alert Box -->
+        <div id="loginAlert" class="alert d-none py-2 px-3 mb-3" role="alert" style="font-size: 11.5px;"></div>
 
-  <!-- Hidden Field for Selected Role (Default: student) -->
-  <input type="hidden" name="user_role" id="selectedRoleInput" value="student">
+        <!-- Hidden Field for Selected Role (Default: student) -->
+        <input type="hidden" name="user_role" id="selectedRoleInput" value="student">
 
-  <!-- Email / Registration Field -->
-  <div class="form-group-custom">
-    <label class="form-label">Email / Registration No.</label>
-    <div class="input-wrapper">
-      <i class="bi bi-envelope input-icon"></i>
-      <input type="text" name="user_identity" id="userIdentity" class="form-control" placeholder="Enter your email or registration number" required>
+       
+        <div class="role-section">
+          <label class="role-title">Select Role </label>
+          <div class="role-grid">
+            <div class="role-box active" data-role="student">
+              <i class="bi bi-mortarboard"></i>
+              <span>Student</span>
+            </div>
+            <div class="role-box" data-role="supervisor">
+              <i class="bi bi-person-badge"></i>
+              <span>Supervisor</span>
+            </div>
+            <div class="role-box" data-role="pmo">
+              <i class="bi bi-shield-check"></i>
+              <span>PMO </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Identity Field (Registration No. or Email) -->
+        <div class="form-group-custom">
+          <label class="form-label" id="identityLabel">Registration No.</label>
+          <div class="input-wrapper">
+            <i class="bi bi-card-heading input-icon" id="identityIcon"></i>
+            <input type="text" name="user_identity" id="userIdentity" class="form-control" placeholder="Enter your reg number (e.g., 23-arid-3134)" required>
+          </div>
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group-custom">
+          <label class="form-label">Password</label>
+          <div class="input-wrapper">
+            <i class="bi bi-lock input-icon"></i>
+            <input type="password" name="password" id="passwordInput" class="form-control" placeholder="••••••••••••" required>
+            <i class="bi bi-eye-slash toggle-password" id="togglePassword"></i>
+          </div>
+        </div>
+
+        <!-- Remember Me & Forgot Password -->
+        <div class="d-flex justify-content-between align-items-center form-options">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="remember_me" id="rememberMe" checked>
+            <label class="form-check-label" for="rememberMe">Remember me</label>
+          </div>
+          <a href="#" class="forgot-link">Forgot Password?</a>
+        </div>
+
+        <!-- Submit Button with Loading State -->
+        <button type="submit" id="btnLogin" class="btn btn-login">
+          <span id="btnText">Login &nbsp;&rarr;</span>
+          <span id="btnSpinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
+        </button>
+        
+
+      </form>
     </div>
-  </div>
+    <!-- FORGOT PASSWORD MODAL POPUP -->
+<div class="modal-backdrop" id="forgotPasswordModal">
+    <div class="modal-card">
+        <div class="modal-header">
+            <div>
+                <h5 class="modal-title">Reset Password</h5>
+                <p class="modal-subtitle">Enter your details to receive password reset instructions.</p>
+            </div>
+            <button class="modal-close" id="closeModalBtn">&times;</button>
+        </div>
 
-  <!-- Password Field -->
-  <div class="form-group-custom">
-    <label class="form-label">Password</label>
-    <div class="input-wrapper">
-      <i class="bi bi-lock input-icon"></i>
-      <input type="password" name="password" id="passwordInput" class="form-control" placeholder="Enter your password" required>
-      <i class="bi bi-eye-slash toggle-password" id="togglePassword"></i>
+        <form id="forgotPasswordForm">
+            <div class="form-group mb-3">
+                <label class="form-label">Select Your Role</label>
+                <select class="form-select" id="resetRole" required>
+                    <option value="student" selected>Student</option>
+                    <option value="supervisor">Supervisor</option>
+                    <option value="pmo">PMO </option>
+                </select>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="form-label">Registered Email / Reg No.</label>
+                <div class="input-icon-wrapper">
+                    <i class="fa-solid fa-envelope icon"></i>
+                    <input type="text" class="form-control" id="resetInput" placeholder="Enter email or Reg No (e.g., 23-arid-3134)" required>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="btn-cancel" id="cancelModalBtn">Cancel</button>
+                <button type="submit" class="btn-submit">Send Reset Link <i class="fa-solid fa-paper-plane ms-1"></i></button>
+            </div>
+        </form>
     </div>
-  </div>
-
-  <!-- Remember Me & Forgot Password -->
-  <div class="d-flex justify-content-between align-items-center form-options">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" name="remember_me" id="rememberMe" checked>
-      <label class="form-check-label" for="rememberMe">Remember me</label>
-    </div>
-    <a href="#" class="forgot-link">Forgot Password?</a>
-  </div>
-
-  <!-- Role Selector Grid -->
-  <div class="role-section">
-    <label class="role-title">Login As</label>
-    <div class="role-grid">
-      <div class="role-box active" data-role="student">
-        <i class="bi bi-mortarboard"></i>
-        <span>Student</span>
-      </div>
-      <div class="role-box" data-role="supervisor">
-        <i class="bi bi-person-badge"></i>
-        <span>Supervisor</span>
-      </div>
-      <div class="role-box" data-role="pmo">
-        <i class="bi bi-shield-check"></i>
-        <span>PMO</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Submit Button with Loading State -->
-  <button type="submit" id="btnLogin" class="btn btn-login">
-    <span id="btnText">Login &nbsp;&rarr;</span>
-    <span id="btnSpinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
-  </button>
-
-  
-
-  
-</form>
-    </div>
+</div>
 
   </div>
 </div>

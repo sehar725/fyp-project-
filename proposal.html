@@ -1,190 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proposal Submission - GIMS FYP Portal</title>
-  
-  <!-- Font Awesome & Google Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
-  
-  <!-- CSS Links -->
-  <link rel="stylesheet" href="css/proposal.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposals - GIMS FYP Portal</title>
+    
+    <!-- Bootstrap 5 & FontAwesome CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS Link -->
+    <link rel="stylesheet" href="css/proposal.css">
 </head>
 <body>
 
-  <div class="app-layout">
-    
-    <!-- SIDEBAR -->
+<div class="app-container">
+
+    <!-- Left Navigation Bar -->
     <aside class="sidebar">
-      <div class="sidebar-top">
-        <div class="sidebar-header">
-          <div class="brand-logo">
-            <img src="assets/images/gims-logo.png" alt="GIMS Logo" class="uni-logo-img">
-          </div>
-          <div class="brand-text">
-            <h3>Gujrat Institute of</h3>
-            <h3>Management Sciences</h3>
-            <p>AI-Powered FYP Management Portal</p>
-          </div>
+        <div>
+            <div class="sidebar-brand">
+                <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="brand-info">
+                    <h3>Gujrat Institute of Management Sciences</h3>
+                    <span>AI-Powered FYP Management Portal</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> <span>Dashboard</span></a></li>
+                    <li><a href="group-registration.html"><i class="fa-solid fa-users"></i> <span>Group Management</span></a></li>
+                    <li><a href="idea-checker.html"><i class="fa-solid fa-robot"></i> <span>  AI Idea Checker</span></a></li>
+                    <li><a href="idea-submission.html"><i class="fa-solid fa-lightbulb"></i> <span>Idea Submission </span></a></li>
+                    <li class="active"><a href="proposal.html"><i class="fa-solid fa-file-lines"></i> <span>Proposals</span></a></li>
+                    <li><a href="questionnaire.html"><i class="fa-solid fa-clipboard-question"></i> <span>Feasibility Questionnaire</span></a></li>
+                    <li><a href="progress.html"><i class="fa-solid fa-chart-line"></i> <span>Project Progress</span></a></li>
+                    <li><a href="final-submission.html"><i class="fa-solid fa-database"></i> <span>Final Submission</span></a></li>
+                    <li><a href="repository.html"><i class="fa-solid fa-database"></i> <span>Repository</span></a></li>
+                    <li>
+                    <a href="login.html" id="sidebarLogoutBtn">
+                    <i class="fa-solid fa-right-from-bracket"></i> 
+                   <span>Logout</span>
+                    </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
 
-        <nav class="sidebar-menu">
-          <a href="dashboard.html" class="menu-item">
-            <i class="fa-solid fa-house"></i>
-            <span>Dashboard</span>
-          </a>
-          <a href="idea-submission.html" class="menu-item">
-            <i class="fa-solid fa-lightbulb"></i>
-            <span>Idea Submission</span>
-          </a>
-          <a href="idea-checker.html" class="menu-item">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-            <span>AI Idea Checker</span>
-          </a>
-          <a href="proposal.html" class="menu-item active">
-            <i class="fa-regular fa-file-lines"></i>
-            <span>Proposals</span>
-          </a>
-          <a href="supervisors.html" class="menu-item">
-            <i class="fa-regular fa-user"></i>
-            <span>Supervisor Recommendation</span>
-          </a>
-          <a href="questionnaire.html" class="menu-item">
-            <i class="fa-regular fa-clipboard"></i>
-            <span>Feasibility Questionnaire</span>
-          </a>
-          <a href="progress.html" class="menu-item">
-            <i class="fa-solid fa-chart-line"></i>
-            <span>Project Progress</span>
-          </a>
-          <a href="repository.html" class="menu-item">
-            <i class="fa-solid fa-database"></i>
-            <span>Repository</span>
-          </a>
-
-          <div class="menu-divider"></div>
-
-          <a href="notifications.html" class="menu-item">
-            <i class="fa-regular fa-bell"></i>
-            <span>Notifications</span>
-          </a>
-          <a href="settings.html" class="menu-item">
-            <i class="fa-solid fa-gear"></i>
-            <span>Settings</span>
-          </a>
-        </nav>
-      </div>
-
-      <div class="sidebar-footer">
-        <p class="font-handwriting">Your Ideas</p>
-        <p class="font-handwriting">Build Tomorrow</p>
-      </div>
+        <div class="sidebar-footer">
+            <span>Your Ideas</span>
+            <strong>Build Tomorrow</strong>
+        </div>
     </aside>
 
-    <!-- MAIN CONTENT -->
-    <main class="main-content">
-      
-      <!-- TOPBAR -->
-      <header class="topbar">
-        <div class="search-box">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search for projects, supervisors, or anything...">
+    <!-- Main Workspace -->
+    <div class="main-wrapper">
+        <header class="topbar">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass text-muted"></i>
+                <input type="text" placeholder="Search anything...">
+            </div>
+           
+  <div class="topbar-user">
+    <!-- Notification -->
+    <div class="position-relative me-3">
+      <button class="btn p-0 border-0 text-muted position-relative" id="notifDropdownBtn" type="button" style="font-size: 18px;">
+        <i class="fa-regular fa-bell"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="notifBadge" style="font-size: 9px; padding: 3px 5px;">3</span>
+      </button>
+
+      <div class="popover-dropdown shadow-lg rounded-3 p-3 bg-white" id="notifMenu">
+        <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+          <h6 class="fw-bold m-0 text-dark" style="font-size: 14px;">Notifications</h6>
+          <button class="btn btn-primary btn-sm px-2 py-1" id="markReadBtn" type="button" style="font-size: 10px;">Mark All as Read</button>
         </div>
-
-        <div class="top-actions">
-          <a href="notifications.html" class="icon-btn">
-            <i class="fa-regular fa-bell"></i>
-          </a>
-          <div class="icon-btn">
-            <i class="fa-regular fa-sun"></i>
-          </div>
-
-          <div class="user-profile">
-            <div class="avatar" id="userAvatar">SB</div>
-            <div class="info">
-              <span class="name" id="userName">Sehar Babar</span>
-              <span class="role">Student</span>
+        <div style="max-height: 250px; overflow-y: auto;">
+          <div class="d-flex align-items-start gap-2 p-2 mb-2 rounded bg-light border-start border-3 border-success">
+            <span class="badge bg-success p-1 rounded-circle" style="font-size: 8px;"><i class="fa-solid fa-check"></i></span>
+            <div style="font-size: 11px;">
+              <p class="m-0 text-dark fw-medium">Your proposal has been approved by supervisor.</p>
+              <span class="text-muted" style="font-size: 9px;">2 days ago</span>
             </div>
-            <i class="fa-solid fa-chevron-down" style="font-size:10px; color:#94a3b8;"></i>
+          </div>
+          <div class="d-flex align-items-start gap-2 p-2 mb-2 rounded bg-light border-start border-3 border-info">
+            <span class="badge bg-info p-1 rounded-circle" style="font-size: 8px;"><i class="fa-solid fa-calendar"></i></span>
+            <div style="font-size: 11px;">
+              <p class="m-0 text-dark fw-medium">Evaluation schedule has been updated.</p>
+              <span class="text-muted" style="font-size: 9px;">3 days ago</span>
+            </div>
+          </div>
+          <div class="d-flex align-items-start gap-2 p-2 rounded bg-light border-start border-3 border-primary">
+            <span class="badge bg-primary p-1 rounded-circle" style="font-size: 8px;"><i class="fa-solid fa-bullhorn"></i></span>
+            <div style="font-size: 11px;">
+              <p class="m-0 text-dark fw-medium">A new announcement is available.</p>
+              <span class="text-muted" style="font-size: 9px;">5 days ago</span>
+            </div>
           </div>
         </div>
-      </header>
-
-      <!-- CONTENT BODY -->
-      <div class="content-body">
-        
-        <div class="proposal-card">
-          
-          <div class="proposal-header">
-            <h2>Proposal Submission</h2>
-            <p>Upload your project proposal for review and approval.</p>
-          </div>
-
-          <!-- INFO ALERT BOX -->
-          <div class="info-alert">
-            <i class="fa-regular fa-circle-question"></i>
-            <p>Make sure your proposal includes clear objectives, methodology, and expected outcomes.</p>
-          </div>
-
-          <!-- PROPOSAL FORM -->
-          <form id="proposalForm">
-            
-            <div class="form-group">
-              <label class="form-label">Project Title <span class="req">*</span></label>
-              <input type="text" id="projectTitle" class="form-control" value="AI powered travel planning app" required>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Project Domain <span class="req">*</span></label>
-              <select id="projectDomain" class="form-control" required>
-                <option value="" disabled>Select domain</option>
-                <option value="Artificial Intelligence" selected>Artificial Intelligence</option>
-                <option value="Web Development">Web Development</option>
-                <option value="Mobile App Development">Mobile App Development</option>
-                <option value="Cyber Security">Cyber Security</option>
-                <option value="Healthcare">Healthcare</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Project Description <span class="req">*</span></label>
-              <textarea id="projectDescription" class="form-control" placeholder="Provide a brief overview of your project, its purpose, and core functionality..." required></textarea>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Technologies / Tools</label>
-              <textarea id="projectTech" class="form-control tech-textarea" placeholder="e.g. React, Node.js, Firebase, etc."></textarea>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Upload Proposal (PDF) <span class="req">*</span></label>
-              <div class="file-drop-zone" id="dropZone">
-                <div class="upload-icon-circle">
-                  <i class="fa-solid fa-upload"></i>
-                </div>
-                <div class="drop-text">Drag & drop file here or click to upload</div>
-                <div class="drop-subtext">(Max 10MB)</div>
-                <input type="file" id="proposalPdfInput" accept=".pdf" class="file-input-hidden" required>
-              </div>
-              <div id="fileDisplay" class="selected-file-name"></div>
-            </div>
-
-            <div class="form-actions-row">
-              <a href="dashboard.html" class="btn-secondary">Back</a>
-              <button type="submit" class="btn-primary-action">Submit</button>
-            </div>
-
-          </form>
-
-        </div>
-
       </div>
-    </main>
+    </div>
 
-  </div>
+    <!-- Settings -->
+    <i class="fa-solid fa-gear text-muted me-3" style="font-size: 18px; cursor: pointer;"></i>
 
-  <script src="js/proposal.js"></script>
+    <!-- Profile -->
+    <div class="position-relative">
+      <div class="d-flex align-items-center" id="profileDropdownBtn" style="cursor: pointer;">
+        <div class="avatar-badge me-2" id="topbarAvatarBadge">SB</div>
+        <div>
+          <strong id="topbarUserName" style="font-size: 12px; display: block; color: #0f172a;">Sehar Babar</strong>
+          <span id="topbarUserRole" style="font-size: 11px; color: #64748b;">Student</span>
+        </div>
+      </div>
+
+      <div class="popover-dropdown profile-popover shadow-lg rounded-3 p-3 bg-white" id="profileMenu">
+        <div class="text-center pb-3 border-bottom mb-3">
+          <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-2 fw-bold"
+               id="popAvatarBadge" style="width: 45px; height: 45px; font-size: 16px;">SB</div>
+          <h6 class="fw-bold text-dark m-0" style="font-size: 13px;" id="profileViewName">Sehar Babar</h6>
+          <span class="text-muted" style="font-size: 11px;" id="profileViewSubtitle">Student | SE-01</span>
+        </div>
+
+        <ul class="nav nav-tabs border-bottom-0 mb-3 gap-1" id="profilePopupTabs" style="font-size: 11px;">
+          <li class="nav-item"><a class="nav-link active py-1 px-2" href="#popPersonal" data-bs-toggle="tab">Personal Info</a></li>
+          <li class="nav-item"><a class="nav-link py-1 px-2 text-secondary" href="#popAcademic" data-bs-toggle="tab">Academic Info</a></li>
+        </ul>
+
+        <div class="tab-content" style="font-size: 11px;">
+          <div class="tab-pane fade show active" id="popPersonal">
+            <div class="mb-2"><label class="text-muted d-block">Name</label><input type="text" class="form-control form-control-sm" id="editName" readonly></div>
+            <div class="mb-2"><label class="text-muted d-block">Email</label><input type="email" class="form-control form-control-sm" id="editEmail" readonly></div>
+            <div class="mb-2"><label class="text-muted d-block">Roll Number</label><input type="text" class="form-control form-control-sm" id="editRollNo" readonly></div>
+            <div class="mb-2"><label class="text-muted d-block">Role / Title</label><input type="text" class="form-control form-control-sm" id="editRole" readonly></div>
+          </div>
+          <div class="tab-pane fade" id="popAcademic">
+            <div class="mb-2"><label class="text-muted d-block">Program</label><input type="text" class="form-control form-control-sm" id="editProgram" readonly></div>
+            <div class="mb-2"><label class="text-muted d-block">Batch</label><input type="text" class="form-control form-control-sm" id="editBatch" readonly></div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+          <button class="btn btn-outline-danger btn-sm px-2 py-1" id="btnLogout" type="button" style="font-size: 11px;">
+            <i class="fa-solid fa-right-from-bracket me-1"></i> Logout
+          </button>
+        </header>
+
+        <main class="page-content">
+            <div class="card p-4 border-0 shadow-sm" style="border-radius: 14px;">
+                <h5 class="fw-bold mb-4" style="color: #0f172a;">Submit Proposal</h5>
+
+                <!-- PMO Assigned Slot -->
+                <div class="slot-card">
+                    <div>
+                        <h6 class="fw-bold mb-2 text-primary" style="font-size: 13px;">
+                            <i class="fa-solid fa-circle-info me-1"></i> Your Assigned Time Slot
+                        </h6>
+                        <p class="mb-1 text-secondary" style="font-size: 12px;"><strong>Date:</strong> 10 Nov 2026</p>
+                        <p class="mb-0 text-secondary" style="font-size: 12px;"><strong>Time:</strong> 8:00 AM - 8:30 AM</p>
+                    </div>
+                    <div>
+                        <span class="slot-badge"><i class="fa-solid fa-check me-1"></i> Within Slot</span>
+                    </div>
+                </div>
+
+                <!-- Form Area -->
+                <form id="proposalSubmitForm">
+                    <label class="form-label fw-semibold small text-secondary">Upload Proposal (PDF only)</label>
+                    
+                    <!-- Drag & Drop Zone -->
+                    <div class="drop-zone" id="dropZone">
+                        <i class="fa-solid fa-cloud-arrow-up text-primary fs-1 mb-2"></i>
+                        <p class="mb-1 fw-bold text-dark" style="font-size: 14px;">Drag and drop file here</p>
+                        <span class="text-muted small">or</span>
+                        <div class="mt-2">
+                            <button type="button" class="btn btn-primary btn-sm px-4 rounded-2" id="btnChooseFile">Choose File</button>
+                        </div>
+                        <input type="file" id="fileInput" accept=".pdf" class="d-none">
+                    </div>
+
+                    <!-- Selected File Box -->
+                    <div class="file-preview-card d-none" id="filePreviewCard">
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="fa-solid fa-file-pdf text-danger fs-3"></i>
+                            <div>
+                                <span class="fw-semibold text-dark d-block" style="font-size: 13px;" id="lblFileName">document.pdf</span>
+                                <span class="text-muted" style="font-size: 11px;" id="lblFileSize">0 MB</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-circle-xmark text-danger fs-5 cursor-pointer" id="btnRemoveFile"></i>
+                    </div>
+
+                    <!-- Plagiarism Report Display Area -->
+                    <div id="plagiarismReportContainer" class="mt-3"></div>
+
+                    <!-- Submit Button -->
+                    <div class="text-end mt-4">
+                        <button type="submit" id="btnSubmitProposal" class="btn btn-primary px-4 py-2" style="border-radius: 8px;">
+                            Submit Proposal
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- Custom JS Link -->
+<script src="js/proposal.js"></script>
 </body>
 </html>

@@ -1,275 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - GIMS FYP Portal</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="css/dashboard.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - GIMS FYP Portal</title>
+    
+    <!-- Bootstrap 5 & FontAwesome CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS Link -->
+    <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
 
-  <div class="app-container">
+<div class="app-container">
 
-    <!-- Sidebar -->
+    <!-- Left Navigation Bar -->
     <aside class="sidebar">
-      <div class="sidebar-brand">
-        <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
-        <div class="brand-info">
-          <h3>Gujrat Institute of Management Sciences</h3>
-          <span>AI-Powered FYP Management Portal</span>
+        <div>
+            <div class="sidebar-brand">
+                <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="brand-info">
+                    <h3>Gujrat Institute of Management Sciences</h3>
+                    <span>AI-Powered FYP Management Portal</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="dashboard.html"><i class="fa-solid fa-house"></i> <span>Dashboard</span></a></li>
+                    <li><a href="group-registration.html"><i class="fa-solid fa-users"></i> <span>Group Management</span></a></li>
+                    <li><a href="idea-checker.html"><i class="fa-solid fa-robot"></i> <span>AI Idea Checker</span></a></li>
+                    <li><a href="idea-checker.html"><i class="fa-solid fa-lightbulb"></i> <span>Idea Submission</span></a></li>
+                    <li><a href="proposal.html"><i class="fa-solid fa-file-lines"></i> <span>Proposals</span></a></li>
+                    <li><a href="questionnaire.html"><i class="fa-solid fa-clipboard-question"></i> <span>Feasibility Questionnaire</span></a></li>
+                    <li><a href="progress.html"><i class="fa-solid fa-chart-line"></i> <span>Project Progress</span></a></li>
+                    <li><a href="final-submission.html"><i class="fa-solid fa-database"></i> <span>Final-submission</span></a></li>
+                    <li><a href="repository.html"><i class="fa-solid fa-database"></i> <span>Repository</span></a></li>
+                    <li>
+                    <a href="login.html" id="sidebarLogoutBtn">
+                    <i class="fa-solid fa-right-from-bracket"></i> 
+                    <span>Logout</span>
+                     </a>
+                     </li>
+                   
+                </ul>
+            </nav>
         </div>
-      </div>
 
-      <nav class="sidebar-nav">
-        <ul>
-          <li class="active">
-            <a href="dashboard.html"><i class="fa-solid fa-house"></i> <span>Dashboard</span></a>
-          </li>
-           <li>
-            <a href="idea-submission.html"><i class="fa-solid fa-percent"></i> <span>Idea Submission</span></a>
-          </li>
-          <li>
-            <a href="idea-checker.html"><i class="fa-solid fa-percent"></i> <span>AI Idea Checker</span></a>
-          </li>
-          <li>
-            <a href="proposal.html"><i class="fa-solid fa-file-lines"></i> <span>Proposals</span></a>
-          </li>
-          <li>
-            <a href="questionnaire.html"><i class="fa-solid fa-clipboard-question"></i> <span>Feasibility Questionnaire</span></a>
-          </li>
-          <li>
-            <a href="progress.html"><i class="fa-solid fa-chart-line"></i> <span>Project Progress</span></a>
-          </li>
-          <li>
-            <a href="repository.html"><i class="fa-solid fa-database"></i> <span>Repository</span></a>
-          </li>
-          <li>
-            <a href="notifications.html"><i class="fa-solid fa-bell"></i> <span>Notifications</span></a>
-          </li>
-          <li>
-            <a href="settings.html"><i class="fa-solid fa-gear"></i> <span>Settings</span></a>
-          </li>
-        </ul>
-      </nav>
-
-      <div class="sidebar-footer">
-        <p>Your Ideas<br><strong>Build Tomorrow</strong></p>
-      </div>
+        <div class="sidebar-footer">
+            <span>Your Ideas</span>
+            <strong>Build Tomorrow</strong>
+        </div>
     </aside>
 
-    <!-- Main Content -->
-    <main class="main-wrapper">
-
-      <!-- Topbar -->
-      <header class="topbar">
-        <div class="search-bar">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search for projects, supervisors, or anything...">
-        </div>
-
-        <div class="topbar-user">
-          <button class="top-icon-btn"><i class="fa-regular fa-bell"></i></button>
-          <button class="top-icon-btn"><i class="fa-solid fa-gear"></i></button>
-          <div class="user-chip">
-            <div class="avatar-badge">SB</div>
-            <div class="user-meta">
-              <span class="user-name">Sehar Babar</span>
-              <span class="user-role">Student</span>
+    <!-- Main Workspace (Right Side Workspace) -->
+    <div class="main-wrapper">
+        <!-- Topbar Search & Profile Header -->
+        <header class="topbar">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass text-muted"></i>
+                <input type="text" id="dashboardSearch" placeholder="Search for projects, supervisors, or notifications...">
             </div>
-            <i class="fa-solid fa-chevron-down dropdown-icon"></i>
-          </div>
-        </div>
-      </header>
+           <div class="topbar-user">
+    <!-- 1. Notification Icon & Dropdown Popup -->
+    <div class="position-relative me-3">
+        <button class="btn p-0 border-0 text-muted position-relative" id="notifDropdownBtn" type="button" style="font-size: 18px;">
+            <i class="fa-regular fa-bell"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="notifBadge" style="font-size: 9px; padding: 3px 5px;">3</span>
+        </button>
 
-      <!-- Page Body -->
-      <div class="page-content">
-
-        <!-- Welcome Banner -->
-        <section class="welcome-header">
-          <h2>Good Morning, Sehar Babar!</h2>
-          <p>"Turn your ideas into impactful solutions with the power of AI."</p>
-        </section>
-
-        <!-- Top 4 Summary Cards -->
-        <section class="summary-cards">
-          <div class="card">
-            <div class="card-icon blue-bg"><i class="fa-regular fa-lightbulb"></i></div>
-            <div class="card-body">
-              <span class="label">My Current Project</span>
-              <h4 class="value muted">No Active Project</h4>
-              <a href="#" class="card-link">View Details &rarr;</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-icon green-bg"><i class="fa-solid fa-percent"></i></div>
-            <div class="card-body">
-              <span class="label">Similarity Score</span>
-              <h4 class="value text-green">0%</h4>
-              <span class="subtext">Submit proposal to check</span>
-              <a href="idea-checker.html" class="card-link mt-1">Check Again &rarr;</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-icon purple-bg"><i class="fa-regular fa-file-code"></i></div>
-            <div class="card-body">
-              <span class="label">Proposal Status</span>
-              <h4 class="value text-purple">Not Submitted</h4>
-              <span class="subtext">N/A</span>
-              <a href="proposal.html" class="card-link mt-1">View Details &rarr;</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-icon orange-bg"><i class="fa-regular fa-user"></i></div>
-            <div class="card-body">
-              <span class="label">Supervisor</span>
-              <h4 class="value text-orange">Not Assigned</h4>
-              <span class="subtext">N/A</span>
-              <a href="#" class="card-link mt-1">View Profile &rarr;</a>
-            </div>
-          </div>
-        </section>
-
-        <!-- Middle Section: FYP Progress & Notifications -->
-        <section class="grid-2-col">
-          
-          <!-- FYP Progress & Milestones -->
-          <div class="content-box">
-            <div class="box-header">
-              <h3>FYP Progress & Milestones</h3>
-              <a href="progress.html" class="box-link">View All &rarr;</a>
+        <!-- Notification Popover Menu -->
+        <div class="popover-dropdown shadow-lg rounded-3 p-3 bg-white" id="notifMenu">
+            <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+                <h6 class="fw-bold m-0 text-dark" style="font-size: 14px;">Notifications</h6>
+                <button class="btn btn-primary btn-sm px-2 py-1" id="markReadBtn" type="button" style="font-size: 10px;">Mark All as Read</button>
             </div>
             
-            <div class="milestones-container">
-              <ul class="milestone-list">
-                <li class="active-item">
-                  <div class="m-number">1</div>
-                  <div class="m-info">
-                    <h4>Proposal Submission</h4>
-                    <span>Not Submitted</span>
-                  </div>
-                  <span class="m-status tag-grey">Not Started Yet</span>
-                </li>
-
-                <li>
-                  <div class="m-number">2</div>
-                  <div class="m-info">
-                    <h4>Supervisor Review</h4>
-                    <span>Awaiting Proposal</span>
-                  </div>
-                  <span class="m-status tag-grey">Not Started Yet</span>
-                </li>
-
-                <li>
-                  <div class="m-number">3</div>
-                  <div class="m-info">
-                    <h4>HOD Approval</h4>
-                  </div>
-                  <span class="m-status tag-grey">Not Started Yet</span>
-                </li>
-
-                <li>
-                  <div class="m-number">4</div>
-                  <div class="m-info">
-                    <h4>Project Development</h4>
-                  </div>
-                  <span class="m-status tag-grey">Not Started Yet</span>
-                </li>
-
-                <li>
-                  <div class="m-number">5</div>
-                  <div class="m-info">
-                    <h4>Final Evaluation</h4>
-                  </div>
-                  <span class="m-status tag-grey">Not Started Yet</span>
-                </li>
-              </ul>
-
-              <div class="progress-circle-box">
-                <div class="radial-progress">
-                  <span class="percent-val">0%</span>
-                  <span class="percent-lbl">Overall Progress</span>
+            <div class="notification-pop-list" style="max-height: 250px; overflow-y: auto;">
+                <div class="d-flex align-items-start gap-2 p-2 mb-2 rounded bg-light border-start border-3 border-success">
+                    <span class="badge bg-success p-1 rounded-circle" style="font-size: 8px;"><i class="fa-solid fa-check"></i></span>
+                    <div style="font-size: 11px;">
+                        <p class="m-0 text-dark fw-medium">Your proposal has been approved by supervisor.</p>
+                        <span class="text-muted" style="font-size: 9px;">2 days ago</span>
+                    </div>
                 </div>
-                <div class="next-milestone-card">
-                  <span class="nm-tag"><i class="fa-regular fa-flag"></i> Next Milestone</span>
-                  <h5>Proposal Submission</h5>
-                  <span>(Awaiting Submission)</span>
+
+                <div class="d-flex align-items-start gap-2 p-2 mb-2 rounded bg-light border-start border-3 border-info">
+                    <span class="badge bg-info p-1 rounded-circle" style="font-size: 8px;"><i class="fa-solid fa-calendar"></i></span>
+                    <div style="font-size: 11px;">
+                        <p class="m-0 text-dark fw-medium">Evaluation schedule has been updated.</p>
+                        <span class="text-muted" style="font-size: 9px;">3 days ago</span>
+                    </div>
                 </div>
-              </div>
+
+                <div class="d-flex align-items-start gap-2 p-2 rounded bg-light border-start border-3 border-primary">
+                    <span class="badge bg-primary p-1 rounded-circle" style="font-size: 8px;"><i class="fa-solid fa-bullhorn"></i></span>
+                    <div style="font-size: 11px;">
+                        <p class="m-0 text-dark fw-medium">A new announcement is available.</p>
+                        <span class="text-muted" style="font-size: 9px;">5 days ago</span>
+                    </div>
+                </div>
             </div>
-          </div>
+        </div>
+    </div>
 
-          <!-- Recent Notifications -->
-          <div class="content-box">
-            <div class="box-header">
-              <h3>Recent Notifications</h3>
-              <a href="notifications.html" class="box-link">View All &rarr;</a>
+    <!-- 2. Settings Icon -->
+    <i class="fa-regular fa-gear text-muted me-3" style="font-size: 18px; cursor: pointer;"></i>
+
+    <!-- 3. Profile Avatar & Dynamic Header Info -->
+    <div class="position-relative">
+        <div class="d-flex align-items-center" id="profileDropdownBtn" style="cursor: pointer;">
+            <div class="avatar-badge me-2" id="topbarAvatarBadge">SB</div>
+            <div>
+                <strong id="topbarUserName" style="font-size: 12px; display: block; color: #0f172a;">Sehar Babar</strong>
+                <span id="topbarUserRole" style="font-size: 11px; color: #64748b;">Student</span>
             </div>
-            <div class="empty-state">
-              <i class="fa-solid fa-bell-slash"></i>
-              <p>No notifications available yet.</p>
+        </div>
+
+        <!-- Profile Dropdown Popup -->
+        <div class="popover-dropdown profile-popover shadow-lg rounded-3 p-3 bg-white" id="profileMenu">
+            <div class="text-center pb-3 border-bottom mb-3">
+                <div class="avatar-large bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-2 fw-bold" 
+                     id="popAvatarBadge" style="width: 45px; height: 45px; font-size: 16px;">SB</div>
+                <h6 class="fw-bold text-dark m-0" style="font-size: 13px;" id="profileViewName">Sehar Babar</h6>
+                <span class="text-muted" style="font-size: 11px;" id="profileViewSubtitle">Student | SE-01</span>
             </div>
-          </div>
 
-        </section>
+            <!-- Tabs -->
+            <ul class="nav nav-tabs border-bottom-0 mb-3 gap-1" id="profilePopupTabs" style="font-size: 11px;">
+                <li class="nav-item">
+                    <a class="nav-link active py-1 px-2" href="#popPersonal" data-bs-toggle="tab">Personal Info</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-1 px-2 text-secondary" href="#popAcademic" data-bs-toggle="tab">Academic Info</a>
+                </li>
+            </ul>
 
-        <!-- Bottom Section: Current Details & Quick Actions -->
-        <section class="grid-2-col mt-20">
+            <div class="tab-content" style="font-size: 11px;">
+                <!-- Personal Tab -->
+                <div class="tab-pane fade show active" id="popPersonal">
+                    <div class="mb-2">
+                        <label class="text-muted d-block">Name</label>
+                        <input type="text" class="form-control form-control-sm" id="editName" value="Sehar Babar" readonly>
+                    </div>
+                    <div class="mb-2">
+                        <label class="text-muted d-block">Email</label>
+                        <input type="email" class="form-control form-control-sm" id="editEmail" value="sehar@gmail.com" readonly>
+                    </div>
+                    <div class="mb-2">
+                        <label class="text-muted d-block">Roll Number</label>
+                        <input type="text" class="form-control form-control-sm" id="editRollNo" value="SE-01" readonly>
+                    </div>
+                    <div class="mb-2">
+                        <label class="text-muted d-block">Role / Title</label>
+                        <input type="text" class="form-control form-control-sm" id="editRole" value="Student" readonly>
+                    </div>
+                </div>
 
-          <!-- My Current FYP Details -->
-          <div class="content-box">
-            <div class="box-header">
-              <h3>My Current FYP Details</h3>
-              <a href="#" class="box-link">View All &rarr;</a>
+                <!-- Academic Tab -->
+                <div class="tab-pane fade" id="popAcademic">
+                    <div class="mb-2">
+                        <label class="text-muted d-block">Program</label>
+                        <input type="text" class="form-control form-control-sm" id="editProgram" value="BS Software Engineering" readonly>
+                    </div>
+                    <div class="mb-2">
+                        <label class="text-muted d-block">Batch</label>
+                        <input type="text" class="form-control form-control-sm" id="editBatch" value="2026" readonly>
+                    </div>
+                </div>
             </div>
-            <div class="fyp-empty-card">
-              <div class="fyp-placeholder-img">
-                <i class="fa-solid fa-image"></i>
-              </div>
-              <div class="fyp-placeholder-text">
-                <h4>No Active FYP Found</h4>
-                <p>Domain: N/A | Technology: N/A</p>
-                <p>Supervisor: N/A</p>
-                <a href="proposal.html" class="action-blue-link">Submit Proposal &rarr;</a>
-              </div>
+
+            <!-- Actions Footer -->
+            <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                <button class="btn btn-outline-danger btn-sm px-2 py-1" id="btnLogout" type="button" style="font-size: 11px;">
+                    <i class="fa-solid fa-right-from-bracket me-1"></i> Logout
+                </button>
+                <button class="btn btn-outline-primary btn-sm px-3 py-1" id="btnToggleEdit" type="button" style="font-size: 11px;">Edit Profile</button>
             </div>
-          </div>
+        </div>
+    </div>
+</div>
+        </header>
 
-          <!-- Quick Actions -->
-          <div class="content-box">
-            <div class="box-header">
-              <h3>Quick Actions</h3>
+        <main class="page-content">
+            
+            <!-- Welcome Heading -->
+            <div class="mb-4">
+                <h4 class="fw-bold mb-1" style="color: #0f172a;">Welcome!</h4>
+                <p class="text-muted small m-0">"Turn your ideas into impactful solutions with the power of AI."</p>
             </div>
-            <div class="quick-actions-grid">
-              <a href="idea-checker.html" class="action-btn">
-                <i class="fa-regular fa-lightbulb"></i>
-                <span>Check New Idea</span>
-              </a>
-              <a href="proposal.html" class="action-btn">
-                <i class="fa-regular fa-file-lines"></i>
-                <span>Submit Proposal</span>
-              </a>
-              <a href="#" class="action-btn">
-                <i class="fa-regular fa-user"></i>
-                <span>Find Supervisor</span>
-              </a>
-              <a href="repository.html" class="action-btn">
-                <i class="fa-solid fa-compass"></i>
-                <span>Explore Repository</span>
-              </a>
+
+            <!-- Top Stat Cards Grid -->
+            <div class="row g-3 mb-4">
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm p-3 rounded-3 d-flex flex-row align-items-center gap-3">
+                        <div class="stat-icon bg-primary-subtle text-primary">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+                        <div>
+                            <span class="text-muted d-block" style="font-size: 11px;">Group</span>
+                            <strong class="text-dark" style="font-size: 14px;">Group 07</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm p-3 rounded-3 d-flex flex-row align-items-center gap-3">
+                        <div class="stat-icon bg-info-subtle text-info">
+                            <i class="fa-solid fa-user-group"></i>
+                        </div>
+                        <div>
+                            <span class="text-muted d-block" style="font-size: 11px;">Members</span>
+                            <strong class="text-dark" style="font-size: 14px;">3 Members</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm p-3 rounded-3 d-flex flex-row align-items-center gap-3">
+                        <div class="stat-icon bg-secondary-subtle text-secondary">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <span class="text-muted d-block" style="font-size: 11px;">Supervisor</span>
+                            <strong class="text-dark" style="font-size: 14px;">Mr. Ashar Javad</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm p-3 rounded-3 d-flex flex-row align-items-center gap-3">
+                        <div class="stat-icon bg-success-subtle text-success">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div>
+                            <span class="text-muted d-block" style="font-size: 11px;">Project Status</span>
+                            <strong class="text-success" style="font-size: 14px;">Proposal Approved</strong>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
 
-        </section>
+            <!-- Project Progress Tracker & Next Milestone Row -->
+            <div class="row g-3 mb-4">
+                <div class="col-md-8">
+                    <div class="card border-0 shadow-sm p-4 rounded-3 h-100">
+                        <h6 class="fw-bold text-dark mb-4">Project Progress</h6>
+                        
+                        <!-- Timeline Steps -->
+                        <div class="progress-timeline-wrapper">
+                            <div class="timeline-step completed">
+                                <div class="step-icon"><i class="fa-solid fa-check"></i></div>
+                                <span class="step-label">Proposal Approved</span>
+                            </div>
+                            <div class="timeline-step completed">
+                                <div class="step-icon"><i class="fa-solid fa-check"></i></div>
+                                <span class="step-label">Requirements</span>
+                            </div>
+                            <div class="timeline-step active">
+                                <div class="step-icon"><i class="fa-solid fa-dot-circle"></i></div>
+                                <span class="step-label">Design</span>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-icon"><i class="fa-solid fa-check"></i></div>
+                                <span class="step-label">Development</span>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-icon"><i class="fa-solid fa-check"></i></div>
+                                <span class="step-label">Testing</span>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-icon"><i class="fa-solid fa-check"></i></div>
+                                <span class="step-label">Final Submission</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-      </div>
-    </main>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm p-4 rounded-3 h-100 bg-light">
+                        <h6 class="fw-bold text-dark mb-3">Upcoming Phase</h6>
+                        <div class="d-flex align-items-center gap-2 text-primary mb-2">
+                            <i class="fa-solid fa-compass-drafting"></i>
+                            <strong style="font-size: 13px;">Development Phase</strong>
+                        </div>
+                        <p class="text-muted small mb-0">Target Date: <span class="fw-medium text-dark">30 Nov 2026</span></p>
+                    </div>
+                </div>
+            </div>
 
-  </div>
+            <!-- Evaluation & Notifications Row -->
+            <div class="row g-3">
+                <!-- Upcoming Evaluation -->
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm p-4 rounded-3 h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <h6 class="fw-bold text-dark mb-3">Upcoming Evaluation</h6>
+                            <ul class="list-unstyled mb-0" style="font-size: 12px;">
+                                <li class="mb-2 text-secondary"><i class="fa-regular fa-calendar me-2 text-primary"></i> 15 Dec 2026</li>
+                                <li class="mb-2 text-secondary"><i class="fa-regular fa-clock me-2 text-primary"></i> 10:00 AM - 12:00 PM</li>
+                                <li class="text-secondary"><i class="fa-solid fa-location-dot me-2 text-primary"></i> Lab 2</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 text-end">
+                            <button class="btn btn-primary btn-sm px-3 rounded-2" id="btnEvaluationDetails">View Details</button>
+                        </div>
+                    </div>
+                </div>
 
-  <script src="js/dashboard.js"></script>
+                <!-- Recent Notifications -->
+                <div class="col-md-8">
+                    <div class="card border-0 shadow-sm p-4 rounded-3 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6 class="fw-bold text-dark m-0">Recent Notifications</h6>
+                            <a href="#" class="text-primary text-decoration-none small fw-medium">View All →</a>
+                        </div>
+
+                        <ul class="list-group list-group-flush" id="notificationList">
+                            <li class="list-group-item bg-transparent px-0 py-2 border-bottom-0 d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="badge bg-success p-1 rounded-circle"></span>
+                                    <span class="text-secondary small">Your proposal has been approved by supervisor.</span>
+                                </div>
+                                <span class="text-muted" style="font-size: 11px;">2 days ago</span>
+                            </li>
+                            <li class="list-group-item bg-transparent px-0 py-2 border-bottom-0 d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="badge bg-success p-1 rounded-circle"></span>
+                                    <span class="text-secondary small">Evaluation schedule has been updated by PMO.</span>
+                                </div>
+                                <span class="text-muted" style="font-size: 11px;">3 days ago</span>
+                            </li>
+                            <li class="list-group-item bg-transparent px-0 py-2 border-bottom-0 d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="badge bg-success p-1 rounded-circle"></span>
+                                    <span class="text-secondary small">A new announcement is available regarding FYP template.</span>
+                                </div>
+                                <span class="text-muted" style="font-size: 11px;">5 days ago</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+<!-- JS CDN & Custom JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/dashboard.js"></script>
 </body>
 </html>

@@ -1,194 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Feasibility Questionnaire - GIMS FYP Portal</title>
-  
-  <!-- FontAwesome & Google Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
-  
-  <!-- External CSS File -->
-  <link rel="stylesheet" href="css/questionnaire.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feasibility Questionnaire & FAQ - GIMS FYP Portal</title>
+    
+    <!-- Bootstrap 5 & FontAwesome CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS Link -->
+    <link rel="stylesheet" href="css/questionnaire.css">
 </head>
 <body>
 
-  <div class="app-layout">
-    
-    <!-- SIDEBAR -->
+<div class="app-container">
+
+    <!-- Left Navigation Bar -->
     <aside class="sidebar">
-      <div>
-        <div class="sidebar-header">
-          <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
-          <div class="brand-text">
-            <h3>Gujrat Institute of</h3>
-            <h3>Management Sciences</h3>
-            <p>AI-Powered FYP Management Portal</p>
-          </div>
+        <div>
+            <div class="sidebar-brand">
+                <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="brand-info">
+                    <h3>Gujrat Institute of Management Sciences</h3>
+                    <span>AI-Powered FYP Management Portal</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> <span>Dashboard</span></a></li>
+                    <li><a href="group-registration.html"><i class="fa-solid fa-users"></i> <span>Group Management</span></a></li>
+                    <li><a href="idea-checker.html"><i class="fa-solid fa-robot"></i> <span>AI Idea Checker</span></a></li>
+                    <li><a href="idea-submission.html"><i class="fa-solid fa-lightbulb"></i> <span>Idea Submission</span></a></li>
+                    <li><a href="proposal.html"><i class="fa-solid fa-file-lines"></i> <span>Proposals</span></a></li>
+                    <li class="active"><a href="questionnaire.html"><i class="fa-solid fa-clipboard-question"></i> <span>Feasibility Questionnaire</span></a></li>
+                    <li><a href="progress.html"><i class="fa-solid fa-chart-line"></i> <span>Project Progress</span></a></li>
+                    <li><a href="final-submission.html"><i class="fa-solid fa-chart-line"></i> <span>Final Submission</span></a></li>
+                    <li><a href="repository.html"><i class="fa-solid fa-database"></i> <span>Repository</span></a></li>
+                    <li>
+                    <a href="login.html" id="sidebarLogoutBtn">
+                    <i class="fa-solid fa-right-from-bracket"></i> 
+                   <span>Logout</span>
+                   </a>
+                </li>
+                </ul>
+            </nav>
         </div>
 
-        <nav class="sidebar-menu">
-          <a href="dashboard.html" class="menu-item"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
-          <a href="idea-submission.html" class="menu-item"><i class="fa-solid fa-percent"></i><span>Idea Submission</span></a>
-          <a href="ai-checker.html" class="menu-item"><i class="fa-solid fa-percent"></i><span>AI Idea Checker</span></a>
-          <a href="proposal.html" class="menu-item"><i class="fa-regular fa-file-lines"></i><span>Proposals</span></a>
-          <a href="questionnaire.html" class="menu-item active"><i class="fa-regular fa-file-lines"></i><span>Feasibility Questionnaire</span></a>
-          <a href="progress.html" class="menu-item"><i class="fa-solid fa-chart-line"></i><span>Project Progress</span></a>
-          <a href="repository.html" class="menu-item"><i class="fa-solid fa-database"></i><span>Repository</span></a>
-          <a href="notifications.html" class="menu-item"><i class="fa-regular fa-bell"></i><span>Notifications</span></a>
-          <a href="settings.html" class="menu-item"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
-        </nav>
-      </div>
-
-      <div class="sidebar-footer">
-        <p class="font-handwriting">Your Ideas</p>
-        <p class="font-handwriting">Build Tomorrow</p>
-      </div>
+        <div class="sidebar-footer">
+            <span>Your Ideas</span>
+            <strong>Build Tomorrow</strong>
+        </div>
     </aside>
 
-    <!-- MAIN CONTENT -->
-    <main class="main-content">
-      
-      <!-- TOPBAR -->
-      <header class="topbar">
-        <div class="search-box">
-          <i class="fa-solid fa-magnifying-glass" style="color:#94a3b8;"></i>
-          <input type="text" placeholder="Search for projects, supervisors, or anything...">
-        </div>
-
-        <div class="top-actions">
-          <i class="fa-regular fa-bell" style="color:#64748b; cursor:pointer;"></i>
-          <i class="fa-regular fa-sun" style="color:#64748b; cursor:pointer;"></i>
-          <div class="user-profile">
-            <div class="avatar">SB</div>
-            <div>
-              <div style="font-weight:600; font-size:12px; color:#0f172a;">Sehar Babar</div>
-              <div style="font-size:10px; color:#94a3b8;">Student</div>
+    <!-- Main Workspace -->
+    <div class="main-wrapper">
+        <!-- Topbar with Working Search -->
+        <header class="topbar">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass text-muted"></i>
+                <input type="text" id="pmoQuerySearch" placeholder="Search PMO queries, guidelines...">
             </div>
-            <i class="fa-solid fa-chevron-down" style="font-size:10px; color:#94a3b8;"></i>
+           
+
+  <div class="topbar-user">
+    <!-- Notification -->
+    <div class="position-relative me-3">
+      <button class="btn p-0 border-0 text-muted position-relative" id="notifDropdownBtn" type="button" style="font-size: 18px;">
+        <i class="fa-regular fa-bell"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="notifBadge" style="font-size: 9px; padding: 3px 5px;">3</span>
+      </button>
+
+      <div class="popover-dropdown shadow-lg rounded-3 p-3 bg-white" id="notifMenu">
+        <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+          <h6 class="fw-bold m-0 text-dark" style="font-size: 14px;">Notifications</h6>
+          <button class="btn btn-primary btn-sm px-2 py-1" id="markReadBtn" type="button" style="font-size: 10px;">Mark All as Read</button>
+        </div>
+        <div style="max-height: 250px; overflow-y: auto;">
+          <div class="d-flex align-items-start gap-2 p-2 mb-2 rounded bg-light border-start border-3 border-success">
+            <span class="badge bg-success p-1 rounded-circle" style="font-size: 8px;"><i class="fa-solid fa-check"></i></span>
+            <div style="font-size: 11px;">
+              <p class="m-0 text-dark fw-medium">Your proposal has been approved by supervisor.</p>
+              <span class="text-muted" style="font-size: 9px;">2 days ago</span>
+            </div>
+          </div>
+          <div class="d-flex align-items-start gap-2 p-2 mb-2 rounded bg-light border-start border-3 border-info">
+            <span class="badge bg-info p-1 rounded-circle" style="font-size: 8px;"><i class="fa-solid fa-calendar"></i></span>
+            <div style="font-size: 11px;">
+              <p class="m-0 text-dark fw-medium">Evaluation schedule has been updated.</p>
+              <span class="text-muted" style="font-size: 9px;">3 days ago</span>
+            </div>
+          </div>
+          <div class="d-flex align-items-start gap-2 p-2 rounded bg-light border-start border-3 border-primary">
+            <span class="badge bg-primary p-1 rounded-circle" style="font-size: 8px;"><i class="fa-solid fa-bullhorn"></i></span>
+            <div style="font-size: 11px;">
+              <p class="m-0 text-dark fw-medium">A new announcement is available.</p>
+              <span class="text-muted" style="font-size: 9px;">5 days ago</span>
+            </div>
           </div>
         </div>
-      </header>
-
-      <!-- CONTENT BODY -->
-      <div class="content-body">
-
-        <div class="page-title-box">
-          <h2>Feasibility Questionnaire</h2>
-          <p>Answer the following questions to evaluate your project's feasibility.</p>
-        </div>
-
-        <!-- MAIN CARD FORM -->
-        <div class="main-card">
-          <form id="feasibilityForm">
-            
-            <!-- 1. TECHNICAL FEASIBILITY -->
-            <div class="section-block">
-              <div class="section-header">
-                <div class="icon-box icon-tech"><i class="fa-regular fa-file-code"></i></div>
-                <div class="section-title">
-                  <h4>Technical Feasibility</h4>
-                  <p>Required tech stack, tools, and team skills availability.</p>
-                </div>
-              </div>
-
-              <div class="q-item">
-                <div class="q-title">
-                  <span>1. Is the required technology stack and tools available?</span>
-                  <div class="radio-group">
-                    <label class="radio-label"><input type="radio" name="q1" value="Yes" checked> Yes</label>
-                    <label class="radio-label"><input type="radio" name="q1" value="No"> No</label>
-                    <label class="radio-label"><input type="radio" name="q1" value="Partially"> Partially</label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="q-item">
-                <div class="q-title">
-                  <span>2. Do you have the technical skills to build this project?</span>
-                  <div class="radio-group">
-                    <label class="radio-label"><input type="radio" name="q2" value="Yes" checked> Yes</label>
-                    <label class="radio-label"><input type="radio" name="q2" value="No"> No</label>
-                    <label class="radio-label"><input type="radio" name="q2" value="Partially"> Partially</label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="q-item">
-                <div class="q-title">3. Describe any technical challenges or complex algorithms involved:</div>
-                <textarea placeholder="Write technical hurdles if any..."></textarea>
-              </div>
-            </div>
-
-            <!-- 2. FINANCIAL FEASIBILITY -->
-            <div class="section-block">
-              <div class="section-header">
-                <div class="icon-box icon-fin"><i class="fa-solid fa-dollar-sign"></i></div>
-                <div class="section-title">
-                  <h4>Financial Feasibility</h4>
-                  <p>Estimated project costs (APIs, Cloud Hosting, Hardware).</p>
-                </div>
-              </div>
-
-              <div class="q-item">
-                <div class="q-title">
-                  <span>4. Is the project cost manageable within student budget?</span>
-                  <div class="radio-group">
-                    <label class="radio-label"><input type="radio" name="q4" value="Yes" checked> Yes</label>
-                    <label class="radio-label"><input type="radio" name="q4" value="No"> No</label>
-                    <label class="radio-label"><input type="radio" name="q4" value="Partially"> Partially</label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="q-item">
-                <div class="q-title">5. Are paid cloud services or APIs required?</div>
-                <textarea placeholder="Mention paid services if applicable..."></textarea>
-              </div>
-            </div>
-
-            <!-- 3. OPERATIONAL FEASIBILITY -->
-            <div class="section-block">
-              <div class="section-header">
-                <div class="icon-box icon-op"><i class="fa-solid fa-gear"></i></div>
-                <div class="section-title">
-                  <h4>Operational & Time Feasibility</h4>
-                  <p>User adoption, data availability, and 2-semester timeline capability.</p>
-                </div>
-              </div>
-
-              <div class="q-item">
-                <div class="q-title">
-                  <span>6. Can all core features be completed within the 2-semester timeframe?</span>
-                  <div class="radio-group">
-                    <label class="radio-label"><input type="radio" name="q6" value="Yes" checked> Yes</label>
-                    <label class="radio-label"><input type="radio" name="q6" value="No"> No</label>
-                    <label class="radio-label"><input type="radio" name="q6" value="Partially"> Partially</label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="q-item">
-                <div class="q-title">7. Is required dataset or data source accessible for training/testing?</div>
-                <textarea placeholder="Describe data availability..."></textarea>
-              </div>
-            </div>
-
-            <!-- ACTION BUTTON -->
-            <div class="action-buttons">
-              <button type="submit" class="btn-submit"><i class="fa-regular fa-paper-plane"></i> Submit Form</button>
-            </div>
-
-          </form>
-        </div>
-
       </div>
-    </main>
+    </div>
 
+    <!-- Settings -->
+    <i class="fa-solid fa-gear text-muted me-3" style="font-size: 18px; cursor: pointer;"></i>
+
+    <!-- Profile -->
+    <div class="position-relative">
+      <div class="d-flex align-items-center" id="profileDropdownBtn" style="cursor: pointer;">
+        <div class="avatar-badge me-2" id="topbarAvatarBadge">SB</div>
+        <div>
+          <strong id="topbarUserName" style="font-size: 12px; display: block; color: #0f172a;">Sehar Babar</strong>
+          <span id="topbarUserRole" style="font-size: 11px; color: #64748b;">Student</span>
+        </div>
+      </div>
+
+      <div class="popover-dropdown profile-popover shadow-lg rounded-3 p-3 bg-white" id="profileMenu">
+        <div class="text-center pb-3 border-bottom mb-3">
+          <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-2 fw-bold"
+               id="popAvatarBadge" style="width: 45px; height: 45px; font-size: 16px;">SB</div>
+          <h6 class="fw-bold text-dark m-0" style="font-size: 13px;" id="profileViewName">Sehar Babar</h6>
+          <span class="text-muted" style="font-size: 11px;" id="profileViewSubtitle">Student | SE-01</span>
+        </div>
+
+        <ul class="nav nav-tabs border-bottom-0 mb-3 gap-1" id="profilePopupTabs" style="font-size: 11px;">
+          <li class="nav-item"><a class="nav-link active py-1 px-2" href="#popPersonal" data-bs-toggle="tab">Personal Info</a></li>
+          <li class="nav-item"><a class="nav-link py-1 px-2 text-secondary" href="#popAcademic" data-bs-toggle="tab">Academic Info</a></li>
+        </ul>
+
+        <div class="tab-content" style="font-size: 11px;">
+          <div class="tab-pane fade show active" id="popPersonal">
+            <div class="mb-2"><label class="text-muted d-block">Name</label><input type="text" class="form-control form-control-sm" id="editName" readonly></div>
+            <div class="mb-2"><label class="text-muted d-block">Email</label><input type="email" class="form-control form-control-sm" id="editEmail" readonly></div>
+            <div class="mb-2"><label class="text-muted d-block">Roll Number</label><input type="text" class="form-control form-control-sm" id="editRollNo" readonly></div>
+            <div class="mb-2"><label class="text-muted d-block">Role / Title</label><input type="text" class="form-control form-control-sm" id="editRole" readonly></div>
+          </div>
+          <div class="tab-pane fade" id="popAcademic">
+            <div class="mb-2"><label class="text-muted d-block">Program</label><input type="text" class="form-control form-control-sm" id="editProgram" readonly></div>
+            <div class="mb-2"><label class="text-muted d-block">Batch</label><input type="text" class="form-control form-control-sm" id="editBatch" readonly></div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+          <button class="btn btn-outline-danger btn-sm px-2 py-1" id="btnLogout" type="button" style="font-size: 11px;">
+            <i class="fa-solid fa-right-from-bracket me-1"></i> Logout
+          </button>
+          <button class="btn btn-outline-primary btn-sm px-3 py-1" id="btnToggleEdit" type="button" style="font-size: 11px;">Edit Profile</button>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- External JS File -->
-  <script src="js/questionnaire.js"></script>
+        </header>
+
+        <main class="page-content">
+            <div class="card p-4 border-0 shadow-sm" style="border-radius: 14px;">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div>
+                        <h5 class="fw-bold mb-1" style="color: #0f172a;">PMO Feasibility & Guidelines Guide</h5>
+                        <p class="text-muted small mb-0">Frequently asked queries and official responses prepared by PMO for student guidance.</p>
+                    </div>
+                    <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold" style="font-size: 11px;">
+                        <i class="fa-solid fa-book-bookmark me-1"></i> PMO Knowledge Base
+                    </span>
+                </div>
+
+                <hr class="my-3 text-muted opacity-25">
+
+                <!-- Questions Accordion Container -->
+                <div class="accordion" id="pmoFaqAccordion">
+
+                    <!-- Query 1 -->
+                    <div class="accordion-item faq-card mb-3 border rounded-3 overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button fw-semibold text-dark fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
+                                <i class="fa-solid fa-circle-question me-2 text-primary"></i> 1. How should we prepare the Feasibility Report for Proposal Defense?
+                            </button>
+                        </h2>
+                        <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#pmoFaqAccordion">
+                            <div class="accordion-body text-secondary small" style="line-height: 1.7;">
+                                <strong>Answer:</strong> According to PMO guidelines, your feasibility report must cover three core areas: Technical Stack (tools your team is familiar with), Project Scope (achievable within 4 months), and Resource Availability (free APIs/datasets). Clearly define your baseline MVP features before submission.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Query 2 -->
+                    <div class="accordion-item faq-card mb-3 border rounded-3 overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-semibold text-dark fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+                                <i class="fa-solid fa-circle-question me-2 text-primary"></i> 2. Are paid third-party APIs or heavy hardware components allowed?
+                            </button>
+                        </h2>
+                        <div id="q2" class="accordion-collapse collapse" data-bs-parent="#pmoFaqAccordion">
+                            <div class="accordion-body text-secondary small" style="line-height: 1.7;">
+                                <strong>Answer:</strong> Students are strongly advised to utilize open-source and free-tier resources (e.g., Hugging Face models, OpenStreetMap, Firebase Free Tier). Projects requiring expensive specialized hardware or paid APIs must obtain prior written approval from the PMO Committee during proposal review.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Query 3 -->
+                    <div class="accordion-item faq-card mb-3 border rounded-3 overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-semibold text-dark fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
+                                <i class="fa-solid fa-circle-question me-2 text-primary"></i> 3. What is the maximum acceptable plagiarism percentage for proposal documents?
+                            </button>
+                        </h2>
+                        <div id="q3" class="accordion-collapse collapse" data-bs-parent="#pmoFaqAccordion">
+                            <div class="accordion-body text-secondary small" style="line-height: 1.7;">
+                                <strong>Answer:</strong> The maximum allowable similarity index is <strong>19%</strong>. Any document with a Turnitin or Portal Similarity Score of 20% or higher will be automatically flagged as "High Plagiarism" and rejected.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Query 4 -->
+                    <div class="accordion-item faq-card mb-3 border rounded-3 overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-semibold text-dark fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#q4">
+                                <i class="fa-solid fa-circle-question me-2 text-primary"></i> 4. What is the procedure if a team misses their assigned defense slot?
+                            </button>
+                        </h2>
+                        <div id="q4" class="accordion-collapse collapse" data-bs-parent="#pmoFaqAccordion">
+                            <div class="accordion-body text-secondary small" style="line-height: 1.7;">
+                                <strong>Answer:</strong> Submissions must occur within the assigned time slot. If a slot is missed due to valid technical or medical reasons, a support request ticket must be submitted via the portal for re-allocation in the secondary evaluation schedule.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Query 5 -->
+                    <div class="accordion-item faq-card mb-3 border rounded-3 overflow-hidden">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-semibold text-dark fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#q5">
+                                <i class="fa-solid fa-circle-question me-2 text-primary"></i> 5. Can project titles or group members be changed after proposal submission?
+                            </button>
+                        </h2>
+                        <div id="q5" class="accordion-collapse collapse" data-bs-parent="#pmoFaqAccordion">
+                            <div class="accordion-body text-secondary small" style="line-height: 1.7;">
+                                <strong>Answer:</strong> Major title or domain changes require formal re-evaluation by the PMO committee. Group composition modifications are strictly prohibited once the final proposal deadline has passed.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Search No Results Box -->
+                <div id="noResultsMsg" class="text-center py-4 text-muted d-none">
+                    <i class="fa-solid fa-magnifying-glass fs-3 mb-2 opacity-50"></i>
+                    <p class="small mb-0">No matching PMO queries found.</p>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- JS Libraries & Custom JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/questionnaire.js"></script>
 </body>
 </html>

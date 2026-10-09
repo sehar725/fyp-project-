@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervisor Logs - PMO Portal</title>
+    <!-- Font Awesome Icons & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        body { background-color: #f8fafc; color: #1e293b; font-size: 14px; }
+        .app-layout { display: flex; min-height: 100vh; }
+
+        /* --- LEFT SIDEBAR STYLES --- */
+        .sidebar { width: 260px; background: #0b132b; color: #94a3b8; display: flex; flex-direction: column; flex-shrink: 0; padding: 20px 15px; justify-content: space-between; }
+        .brand-header { display: flex; align-items: center; gap: 12px; margin-bottom: 30px; padding: 0 5px; }
+        .brand-logo { width: 38px; height: 38px; background: #2563eb; color: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+        .brand-title { font-size: 14px; font-weight: 700; color: #ffffff; line-height: 1.2; }
+        .brand-subtitle { font-size: 11px; color: #64748b; margin-top: 2px; }
+
+        .nav-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+        .nav-item a { display: flex; align-items: center; gap: 12px; padding: 10px 14px; color: #94a3b8; text-decoration: none; border-radius: 8px; font-size: 13.5px; font-weight: 500; transition: all 0.2s; }
+        .nav-item a:hover { color: #ffffff; background: rgba(255, 255, 255, 0.05); }
+        .nav-item.active a { background: #2563eb; color: #ffffff; font-weight: 600; }
+        .nav-item i { width: 18px; text-align: center; font-size: 15px; }
+
+        .sidebar-footer { text-align: center; padding: 15px 0; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+        .font-handwriting { font-family: 'Caveat', cursive; font-size: 17px; color: #cbd5e1; margin: 0; line-height: 1.2; }
+
+        /* --- MAIN CONTENT & TOPBAR --- */
+        .main-content { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+        .topbar { background: #ffffff; height: 64px; padding: 0 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; }
+        .search-box { display: flex; align-items: center; gap: 10px; background: #f1f5f9; padding: 8px 14px; border-radius: 8px; width: 320px; }
+        .search-box input { border: none; background: transparent; outline: none; width: 100%; font-size: 13px; color: #334155; }
+        .top-actions { display: flex; align-items: center; gap: 18px; }
+        .top-actions i { color: #64748b; font-size: 16px; cursor: pointer; }
+        .user-profile { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+        .avatar { width: 34px; height: 34px; background: #dbeafe; color: #1d4ed8; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 12px; }
+
+        /* --- CONTENT BODY & TABLE STYLES --- */
+        .content-body { padding: 30px; flex: 1; }
+        .header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+        .page-title { font-size: 20px; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 10px; }
+        .btn-primary { background: #2563eb; color: #ffffff; border: none; padding: 9px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; }
+        .btn-primary:hover { background: #1d4ed8; }
+
+        /* Tab Controls */
+        .tab-group { display: flex; gap: 8px; margin-bottom: 20px; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; }
+        .tab-btn { padding: 8px 16px; border: none; background: none; font-size: 14px; font-weight: 600; color: #64748b; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s; }
+        .tab-btn.active { color: #2563eb; border-bottom-color: #2563eb; }
+
+        /* Filter Controls */
+        .filter-bar { display: flex; gap: 12px; margin-bottom: 20px; background: #ffffff; padding: 12px 16px; border-radius: 10px; border: 1px solid #e2e8f0; align-items: center; }
+        .filter-select, .filter-input { padding: 7px 12px; border: 1px solid #cbd5e1; border-radius: 6px; outline: none; font-size: 13px; color: #334155; }
+
+        /* Table Design */
+        .card-table { background: #ffffff; border-radius: 10px; border: 1px solid #e2e8f0; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
+        .data-table { width: 100%; border-collapse: collapse; text-align: left; }
+        .data-table th { background: #f8fafc; padding: 12px 16px; font-weight: 600; color: #475569; border-bottom: 1px solid #e2e8f0; font-size: 13px; }
+        .data-table td { padding: 14px 16px; border-bottom: 1px solid #f1f5f9; color: #334155; font-size: 13px; }
+        
+        .status-badge { padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; display: inline-block; }
+        .badge-completed { background: #dcfce7; color: #15803d; }
+        .badge-scheduled { background: #dbeafe; color: #1d4ed8; }
+        .badge-online { background: #f3e8ff; color: #6b21a8; }
+        .badge-inperson { background: #e0e7ff; color: #3730a3; }
+        .action-btn { background: transparent; border: none; color: #2563eb; font-weight: 600; cursor: pointer; }
+
+        /* Modal Styles */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.4); justify-content: center; align-items: center; z-index: 1000; }
+        .modal.active { display: flex; }
+        .modal-content { background: #ffffff; width: 440px; border-radius: 12px; padding: 24px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 16px; margin-bottom: 20px; color: #0f172a; }
+        .close-modal { cursor: pointer; color: #64748b; }
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 6px; color: #475569; }
+        .form-control { width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; outline: none; }
+    </style>
+</head>
+<body>
+    <div class="app-layout">
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar">
+            <div>
+                <div class="brand-header">
+                    <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div>
+                        <div class="brand-title">Gujrat Institute of<br>Management Sciences</div>
+                        <div class="brand-subtitle">PMO Portal</div>
+                    </div>
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="pmo-dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                    <li class="nav-item"><a href="pmo-schedule.html"><i class="fa-regular fa-calendar-check"></i> Evaluation Schedule</a></li>
+                    <li class="nav-item"><a href="pmo-panel.html"><i class="fa-solid fa-users-gear"></i> Panel Assignment</a></li>
+                    <li class="nav-item"><a href="pmo-slots.html"><i class="fa-regular fa-clock"></i> Slot Allocation</a></li>
+                    <li class="nav-item"><a href="pmo-approvals.html"><i class="fa-solid fa-square-check"></i> Projects & Approvals</a></li>
+                    <li class="nav-item"><a href="pmo-repository.html"><i class="fa-solid fa-box-archive"></i> Repository</a></li>
+                    <li class="nav-item active"><a href="pmo-supervisor-logs.html"><i class="fa-solid fa-chart-line"></i> Supervisor & Meetings</a></li>
+                    <li class="nav-item"><a href="pmo-users.html"><i class="fa-solid fa-user-gear"></i> User Management</a></li>
+                    <li class="nav-item"><a href="pmo-groups.html"><i class="fa-solid fa-people-group"></i> Group Management</a></li>
+                   <li class="nav-item">
+    <a href="login.html">
+        <i class="fa-solid fa-right-from-bracket"></i> Logout
+    </a>
+</li>
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                <p class="font-handwriting">Better Ideas</p>
+                <p class="font-handwriting">Brighter Future</p>
+            </div>
+        </aside>
+
+        <!-- RIGHT MAIN CONTENT AREA -->
+        <main class="main-content">
+            <!-- TOPBAR -->
+            <header class="topbar">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass" style="color: #94a3b8;"></i>
+                    <input type="text" placeholder="Search schedule or meetings...">
+                </div>
+                <div class="top-actions">
+                    <i class="fa-regular fa-bell"></i>
+                    <i class="fa-regular fa-sun"></i>
+                    <div class="user-profile">
+                        <div class="avatar">SB</div>
+                        <div>
+                            <div style="font-weight: 600; font-size: 12px; color: #0f172a;">Shahida Bilal</div>
+                            <div style="font-size: 10px; color: #94a3b8;">PMO Head</div>
+                        </div>
+                        <i class="fa-solid fa-chevron-down" style="font-size: 10px; color: #94a3b8;"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- PAGE CONTENT BODY -->
+            <div class="content-body">
+                <div class="header-row">
+                    <h2 class="page-title"><i class="fa-solid fa-calendar-days" style="color: #2563eb;"></i> Supervisor Timetable & Meeting Logs</h2>
+                    <button class="btn-primary" id="openLogModalBtn"><i class="fa-solid fa-plus"></i> Log New Meeting</button>
+                </div>
+
+                <!-- Tabs Switcher -->
+                <div class="tab-group">
+                    <button class="tab-btn active" id="tabMeetingsBtn" onclick="switchTab('meetings')">Meeting Logs</button>
+                    <button class="tab-btn" id="tabTimetableBtn" onclick="switchTab('timetable')">Supervisor Timetables</button>
+                </div>
+
+                <!-- Filter Control Bar -->
+                <div class="filter-bar">
+                    <i class="fa-solid fa-filter" style="color: #64748b;"></i>
+                    <select class="filter-select" id="supervisorFilter">
+                        <option value="All">All Supervisors</option>
+                        <option value="Dr. Ayesha Khan">Dr. Ayesha Khan</option>
+                        <option value="Prof. Usman Ali">Prof. Usman Ali</option>
+                        <option value="Dr. Tariq Mehmood">Dr. Tariq Mehmood</option>
+                    </select>
+
+                    <select class="filter-select" id="statusFilter">
+                        <option value="All">All Statuses</option>
+                        <option value="Completed">Completed</option>
+                        <option value="Scheduled">Scheduled</option>
+                    </select>
+
+                    <input type="text" class="filter-input" id="searchInput" placeholder="Search project or group..." style="margin-left: auto; width: 220px;">
+                </div>
+
+                <!-- VIEW 1: Meeting Logs Table -->
+                <div id="meetingsView" class="card-table">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Supervisor</th>
+                                <th>Project / Group Title</th>
+                                <th>Mode</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="meetingsTbody">
+                            <!-- JS Dynamic Content Inserted Here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- VIEW 2: Supervisor Timetable -->
+                <div id="timetableView" class="card-table" style="display: none;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Supervisor Name</th>
+                                <th>Day</th>
+                                <th>Available Slot</th>
+                                <th>Office/Venue</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="timetableTbody">
+                            <!-- JS Dynamic Content Inserted Here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- LOG MEETING MODAL -->
+    <div class="modal" id="logModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>Log Student-Supervisor Meeting</span>
+                <i class="fa-solid fa-xmark close-modal" id="closeLogModalBtn"></i>
+            </div>
+            <form id="logMeetingForm">
+                <div class="form-group">
+                    <label>Supervisor</label>
+                    <select class="form-control" id="modalSupervisor" required>
+                        <option value="Dr. Ayesha Khan">Dr. Ayesha Khan</option>
+                        <option value="Prof. Usman Ali">Prof. Usman Ali</option>
+                        <option value="Dr. Tariq Mehmood">Dr. Tariq Mehmood</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Project / Group Title</label>
+                    <input type="text" class="form-control" id="modalProject" placeholder="e.g. Group 1 - AI Attendance" required>
+                </div>
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" class="form-control" id="modalDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Time</label>
+                    <input type="time" class="form-control" id="modalTime" required>
+                </div>
+                <div class="form-group">
+                    <label>Meeting Mode</label>
+                    <select class="form-control" id="modalMode" required>
+                        <option value="In-Person">In-Person</option>
+                        <option value="Online">Online (Google Meet/Teams)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Status</label>
+                    <select class="form-control" id="modalStatus" required>
+                        <option value="Scheduled">Scheduled</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 10px;">Save Meeting Log</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/pmo-supervisor-logs.js"></script>
+</body>
+</html>

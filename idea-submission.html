@@ -1,200 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Initial Idea Submission - GIMS FYP Portal</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="css/idea-submission.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initial Idea Submission - GIMS FYP Portal</title>
+    
+    <!-- Bootstrap 5 & FontAwesome CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS Link -->
+    <link rel="stylesheet" href="css/idea-submission.css">
 </head>
 <body>
 
-  <div class="app-container">
+<div class="app-container">
 
-    <!-- Sidebar -->
+    <!-- Left Navigation Bar -->
     <aside class="sidebar">
-      <div>
-        <div class="sidebar-brand">
-          <div class="brand-logo">
-            <img src="assets/images/gims-logo.png" alt="University Logo" class="uni-logo-img">
-          </div>
-          <div class="brand-info">
-            <h3>Gujrat Institute of Management Sciences</h3>
-            <span>FYP Portal</span>
-          </div>
+        <div>
+            <div class="sidebar-brand">
+                <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="brand-info">
+                    <h3>Gujrat Institute of Management Sciences</h3>
+                    <span>AI-Powered FYP Management Portal</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> <span>Dashboard</span></a></li>
+                    <li><a href="group-registration.html"><i class="fa-solid fa-users"></i> <span>Group Management</span></a></li>
+                    <li><a href="idea-checker.html"><i class="fa-solid fa-robot"></i> <span>AI Idea Checker</span></a></li>
+                    <li class="active"><a href="idea-submission.html"><i class="fa-solid fa-lightbulb"></i> <span>FYP Idea Submission</span></a></li>
+                    <li><a href="proposal.html"><i class="fa-solid fa-file-lines"></i> <span>Proposal</span></a></li>
+                   <li><a href="questionnaire.html"><i class="fa-solid fa-clipboard-question"></i> <span>Feasibility Questionnaire</span></a> </li>
+                   <li><a href="progress.html"><i class="fa-solid fa-chart-line"></i> <span>Progress</span></a></li>
+                    <li><a href="final-submission.html"><i class="fa-solid fa-chart-line"></i> <span>Final Submission</span></a></li>
+                    <li><a href="repository.html"><i class="fa-solid fa-database"></i> <span> Repository</span></a></li>
+                    <li>
+                   <a href="login.html" id="sidebarLogoutBtn">
+                  <i class="fa-solid fa-right-from-bracket"></i> 
+                  <span>Logout</span>
+                  </a>
+                 </li>
+                </ul>
+            </nav>
         </div>
 
-        <nav class="sidebar-nav">
-          <ul>
-            <li>
-              <a href="dashboard.html"><i class="fa-solid fa-house"></i> <span>Dashboard</span></a>
-            </li>
-            <li class="active">
-              <a href="idea-submission.html"><i class="fa-solid fa-lightbulb"></i> <span>Initial Idea Submission</span></a>
-            </li>
-            <li>
-              <a href="idea-checker.html"><i class="fa-solid fa-wand-magic-sparkles"></i> <span>AI Idea Submission</span></a>
-            </li>
-            <li>
-              <a href="proposals.html"><i class="fa-solid fa-file-contract"></i> <span>Proposals & Progress</span></a>
-            </li>
-            <li>
-              <a href="repository.html"><i class="fa-solid fa-folder-open"></i> <span>Repository</span></a>
-            </li>
-            <li>
-              <a href="notifications.html"><i class="fa-solid fa-bell"></i> <span>Notifications</span> <span class="badge">3</span></a>
-            </li>
-            <li>
-              <a href="settings.html"><i class="fa-solid fa-gear"></i> <span>Settings</span></a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-      <div class="sidebar-footer">
-        <p>Better Ideas<br><strong>Brighter Future</strong></p>
-      </div>
+        <div class="sidebar-footer">
+            <span>Your Ideas</span>
+            <strong>Build Tomorrow</strong>
+        </div>
     </aside>
 
-    <!-- Main Content -->
-    <main class="main-wrapper">
-
-      <!-- Topbar -->
-      <header class="topbar">
-        <div class="search-bar">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search anything...">
-        </div>
-
-        <div class="topbar-user">
-          <button class="top-icon-btn"><i class="fa-solid fa-bell"></i><span class="dot"></span></button>
-          <button class="top-icon-btn"><i class="fa-solid fa-gear"></i></button>
-          <div class="user-chip">
-            <div class="avatar-badge">SB</div>
-            <div class="user-meta">
-              <span class="user-name">Sehar Babar</span>
-              <span class="user-role">Student</span>
-            </div>
-            <i class="fa-solid fa-chevron-down dropdown-icon"></i>
-          </div>
-        </div>
-      </header>
-
-      <!-- Page Content -->
-      <div class="page-content">
-
-        <!-- Header -->
-        <div class="page-header">
-          <div class="header-icon-box">
-            <i class="fa-solid fa-lightbulb"></i>
-          </div>
-          <div class="header-text">
-            <h2>Initial Idea Submission</h2>
-            <p>Share up to 3 project ideas with a brief description. This will help us understand your interests and suggest the best possible matches.</p>
-          </div>
-        </div>
-
-        <!-- Main Content Grid -->
-        <div class="content-grid">
-
-          <!-- Left Form Section -->
-          <div class="form-section">
-            <div class="section-title">
-              <h3>Your Project Ideas</h3>
-              <p>You can submit up to 3 ideas. Please provide a clear and concise title and description for each idea.</p>
+    <!-- Main Workspace -->
+    <div class="main-wrapper">
+        
+        <!-- Topbar Header -->
+        <header class="topbar">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass text-muted"></i>
+                <input type="text" placeholder="Search for ideas, guidance, templates...">
             </div>
 
-            <form id="idea-form">
-              <!-- Idea 1 -->
-              <div class="idea-card">
-                <div class="idea-badge">1</div>
-                <div class="idea-fields">
-                  <span class="idea-label">Idea 1</span>
-                  <input type="text" id="idea1-title" class="input-field" placeholder="Enter idea title (e.g. AI based attendance system)">
-                  <div class="textarea-wrapper">
-                    <textarea id="idea1-desc" class="textarea-field" placeholder="Write a brief description of your idea..."></textarea>
-                    <span class="char-count">0/500</span>
-                  </div>
-                </div>
-              </div>
+  <div class="topbar-user">
+    <!-- Notification -->
+    <div class="position-relative me-3">
+      <button class="btn p-0 border-0 text-muted position-relative" id="notifDropdownBtn" type="button" style="font-size: 18px;">
+        <i class="fa-regular fa-bell"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="notifBadge" style="font-size: 9px; padding: 3px 5px;">3</span>
+      </button>
 
-              <!-- Idea 2 -->
-              <div class="idea-card">
-                <div class="idea-badge">2</div>
-                <div class="idea-fields">
-                  <span class="idea-label">Idea 2</span>
-                  <input type="text" id="idea2-title" class="input-field" placeholder="Enter idea title (e.g. Smart energy management system)">
-                  <div class="textarea-wrapper">
-                    <textarea id="idea2-desc" class="textarea-field" placeholder="Write a brief description of your idea..."></textarea>
-                    <span class="char-count">0/500</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Idea 3 -->
-              <div class="idea-card">
-                <div class="idea-badge">3</div>
-                <div class="idea-fields">
-                  <span class="idea-label">Idea 3</span>
-                  <input type="text" id="idea3-title" class="input-field" placeholder="Enter idea title (e.g. AR interior design app)">
-                  <div class="textarea-wrapper">
-                    <textarea id="idea3-desc" class="textarea-field" placeholder="Write a brief description of your idea..."></textarea>
-                    <span class="char-count">0/500</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-actions">
-                <button type="button" id="submit-ideas-btn" class="submit-btn">
-                  <i class="fa-solid fa-paper-plane"></i> Submit Ideas
-                </button>
-              </div>
-            </form>
-          </div>
-
-          <!-- Right Tips Panel -->
-          <div class="tips-panel">
-            <div class="tips-header">
-              <i class="fa-solid fa-lightbulb"></i>
-              <h3>Tips for a Good Idea</h3>
-            </div>
-            
-            <ul class="tips-list">
-              <li>
-                <i class="fa-regular fa-circle-check"></i>
-                <span>Keep your ideas relevant to your field of study.</span>
-              </li>
-              <li>
-                <i class="fa-regular fa-circle-check"></i>
-                <span>Write a clear and simple title.</span>
-              </li>
-              <li>
-                <i class="fa-regular fa-circle-check"></i>
-                <span>Provide a brief but meaningful description.</span>
-              </li>
-              <li>
-                <i class="fa-regular fa-circle-check"></i>
-                <span>Think about real-world problems or innovative solutions.</span>
-              </li>
-              <li>
-                <i class="fa-regular fa-circle-check"></i>
-                <span>You can update your ideas later if needed.</span>
-              </li>
-            </ul>
-
-            <div class="tips-illustration">
-              <div class="bulb-glow">
-                <i class="fa-solid fa-lightbulb"></i>
-              </div>
-            </div>
-          </div>
-
+      <div class="popover-dropdown shadow-lg rounded-3 p-3 bg-white" id="notifMenu">
+        <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+          <h6 class="fw-bold m-0 text-dark" style="font-size: 14px;">Notifications</h6>
+          <button class="btn btn-primary btn-sm px-2 py-1" id="markReadBtn" type="button" style="font-size: 10px;">Mark All as Read</button>
         </div>
-
+        <div style="max-height: 250px; overflow-y: auto;">
+          <div class="d-flex align-items-start gap-2 p-2 mb-2 rounded bg-light border-start border-3 border-success">
+            <span class="badge bg-success p-1 rounded-circle" style="font-size: 8px;"><i class="fa-solid fa-check"></i></span>
+            <div style="font-size: 11px;">
+              <p class="m-0 text-dark fw-medium">Your proposal has been approved by supervisor.</p>
+              <span class="text-muted" style="font-size: 9px;">2 days ago</span>
+            </div>
+          </div>
+          <div class="d-flex align-items-start gap-2 p-2 mb-2 rounded bg-light border-start border-3 border-info">
+            <span class="badge bg-info p-1 rounded-circle" style="font-size: 8px;"><i class="fa-solid fa-calendar"></i></span>
+            <div style="font-size: 11px;">
+              <p class="m-0 text-dark fw-medium">Evaluation schedule has been updated.</p>
+              <span class="text-muted" style="font-size: 9px;">3 days ago</span>
+            </div>
+          </div>
+          <div class="d-flex align-items-start gap-2 p-2 rounded bg-light border-start border-3 border-primary">
+            <span class="badge bg-primary p-1 rounded-circle" style="font-size: 8px;"><i class="fa-solid fa-bullhorn"></i></span>
+            <div style="font-size: 11px;">
+              <p class="m-0 text-dark fw-medium">A new announcement is available.</p>
+              <span class="text-muted" style="font-size: 9px;">5 days ago</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </main>
+    </div>
 
+    <!-- Settings -->
+    <i class="fa-solid fa-gear text-muted me-3" style="font-size: 18px; cursor: pointer;"></i>
+
+    <!-- Profile -->
+    <div class="position-relative">
+      <div class="d-flex align-items-center" id="profileDropdownBtn" style="cursor: pointer;">
+        <div class="avatar-badge me-2" id="topbarAvatarBadge">SB</div>
+        <div>
+          <strong id="topbarUserName" style="font-size: 12px; display: block; color: #0f172a;">Sehar Babar</strong>
+          <span id="topbarUserRole" style="font-size: 11px; color: #64748b;">Student</span>
+        </div>
+      </div>
+
+      <div class="popover-dropdown profile-popover shadow-lg rounded-3 p-3 bg-white" id="profileMenu">
+        <div class="text-center pb-3 border-bottom mb-3">
+          <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-2 fw-bold"
+               id="popAvatarBadge" style="width: 45px; height: 45px; font-size: 16px;">SB</div>
+          <h6 class="fw-bold text-dark m-0" style="font-size: 13px;" id="profileViewName">Sehar Babar</h6>
+          <span class="text-muted" style="font-size: 11px;" id="profileViewSubtitle">Student | SE-01</span>
+        </div>
+
+        <ul class="nav nav-tabs border-bottom-0 mb-3 gap-1" id="profilePopupTabs" style="font-size: 11px;">
+          <li class="nav-item"><a class="nav-link active py-1 px-2" href="#popPersonal" data-bs-toggle="tab">Personal Info</a></li>
+          <li class="nav-item"><a class="nav-link py-1 px-2 text-secondary" href="#popAcademic" data-bs-toggle="tab">Academic Info</a></li>
+        </ul>
+
+        <div class="tab-content" style="font-size: 11px;">
+          <div class="tab-pane fade show active" id="popPersonal">
+            <div class="mb-2"><label class="text-muted d-block">Name</label><input type="text" class="form-control form-control-sm" id="editName" readonly></div>
+            <div class="mb-2"><label class="text-muted d-block">Email</label><input type="email" class="form-control form-control-sm" id="editEmail" readonly></div>
+            <div class="mb-2"><label class="text-muted d-block">Roll Number</label><input type="text" class="form-control form-control-sm" id="editRollNo" readonly></div>
+            <div class="mb-2"><label class="text-muted d-block">Role / Title</label><input type="text" class="form-control form-control-sm" id="editRole" readonly></div>
+          </div>
+          <div class="tab-pane fade" id="popAcademic">
+            <div class="mb-2"><label class="text-muted d-block">Program</label><input type="text" class="form-control form-control-sm" id="editProgram" readonly></div>
+            <div class="mb-2"><label class="text-muted d-block">Batch</label><input type="text" class="form-control form-control-sm" id="editBatch" readonly></div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+          <button class="btn btn-outline-danger btn-sm px-2 py-1" id="btnLogout" type="button" style="font-size: 11px;">
+            <i class="fa-solid fa-right-from-bracket me-1"></i> Logout
+          </button>
+          <button class="btn btn-outline-primary btn-sm px-3 py-1" id="btnToggleEdit" type="button" style="font-size: 11px;">Edit Profile</button>
+        </div>
+      </div>
+    </div>
   </div>
+</header>
+         
+
+        <main class="page-content">
+            
+            <!-- Header Section -->
+            <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="bg-primary-subtle text-primary p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                    <i class="fa-solid fa-lightbulb fs-5"></i>
+                </div>
+                <div>
+                    <h4 class="fw-bold m-0" style="color: #0f172a;">Initial Idea Submission</h4>
+                    <p class="text-muted small m-0">Share up to 3 project ideas with a brief description. This will help us understand your interests and suggest the best possible matches.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Main Form Column -->
+                <div class="col-lg-8">
+                    <div class="card p-4 border-0 shadow-sm" style="border-radius: 14px;">
+                        <h5 class="fw-bold text-dark mb-1">Your Project Ideas</h5>
+                        <p class="text-muted small mb-4">You can submit up to 3 ideas. Please provide a clear and concise title and description for each idea.</p>
+
+                        <form id="ideaSubmissionForm">
+                            
+                            <!-- Idea 1 -->
+                            <div class="idea-box mb-4">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-primary-subtle text-primary rounded-circle" style="width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px;">1</span>
+                                    <strong class="text-dark small">Idea 1</strong>
+                                </div>
+                                <div class="mb-2">
+                                    <input type="text" class="form-control form-control-sm border-light-subtle bg-light" id="ideaTitle1" placeholder="Enter idea title (e.g. AI based attendance system)" required>
+                                </div>
+                                <div class="position-relative">
+                                    <textarea class="form-control form-control-sm border-light-subtle bg-light idea-textarea" id="ideaDesc1" maxlength="500" rows="3" placeholder="Write a brief description of your idea..." required></textarea>
+                                    <span class="char-counter text-muted">0/500</span>
+                                </div>
+                            </div>
+
+                            <!-- Idea 2 -->
+                            <div class="idea-box mb-4">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-primary-subtle text-primary rounded-circle" style="width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px;">2</span>
+                                    <strong class="text-dark small">Idea 2</strong>
+                                </div>
+                                <div class="mb-2">
+                                    <input type="text" class="form-control form-control-sm border-light-subtle bg-light" id="ideaTitle2" placeholder="Enter idea title (e.g. Smart energy management system)">
+                                </div>
+                                <div class="position-relative">
+                                    <textarea class="form-control form-control-sm border-light-subtle bg-light idea-textarea" id="ideaDesc2" maxlength="500" rows="3" placeholder="Write a brief description of your idea..."></textarea>
+                                    <span class="char-counter text-muted">0/500</span>
+                                </div>
+                            </div>
+
+                            <!-- Idea 3 -->
+                            <div class="idea-box mb-4">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-primary-subtle text-primary rounded-circle" style="width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px;">3</span>
+                                    <strong class="text-dark small">Idea 3</strong>
+                                </div>
+                                <div class="mb-2">
+                                    <input type="text" class="form-control form-control-sm border-light-subtle bg-light" id="ideaTitle3" placeholder="Enter idea title (e.g. AR interior design app)">
+                                </div>
+                                <div class="position-relative">
+                                    <textarea class="form-control form-control-sm border-light-subtle bg-light idea-textarea" id="ideaDesc3" maxlength="500" rows="3" placeholder="Write a brief description of your idea..."></textarea>
+                                    <span class="char-counter text-muted">0/500</span>
+                                </div>
+                            </div>
+
+                            <div class="text-end mt-4">
+                                <button type="submit" class="btn btn-primary px-4 py-2 rounded-2" style="font-size: 13px;">
+                                    <i class="fa-solid fa-paper-plane me-2"></i> Submit Ideas
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Tips Side Panel Column -->
+                <div class="col-lg-4">
+                    <div class="card p-4 border-0 shadow-sm bg-primary-subtle bg-opacity-10" style="border-radius: 14px; background-color: #f0f7ff;">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <i class="fa-solid fa-lightbulb text-primary"></i>
+                            <h6 class="fw-bold text-primary m-0">Tips for a Good Idea</h6>
+                        </div>
+
+                        <ul class="list-unstyled mb-4" style="font-size: 12px; line-height: 1.8; color: #334155;">
+                            <li class="d-flex gap-2 mb-2">
+                                <i class="fa-regular fa-circle-check text-primary mt-1"></i>
+                                <span>Keep your ideas relevant to your field of study.</span>
+                            </li>
+                            <li class="d-flex gap-2 mb-2">
+                                <i class="fa-regular fa-circle-check text-primary mt-1"></i>
+                                <span>Write a clear and simple title.</span>
+                            </li>
+                            <li class="d-flex gap-2 mb-2">
+                                <i class="fa-regular fa-circle-check text-primary mt-1"></i>
+                                <span>Provide a brief but meaningful description.</span>
+                            </li>
+                            <li class="d-flex gap-2 mb-2">
+                                <i class="fa-regular fa-circle-check text-primary mt-1"></i>
+                                <span>Think about real-world problems or innovative solutions.</span>
+                            </li>
+                            <li class="d-flex gap-2">
+                                <i class="fa-regular fa-circle-check text-primary mt-1"></i>
+                                <span>You can update your ideas later if needed.</span>
+                            </li>
+                        </ul>
+
+                        <div class="text-center py-3">
+                            <div class="bg-white p-3 rounded-circle shadow-sm d-inline-block">
+                                <i class="fa-solid fa-lightbulb fs-2 text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+<!-- JS CDN & Custom JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/idea-submission.js"></script>
 </body>
 </html>

@@ -1,0 +1,281 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif; 
+}
+
+body { 
+    background-color: #f8fafc; 
+    color: #0f172a; 
+}
+
+.app-container { 
+    display: flex; 
+    height: 100vh; 
+    overflow: hidden; 
+}
+
+/* Left Sidebar UI */
+.sidebar {
+    width: 260px;
+    background-color: #0d1527;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+    height: 100vh;
+}
+
+.sidebar-brand {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand-logo {
+    width: 36px;
+    height: 36px;
+    background: #2563eb;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.brand-info h3 { font-size: 13px; font-weight: 600; margin: 0; color: #fff; }
+.brand-info span { font-size: 10px; color: #94a3b8; display: block; }
+
+.sidebar-nav { padding: 15px 10px; flex: 1; overflow-y: auto; }
+.sidebar-nav ul { list-style: none; padding: 0; margin: 0; }
+.sidebar-nav li { margin-bottom: 4px; }
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 13px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.sidebar-nav a:hover { color: #ffffff; background: rgba(255, 255, 255, 0.05); }
+.sidebar-nav li.active a { background-color: #2563eb; color: #ffffff; font-weight: 500; }
+
+.sidebar-footer { padding: 15px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+.sidebar-footer span { font-size: 11px; color: #64748b; display: block; }
+.sidebar-footer strong { font-size: 12px; color: #cbd5e1; }
+
+/* --- MAIN WRAPPER & TOP HEADER --- */
+.main-wrapper {
+  margin-left: 0;          /* sidebar already flex mein jagah le raha hai */
+  flex: 1;
+  min-width: 0;            /* content ko overflow hone se rokta hai */
+  height: 100vh;
+  overflow-y: auto;        /* sirf right side scroll hogi, sidebar fixed rahegi */
+  display: flex;
+  flex-direction: column;
+}
+
+.top-header {
+  height: 65px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.search-box {
+  position: relative;
+  width: 300px;
+}
+
+.search-box input {
+  padding-left: 35px;
+  height: 38px;
+  font-size: 12px;
+  border-radius: 20px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+}
+
+.search-box i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #1e40af;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* --- CARDS & SLOTS --- */
+.content-area {
+  padding: 30px;
+  flex: 1;
+}
+
+.card-custom {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.slot-box {
+  border: 2px dashed #cbd5e1;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 13px;
+}
+/* Topbar layout spacing & flex fix */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.topbar-user {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px; /* Icons aur profile ke darmiyan space */
+    position: relative;
+}
+
+/* Avatar Badge shape & text handling */
+.avatar-badge {
+    width: 35px;
+    height: 35px;
+    background-color: #2563eb;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+/* ==========================================
+   Topbar Spacing & Flex Layout
+========================================== */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.topbar-user {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px;
+    position: relative;
+}
+
+.avatar-badge {
+    width: 35px;
+    height: 35px;
+    background-color: #2563eb;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+
+.popover-dropdown {
+    position: absolute !important;
+    top: calc(100% + 10px) !important;
+    right: 0 !important;
+    width: 320px;
+    z-index: 1050;
+    display: none !important; 
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-popover {
+    width: 300px;
+}
+
+/* Jab JS se .show class add hogi tabhi dikhega */
+.popover-dropdown.show {
+    display: block !important;
+    animation: popoverFadeIn 0.2s ease-out;
+}
+
+@keyframes popoverFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Icons ke beech gap kam karna */
+.topbar-user {
+  gap: 4px !important;
+}
+
+.topbar-user .me-3 {
+  margin-right: 0 !important;
+}
+
+.topbar-user #notifDropdownBtn,
+.topbar-user .fa-gear {
+  padding: 0 10px !important;
+}
+
+.topbar-user .fa-gear {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Profile ke avatar aur naam ke beech gap */
+.topbar-user .avatar-badge {
+  margin-right: 8px !important;
+}
+
+.topbar-user .position-relative:last-child {
+  margin-left: 6px;
+}

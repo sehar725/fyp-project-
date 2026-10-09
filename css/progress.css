@@ -369,3 +369,271 @@ body {
   color: #64748b;
   font-weight: 500;
 }
+/* ==========================================
+   SIDEBAR OVERRIDE (Feasibility page jaisa)
+   Isay file ke sab se neeche paste karein
+========================================== */
+.sidebar {
+  width: 260px;
+  background-color: #0d1527;
+  color: #ffffff;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.sidebar-header {
+  padding: 20px;
+  margin-bottom: 0;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  background: #2563eb;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.brand-text h3 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+}
+
+.brand-text p {
+  font-size: 10px;
+  color: #94a3b8;
+  margin-top: 0;
+}
+
+.sidebar-menu {
+  padding: 15px 10px;
+  gap: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.sidebar-menu ul,
+.sidebar-menu li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* .menu-item class ho ya na ho, har link same style lega
+   (Group Management aur Logout ki purple underline yahin fix hogi) */
+.sidebar-menu a,
+.sidebar-menu .menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  margin-bottom: 4px;
+  color: #94a3b8;
+  text-decoration: none !important;
+  font-size: 13px;
+  font-weight: 400;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu .menu-item:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-menu a.active,
+.sidebar-menu li.active a,
+.sidebar-menu .menu-item.active {
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Footer: handwriting ki jagah plain text + bold */
+.sidebar-footer {
+  display: block;
+  padding: 15px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.font-handwriting {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #cbd5e1;
+  line-height: 1.4;
+}
+
+.font-handwriting::first-line {
+  font-size: 11px;
+  font-weight: 400;
+  color: #64748b;
+}
+
+/* Sidebar ab 260px ka hai, to content ka margin bhi match karein */
+.main-content {
+  margin-left: 260px;
+}
+/* ==========================================
+   TOPBAR + POPUPS (neeche add karein, purana code same rahe)
+========================================== */
+.topbar {
+  height: 65px;
+  min-height: 65px;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.topbar .search-box {
+  background: #f1f5f9;
+  border-radius: 20px;
+  width: 380px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topbar .search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 12px;
+  width: 100%;
+}
+
+.topbar-user {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 4px;
+}
+
+.topbar-user .position-relative {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.topbar-user .d-flex { display: flex; align-items: center; }
+.topbar-user .me-2 { margin-right: 8px; }
+.topbar-user .me-3 { margin-right: 12px; }
+.topbar-user .text-muted { color: #6c757d; }
+
+.topbar-user #notifDropdownBtn {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.topbar-user .badge {
+  position: absolute;
+  top: -4px;
+  right: 0;
+  background: #dc3545;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 9px;
+  font-weight: 600;
+  padding: 3px 5px;
+  line-height: 1;
+}
+
+.avatar-badge {
+  width: 34px;
+  height: 34px;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+#topbarUserName,
+#topbarUserRole {
+  display: block;
+  line-height: 1.3;
+}
+
+/* Popups (default band) */
+.popover-dropdown {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  width: 310px;
+  z-index: 1050;
+  display: none;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.profile-popover { width: 295px; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.popover-dropdown.show { display: block !important; }
+
+#profilePopupTabs .nav-link {
+  border: none;
+  border-radius: 4px;
+  background: #f1f5f9;
+}
+
+#profilePopupTabs .nav-link.active {
+  background: #2563eb;
+  color: #ffffff !important;
+}
+/* Popup clip na ho */
+.topbar {
+  position: relative;
+  z-index: 1000;
+  overflow: visible;
+}
+
+.main-content {
+  overflow: visible;
+}
+
+/* Popup ki height: andar ka content poora dikhe */
+.popover-dropdown {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Badge poora dikhe */
+.topbar-user #notifDropdownBtn {
+  overflow: visible;
+}
+
+.topbar-user .badge {
+  top: -6px;
+  right: 2px;
+  min-width: 16px;
+  text-align: center;
+}

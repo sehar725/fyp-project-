@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8fafc;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+/* MAIN CONTENT LAYOUT */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+/* TOPBAR */
+.topbar {
+    height: 60px;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+}
+
+.search-box {
+    background: #f1f5f9;
+    border-radius: 20px;
+    padding: 6px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 300px;
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 12px;
+    width: 100%;
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.notification-wrapper {
+    position: relative;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -4px;
+    right: -6px;
+    background: #ef4444;
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    background-color: #1e40af;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-body {
+    padding: 28px;
+}
+
+/* DASHED BORDER FOR SLOT */
+.border-dash {
+    border: 2px dashed #cbd5e1;
+    background-color: #f8fafc;
+    transition: all 0.2s ease;
+}
+
+.border-dash:hover {
+    border-color: #3b82f6;
+    background-color: #eff6ff;
+    color: #1d4ed8 !important;
+}
+
+/* UTILITY CLASSES */
+.fs-7 { font-size: 13px !important; }
+.fs-8 { font-size: 12px !important; }
+.fs-9 { font-size: 10px !important; }
+.btn-xs { padding: 2px 6px; font-size: 10px; }
+.cursor-pointer { cursor: pointer; }
+
+.bg-primary-subtle { background-color: #e0f2fe !important; color: #0369a1 !important; }
+.bg-warning-subtle { background-color: #fef3c7 !important; color: #b45309 !important; }
+.bg-info-subtle { background-color: #e0e7ff !important; color: #4338ca !important; }
+.bg-success-subtle { background-color: #dcfce7 !important; color: #15803d !important; }

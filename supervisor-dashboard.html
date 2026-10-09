@@ -1,258 +1,412 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Supervisor Dashboard - GIMS FYP Portal</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/supervisor-dashboard.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervisor Dashboard - GIMS FYP Portal</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/supervisor-dashboard.css">
 </head>
 <body>
 
-  <div class="app-layout">
-    
-    <!-- SIDEBAR -->
+<div class="app-container">
+
+    <!-- LEFT SIDEBAR -->
     <aside class="sidebar">
-      <div>
-        <div class="sidebar-header">
-          <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
-          <div class="brand-text">
-            <h3>Gujrat Institute of</h3>
-            <h3>Management Sciences</h3>
-            <p>FYP Portal</p>
-          </div>
+        <div>
+            <div class="brand-header">
+                <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div>
+                    <h6 class="brand-title">Gujrat Institute of Management Sciences</h6>
+                    <span class="brand-subtitle">AI-Powered FYP Management Portal</span>
+                </div>
+            </div>
+
+            <ul class="nav flex-column sidebar-nav">
+                <li class="nav-item">
+                    <a href="supervisor-dashboard.html" class="nav-link active"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="supervisor-proposals.html" class="nav-link"><i class="fa-solid fa-file-pen"></i><span>Proposals</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="supervisor-progress.html" class="nav-link"><i class="fa-solid fa-user-graduate"></i><span>Student Progress</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="supervisor-evaluations.html" class="nav-link"><i class="fa-solid fa-clipboard-check"></i><span>Evaluations</span></a>
+                </li>
+                <li class="nav-item">
+                        <a href="supervisor-timetable.html" class="nav-link "><i class="fa-solid fa-calendar-days"></i><span>My Timetable</span></a>
+                    </li>
+                <li class="nav-item">
+    <a href="login.html" id="sidebarLogoutBtn" class="nav-link">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span>Logout</span>
+    </a>
+</li>
+            </ul>
         </div>
 
-        <nav class="sidebar-menu">
-          <a href="supervisor-dashboard.html" class="menu-item active">
-            <div class="menu-link-content"><i class="fa-solid fa-house"></i><span>Dashboard</span></div>
-          </a>
-          <a href="supervisor-proposals.html" class="menu-item">
-            <div class="menu-link-content"><i class="fa-solid fa-file-signature"></i><span>Proposals</span></div>
-          </a>
-          <a href="supervisor-progress.html" class="menu-item">
-            <div class="menu-link-content"><i class="fa-solid fa-user-graduate"></i><span>Student Progress</span></div>
-          </a>
-          <a href="supervisor-evaluations.html" class="menu-item">
-            <div class="menu-link-content"><i class="fa-solid fa-clipboard-check"></i><span>Evaluations</span></div>
-          </a>
-          <a href="#" class="menu-item">
-            <div class="menu-link-content"><i class="fa-regular fa-bell"></i><span>Notifications</span></div>
-            <span class="badge-count">3</span>
-          </a>
-          <a href="settings.html" class="menu-item">
-            <div class="menu-link-content"><i class="fa-solid fa-gear"></i><span>Settings</span></div>
-          </a>
-        </nav>
-      </div>
-
-      <div class="sidebar-footer">
-        <p class="font-handwriting">Better Ideas</p>
-        <p class="font-handwriting">Brighter Future</p>
-      </div>
+        <div class="sidebar-footer">Better Ideas<br>Brighter Future</div>
     </aside>
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
-      
-      <!-- TOPBAR -->
-      <header class="topbar">
-        <div class="search-box">
-          <i class="fa-solid fa-magnifying-glass" style="color:#94a3b8;"></i>
-          <input type="text" placeholder="Search anything...">
-        </div>
-
-        <div class="top-actions">
-          <i class="fa-regular fa-bell" style="color:#64748b; cursor:pointer;"></i>
-          <i class="fa-regular fa-sun" style="color:#64748b; cursor:pointer;"></i>
-          <div class="user-profile">
-            <div class="avatar">MS</div>
-            <div>
-              <div style="font-weight:600; font-size:12px; color:#0f172a;">Prof. Muhammad Salman</div>
-              <div style="font-size:10px; color:#94a3b8;">Supervisor</div>
+        
+        <!-- TOPBAR WITH NOTIFICATIONS -->
+        <header class="topbar">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass text-muted"></i>
+                <input type="text" placeholder="Search groups, students, proposals...">
             </div>
-            <i class="fa-solid fa-chevron-down" style="font-size:10px; color:#94a3b8;"></i>
-          </div>
-        </div>
-      </header>
-
-      <!-- CONTENT BODY -->
-      <div class="content-body">
-
-        <!-- WELCOME BANNER -->
-        <div class="welcome-banner">
-          <div>
-            <h2>Good Morning, Prof. Muhammad Salman!</h2>
-            <p>Review proposals, track student progress and evaluate final projects.</p>
-          </div>
-          <div class="banner-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-        </div>
-
-        <!-- STATS GRID -->
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-icon stat-green"><i class="fa-solid fa-users"></i></div>
-            <div class="stat-details">
-              <h3>12</h3>
-              <p>Total Assigned Students</p>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-icon stat-amber"><i class="fa-regular fa-clock"></i></div>
-            <div class="stat-details">
-              <h3>5</h3>
-              <p>Pending Reviews</p>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-icon stat-blue"><i class="fa-solid fa-spinner"></i></div>
-            <div class="stat-details">
-              <h3>6</h3>
-              <p>In Progress</p>
-            </div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-icon stat-emerald"><i class="fa-solid fa-circle-check"></i></div>
-            <div class="stat-details">
-              <h3>1</h3>
-              <p>Completed</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- DASHBOARD GRID -->
-        <div class="dashboard-grid">
-          
-          <!-- RECENT PROPOSALS TABLE -->
-          <div class="card">
-            <div class="card-header">
-              <div class="card-title">Recent Proposals</div>
-              <a href="supervisor-proposals.html" class="view-all-link">View All</a>
-            </div>
-
-            <table class="custom-table">
-              <thead>
-                <tr>
-                  <th>Student</th>
-                  <th>Title</th>
-                  <th>Status</th>
-                  <th>Submitted</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="student-info">
-                      <div class="student-avatar">AK</div>
-                      <span>Ayesha Khan</span>
+            <div class="top-actions">
+                <!-- Notifications Dropdown (Students & PMO) -->
+                <div class="dropdown">
+                    <div class="notification-wrapper position-relative cursor-pointer" id="notifDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-regular fa-bell fs-5 text-secondary"></i>
+                        <span class="notification-badge">5</span>
                     </div>
-                  </td>
-                  <td>AI-Powered Smart Attendance System</td>
-                  <td><span class="status-badge badge-pending">Pending</span></td>
-                  <td>18 Aug 2026</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="student-info">
-                      <div class="student-avatar">AR</div>
-                      <span>Ahmed Raza</span>
-                    </div>
-                  </td>
-                  <td>E-Learning Platform with AI</td>
-                  <td><span class="status-badge badge-pending">Pending</span></td>
-                  <td>17 Aug 2026</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="student-info">
-                      <div class="student-avatar">FN</div>
-                      <span>Fatima Noor</span>
-                    </div>
-                  </td>
-                  <td>Smart Energy Management System</td>
-                  <td><span class="status-badge badge-review">Under Review</span></td>
-                  <td>15 Aug 2026</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="student-info">
-                      <div class="student-avatar">UT</div>
-                      <span>Usman Tariq</span>
-                    </div>
-                  </td>
-                  <td>Personalized Learning Path</td>
-                  <td><span class="status-badge badge-approved">Approved</span></td>
-                  <td>12 Aug 2026</td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="student-info">
-                      <div class="student-avatar">HS</div>
-                      <span>Hira Shah</span>
-                    </div>
-                  </td>
-                  <td>AR Interior Design App</td>
-                  <td><span class="status-badge badge-revision">Revision Requested</span></td>
-                  <td>10 Aug 2026</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <!-- RIGHT COLUMN: QUICK ACTIONS & NOTIFICATIONS -->
-          <div>
-            <!-- QUICK ACTIONS -->
-            <div class="card">
-              <div class="card-title" style="margin-bottom: 12px;">Quick Actions</div>
-              <a href="supervisor-proposals.html" class="quick-action-btn">
-                <i class="fa-regular fa-file-lines"></i>
-                <span>View All Proposals</span>
-              </a>
-              <a href="supervisor-progress.html" class="quick-action-btn">
-                <i class="fa-solid fa-chart-line"></i>
-                <span>Check Student Progress</span>
-              </a>
-              <a href="#" class="quick-action-btn">
-                <i class="fa-regular fa-bell"></i>
-                <span>View Notifications</span>
-              </a>
-            </div>
-
-            <!-- RECENT NOTIFICATIONS -->
-            <div class="card">
-              <div class="card-header">
-                <div class="card-title">Recent Notifications</div>
-                <a href="#" class="view-all-link">View All</a>
-              </div>
-              <div class="notification-list">
-                <div class="notification-item">
-                  <div class="notification-bullet"></div>
-                  <div>New proposal submitted by <strong>Ayesha Khan</strong>.</div>
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0 rounded-3 mt-2 p-2" style="width: 320px;">
+                        <li class="dropdown-header fw-bold text-dark border-bottom pb-2 mb-2 d-flex justify-content-between">
+                            <span>Notifications</span>
+                            <span class="badge bg-primary fs-9">5 New</span>
+                        </li>
+                        <!-- PMO Notifications -->
+                        <li class="p-2 rounded-2 bg-light mb-2">
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="badge bg-danger fs-9">PMO</span>
+                                <strong class="fs-8 text-dark">Schedule Updated</strong>
+                            </div>
+                            <p class="fs-9 text-muted mb-0">Final evaluation schedule released by PMO office.</p>
+                        </li>
+                        <!-- Student Notifications -->
+                        <li class="p-2 rounded-2 bg-light mb-1">
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="badge bg-info text-dark fs-9">Student</span>
+                                <strong class="fs-8 text-dark">sehar BSSE</strong>
+                            </div>
+                            <p class="fs-9 text-muted mb-0">Submitted updated proposal document for review.</p>
+                        </li>
+                    </ul>
                 </div>
-                <div class="notification-item">
-                  <div class="notification-bullet"></div>
-                  <div>Revision requested for <strong>Ahmed Raza's</strong> proposal.</div>
+
+                <div class="user-profile">
+                    <div class="avatar">AJ</div>
+                    <div>
+                        <div class="fw-bold fs-7 text-dark">Mr. Ashar Javad</div>
+                        <div class="text-muted fs-8">Supervisor</div>
+                    </div>
                 </div>
-                <div class="notification-item">
-                  <div class="notification-bullet"></div>
-                  <div>Final report submitted by <strong>Usman Tariq</strong>.</div>
-                </div>
-              </div>
+            </div>
+        </header>
+
+        <!-- DASHBOARD BODY -->
+        <div class="content-body">
+            
+            <!-- Welcome Banner -->
+            <div class="welcome-banner p-4 rounded-4 text-white mb-4">
+                <h5 class="fw-bold mb-1"> Mr. Ashar Javad!</h5>
+                <p class="mb-0 fs-8 opacity-75">Review proposals, track group members, and schedule meetings with your assigned groups.</p>
             </div>
 
-          </div>
+            <!-- Stats Row -->
+            <div class="row g-3 mb-4">
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm rounded-3 p-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="stat-icon bg-primary-soft text-primary"><i class="fa-solid fa-users"></i></div>
+                            <div>
+                                <h4 class="fw-bold mb-0">4</h4>
+                                <small class="text-muted fs-8">Assigned Groups</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm rounded-3 p-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="stat-icon bg-warning-soft text-warning"><i class="fa-solid fa-clock"></i></div>
+                            <div>
+                                <h4 class="fw-bold mb-0">2</h4>
+                                <small class="text-muted fs-8">Pending Proposals</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm rounded-3 p-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="stat-icon bg-info-soft text-info"><i class="fa-solid fa-arrows-rotate"></i></div>
+                            <div>
+                                <h4 class="fw-bold mb-0">1</h4>
+                                <small class="text-muted fs-8">Changes Required</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm rounded-3 p-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="stat-icon bg-success-soft text-success"><i class="fa-solid fa-circle-check"></i></div>
+                            <div>
+                                <h4 class="fw-bold mb-0">1</h4>
+                                <small class="text-muted fs-8">Approved Projects</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAIN GROUPS & PROPOSALS SECTION -->
+            <div class="row g-4 mb-4">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6 class="fw-bold text-dark mb-0">Assigned Groups & Proposal Details</h6>
+                            <span class="badge bg-light text-secondary border fs-8">Total: 4 Groups</span>
+                        </div>
+
+                        <!-- GROUPS ACCORDION LIST -->
+                        <div class="accordion accordion-flush" id="groupsAccordion">
+                            
+                            <!-- GROUP 1 -->
+                            <div class="accordion-item border rounded-3 mb-3">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed rounded-3 fs-8 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#group1">
+                                        <div class="d-flex justify-content-between align-items-center w-100 me-3">
+                                            <span>G-01: AI-Powered Smart Attendance System</span>
+                                            <span class="badge bg-warning text-dark">Pending</span>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="group1" class="accordion-collapse collapse" data-bs-parent="#groupsAccordion">
+                                    <div class="accordion-body fs-8">
+                                        <p class="mb-2"><strong>Project Proposal:</strong> Face recognition based attendance system with automated report generation.</p>
+                                        <p class="mb-3"><strong>Department:</strong> BS Computer Science</p>
+                                        
+                                        <h6 class="fw-bold fs-8 text-secondary mb-2">Group Members:</h6>
+                                        <div class="table-responsive mb-3">
+                                            <table class="table table-sm table-bordered fs-8 align-middle mb-0">
+                                                <thead class="bg-light">
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Roll No</th>
+                                                        <th>Email</th>
+                                                        <th>Contact</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Ayesha Khan (Leader)</td>
+                                                        <td>22012-0825-014</td>
+                                                        <td>ayesha@gims.edu.pk</td>
+                                                        <td>+92 300 1234567</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Hamza Ali</td>
+                                                        <td>22012-0825-018</td>
+                                                        <td>hamza@gims.edu.pk</td>
+                                                        <td>+92 301 7654321</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <!-- ACTION BUTTONS FOR SUPERVISOR -->
+                                        <div class="d-flex flex-wrap gap-2 pt-2 border-top">
+                                            <button class="btn btn-success btn-sm fs-8" onclick="updateStatus('G-01', 'Approved')"><i class="fa-solid fa-check me-1"></i> Accept</button>
+                                            <button class="btn btn-warning btn-sm text-dark fs-8" onclick="updateStatus('G-01', 'Changes Required')"><i class="fa-solid fa-pen me-1"></i> Require Changes</button>
+                                            <button class="btn btn-danger btn-sm fs-8" onclick="updateStatus('G-01', 'Rejected')"><i class="fa-solid fa-xmark me-1"></i> Reject</button>
+                                            
+                                            <!-- Meetings -->
+                                            <button class="btn btn-primary btn-sm fs-8 ms-auto" onclick="openMeetingModal('G-01', 'Online')"><i class="fa-solid fa-video me-1"></i> Online Meeting</button>
+                                            <button class="btn btn-outline-dark btn-sm fs-8" onclick="openMeetingModal('G-01', 'Physical')"><i class="fa-solid fa-location-dot me-1"></i> Physical Meeting</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- GROUP 2 -->
+                            <div class="accordion-item border rounded-3 mb-3">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed rounded-3 fs-8 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#group2">
+                                        <div class="d-flex justify-content-between align-items-center w-100 me-3">
+                                            <span>G-07: Personalized Learning Path</span>
+                                            <span class="badge bg-success">Approved</span>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="group2" class="accordion-collapse collapse" data-bs-parent="#groupsAccordion">
+                                    <div class="accordion-body fs-8">
+                                        <p class="mb-2"><strong>Project Proposal:</strong> Adaptive learning system using ML algorithms.</p>
+                                        <p class="mb-3"><strong>Department:</strong> BS Information Technology</p>
+                                        
+                                        <h6 class="fw-bold fs-8 text-secondary mb-2">Group Members:</h6>
+                                        <div class="table-responsive mb-3">
+                                            <table class="table table-sm table-bordered fs-8 align-middle mb-0">
+                                                <thead class="bg-light">
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Roll No</th>
+                                                        <th>Email</th>
+                                                        <th>Contact</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Usman Tariq (Leader)</td>
+                                                        <td>22012-0825-002</td>
+                                                        <td>usman@gims.edu.pk</td>
+                                                        <td>+92 321 9876543</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="d-flex flex-wrap gap-2 pt-2 border-top">
+                                            <button class="btn btn-primary btn-sm fs-8 ms-auto" onclick="openMeetingModal('G-07', 'Online')"><i class="fa-solid fa-video me-1"></i> Online Meeting</button>
+                                            <button class="btn btn-outline-dark btn-sm fs-8" onclick="openMeetingModal('G-07', 'Physical')"><i class="fa-solid fa-location-dot me-1"></i> Physical Meeting</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE WIDGETS -->
+                <div class="col-lg-4">
+                    <!-- UPCOMING EVALUATIONS CARD -->
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white mb-4">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <i class="fa-regular fa-calendar-days text-primary fs-5"></i>
+                            <h6 class="fw-bold text-dark mb-0">Upcoming Evaluations</h6>
+                        </div>
+
+                        <div class="d-flex flex-column gap-3">
+                            <div class="p-2 rounded-3 bg-light border d-flex align-items-center gap-3">
+                                <i class="fa-solid fa-calendar-check text-primary fs-5"></i>
+                                <div>
+                                    <div class="fw-bold fs-8 text-dark">15 Dec 2026</div>
+                                    <div class="text-muted fs-9">G-07 | Lab 1 | 10:00 AM</div>
+                                </div>
+                            </div>
+                            <div class="p-2 rounded-3 bg-light border d-flex align-items-center gap-3">
+                                <i class="fa-solid fa-calendar-check text-primary fs-5"></i>
+                                <div>
+                                    <div class="fw-bold fs-8 text-dark">16 Dec 2026</div>
+                                    <div class="text-muted fs-9">G-12 | Lab 2 | 11:00 AM</div>
+                                </div>
+                            </div>
+                            <div class="p-2 rounded-3 bg-light border d-flex align-items-center gap-3">
+                                <i class="fa-solid fa-calendar-check text-primary fs-5"></i>
+                                <div>
+                                    <div class="fw-bold fs-8 text-dark">18 Dec 2026</div>
+                                    <div class="text-muted fs-9">G-15 | Lab 1 | 09:00 AM</div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-sm w-100 mt-3 rounded-3 fs-8">View All</button>
+                    </div>
+
+                    <!-- NOTIFICATIONS LIST (PMO & STUDENTS) -->
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6 class="fw-bold text-dark mb-0">Recent Activity</h6>
+                            <span class="fs-9 text-primary cursor-pointer fw-semibold">View All</span>
+                        </div>
+                        <ul class="list-unstyled mb-0 fs-8">
+                            <li class="mb-3 d-flex gap-2">
+                                <span class="badge bg-danger p-1 align-self-start">PMO</span>
+                                <div>
+                                    <span class="text-dark fw-bold">Evaluation Notice:</span> Mid-term evaluation deadline extended to next Friday.
+                                </div>
+                            </li>
+                            <li class="mb-3 d-flex gap-2">
+                                <span class="badge bg-primary p-1 align-self-start">Student</span>
+                                <div>
+                                    <span class="text-dark fw-bold">Ayesha Khan:</span> Re-submitted project proposal document.
+                                </div>
+                            </li>
+                            <li class="d-flex gap-2">
+                                <span class="badge bg-primary p-1 align-self-start">Student</span>
+                                <div>
+                                    <span class="text-dark fw-bold">Usman Tariq:</span> Uploaded final report for review.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
         </div>
-
-      </div>
     </main>
 
-  </div>
+</div>
 
-  <script src="js/supervisor-dashboard.js"></script>
+<!-- MEETING SCHEDULE MODAL -->
+<div class="modal fade" id="meetingModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 rounded-4 shadow">
+      <div class="modal-header border-bottom-0">
+        <h6 class="modal-title fw-bold" id="meetingModalTitle">Schedule Meeting</h6>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body fs-8">
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Date & Time</label>
+            <input type="datetime-local" class="form-control form-control-sm">
+        </div>
+        <div class="mb-3" id="meetingLocationField">
+            <label class="form-label fw-semibold" id="locationLabel">Venue / Meeting Link</label>
+            <input type="text" class="form-control form-control-sm" id="locationInput" placeholder="Enter venue or link">
+        </div>
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Agenda / Note</label>
+            <textarea class="form-control form-control-sm" rows="2" placeholder="Instructions for students..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer border-top-0">
+        <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary btn-sm" onclick="sendMeetingInvite()">Schedule & Notify</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap 5 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function updateStatus(groupId, status) {
+        alert("Status for " + groupId + " updated to: " + status);
+    }
+
+    let bsModal;
+    function openMeetingModal(groupId, mode) {
+        document.getElementById('meetingModalTitle').innerText = "Schedule " + mode + " Meeting for " + groupId;
+        if(mode === 'Online') {
+            document.getElementById('locationLabel').innerText = "Google Meet / Zoom Link";
+            document.getElementById('locationInput').placeholder = "https://meet.google.com/...";
+        } else {
+            document.getElementById('locationLabel').innerText = "Physical Location / Venue";
+            document.getElementById('locationInput').placeholder = "e.g., Office 204 or Lab 1";
+        }
+        bsModal = new bootstrap.Modal(document.getElementById('meetingModal'));
+        bsModal.show();
+    }
+
+    function sendMeetingInvite() {
+        alert("Meeting invitation successfully sent to group members!");
+        if(bsModal) bsModal.hide();
+    }
+</script>
+
 </body>
 </html>

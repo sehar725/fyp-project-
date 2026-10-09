@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - GIMS FYP Portal</title>
+  
+  <!-- CSS Frameworks & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/group-registration.css">
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="brand-info">
+          <h3>Gujrat Institute of Management Sciences</h3>
+          <span>AI-Powered FYP Management Portal</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul>
+          <li>
+            <a href="dashboard.html"><i class="fa-solid fa-house"></i> <span>Dashboard</span></a>
+          </li>
+          <li class="active">
+            <a href="group-registration.html"><i class="fa-solid fa-users"></i> <span>Group Management</span></a>
+          </li>
+          <li>
+            <li>
+            <a href="idea-checker.html"><i class="fa-solid fa-robot"></i> <span>AI Idea Checker</span></a>
+          </li>
+          <li>
+            <a href="idea-submission.html"><i class="fa-solid fa-lightbulb"></i> <span>Idea Submission</span></a>
+          </li>
+          
+          <li>
+            <a href="proposal.html"><i class="fa-solid fa-file-lines"></i> <span>Proposals</span></a>
+          </li>
+          <li>
+            <a href="questionnaire.html"><i class="fa-solid fa-clipboard-question"></i> <span>Feasibility Questionnaire</span></a>
+          </li>
+          <li>
+            <a href="progress.html"><i class="fa-solid fa-chart-line"></i> <span>Project Progress</span></a>
+          </li>
+          <li>
+            <a href="final-submission.html"><i class="fa-solid fa-chart-line"></i> <span>final-submission</span></a>
+          </li>
+          <li>
+            <a href="repository.html"><i class="fa-solid fa-database"></i> <span>Repository</span></a>
+          </li>
+          <li>
+          <a href="login.html" id="sidebarLogoutBtn">
+          <i class="fa-solid fa-right-from-bracket"></i> 
+          <span>Logout</span>
+           </a>
+           </li>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p>Your Ideas<br><strong>Build Tomorrow</strong></p>
+      </div>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper">
+
+      <!-- Top Header -->
+      <header class="top-header">
+        <div class="search-box">
+          <i class="bi bi-search"></i>
+          <input type="text" class="form-control" placeholder="Search members, reg no...">
+        </div>
+
+    <div class="topbar-user">
+   <!-- 1. Notification Icon & Dropdown Popup -->
+    <div class="position-relative me-3">
+        <button class="btn p-0 border-0 text-muted position-relative" id="notifDropdownBtn" type="button" style="font-size: 18px;">
+            <i class="fa-regular fa-bell"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="notifBadge" style="font-size: 9px; padding: 3px 5px;">3</span>
+        </button>
+
+        <!-- Notification Popover Menu -->
+        <div class="popover-dropdown shadow-lg rounded-3 p-3 bg-white" id="notifMenu">
+            <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+                <h6 class="fw-bold m-0 text-dark" style="font-size: 14px;">Notifications</h6>
+                <button class="btn btn-primary btn-sm px-2 py-1" id="markReadBtn" type="button" style="font-size: 10px;">Mark All as Read</button>
+            </div>
+            
+            <div class="notification-pop-list" style="max-height: 250px; overflow-y: auto;">
+                <div class="d-flex align-items-start gap-2 p-2 mb-2 rounded bg-light border-start border-3 border-success">
+                    <span class="badge bg-success p-1 rounded-circle" style="font-size: 8px;"><i class="fa-solid fa-check"></i></span>
+                    <div style="font-size: 11px;">
+                        <p class="m-0 text-dark fw-medium">Your proposal has been approved by supervisor.</p>
+                        <span class="text-muted" style="font-size: 9px;">2 days ago</span>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-start gap-2 p-2 mb-2 rounded bg-light border-start border-3 border-info">
+                    <span class="badge bg-info p-1 rounded-circle" style="font-size: 8px;"><i class="fa-solid fa-calendar"></i></span>
+                    <div style="font-size: 11px;">
+                        <p class="m-0 text-dark fw-medium">Evaluation schedule has been updated.</p>
+                        <span class="text-muted" style="font-size: 9px;">3 days ago</span>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-start gap-2 p-2 rounded bg-light border-start border-3 border-primary">
+                    <span class="badge bg-primary p-1 rounded-circle" style="font-size: 8px;"><i class="fa-solid fa-bullhorn"></i></span>
+                    <div style="font-size: 11px;">
+                        <p class="m-0 text-dark fw-medium">A new announcement is available.</p>
+                        <span class="text-muted" style="font-size: 9px;">5 days ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Settings Icon -->
+    <i class="fa-regular fa-gear text-muted me-3" style="font-size: 18px; cursor: pointer;"></i>
+
+    <!-- 3. Profile Avatar & Dynamic Header Info -->
+    <div class="position-relative">
+        <div class="d-flex align-items-center" id="profileDropdownBtn" style="cursor: pointer;">
+            <div class="avatar-badge me-2" id="topbarAvatarBadge">SB</div>
+            <div>
+                <strong id="topbarUserName" style="font-size: 12px; display: block; color: #0f172a;">Sehar Babar</strong>
+                <span id="topbarUserRole" style="font-size: 11px; color: #64748b;">Student</span>
+            </div>
+        </div>
+
+        <!-- Profile Dropdown Popup -->
+        <div class="popover-dropdown profile-popover shadow-lg rounded-3 p-3 bg-white" id="profileMenu">
+            <div class="text-center pb-3 border-bottom mb-3">
+                <div class="avatar-large bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-2 fw-bold" 
+                     id="popAvatarBadge" style="width: 45px; height: 45px; font-size: 16px;">SB</div>
+                <h6 class="fw-bold text-dark m-0" style="font-size: 13px;" id="profileViewName">Sehar Babar</h6>
+                <span class="text-muted" style="font-size: 11px;" id="profileViewSubtitle">Student | SE-01</span>
+            </div>
+
+            <!-- Tabs -->
+            <ul class="nav nav-tabs border-bottom-0 mb-3 gap-1" id="profilePopupTabs" style="font-size: 11px;">
+                <li class="nav-item">
+                    <a class="nav-link active py-1 px-2" href="#popPersonal" data-bs-toggle="tab">Personal Info</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-1 px-2 text-secondary" href="#popAcademic" data-bs-toggle="tab">Academic Info</a>
+                </li>
+            </ul>
+
+            <div class="tab-content" style="font-size: 11px;">
+                <!-- Personal Tab -->
+                <div class="tab-pane fade show active" id="popPersonal">
+                    <div class="mb-2">
+                        <label class="text-muted d-block">Name</label>
+                        <input type="text" class="form-control form-control-sm" id="editName" value="Sehar Babar" readonly>
+                    </div>
+                    <div class="mb-2">
+                        <label class="text-muted d-block">Email</label>
+                        <input type="email" class="form-control form-control-sm" id="editEmail" value="sehar@gmail.com" readonly>
+                    </div>
+                    <div class="mb-2">
+                        <label class="text-muted d-block">Roll Number</label>
+                        <input type="text" class="form-control form-control-sm" id="editRollNo" value="SE-01" readonly>
+                    </div>
+                    <div class="mb-2">
+                        <label class="text-muted d-block">Role / Title</label>
+                        <input type="text" class="form-control form-control-sm" id="editRole" value="Student" readonly>
+                    </div>
+                </div>
+
+                <!-- Academic Tab -->
+                <div class="tab-pane fade" id="popAcademic">
+                    <div class="mb-2">
+                        <label class="text-muted d-block">Program</label>
+                        <input type="text" class="form-control form-control-sm" id="editProgram" value="BS Software Engineering" readonly>
+                    </div>
+                    <div class="mb-2">
+                        <label class="text-muted d-block">Batch</label>
+                        <input type="text" class="form-control form-control-sm" id="editBatch" value="2026" readonly>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actions Footer -->
+            <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+                <button class="btn btn-outline-danger btn-sm px-2 py-1" id="btnLogout" type="button" style="font-size: 11px;">
+                    <i class="fa-solid fa-right-from-bracket me-1"></i> Logout
+                </button>
+                <button class="btn btn-outline-primary btn-sm px-3 py-1" id="btnToggleEdit" type="button" style="font-size: 11px;">Edit Profile</button>
+            </div>
+        </div>
+    </div>
+</div>
+      </header>
+
+      <!-- Main Content Area -->
+      <main class="content-area">
+        
+        <div class="mb-4">
+          <h4 class="fw-bold mb-1">Student Group Formation</h4>
+          <p class="text-muted small">Register your FYP group members according to PMO regulations.</p>
+        </div>
+
+        <div class="row g-4">
+          
+          <!-- Left Panel: Form -->
+          <div class="col-lg-5">
+            <div class="card card-custom p-4">
+              <h6 class="fw-bold mb-3" id="formTitle">Add / Update Member Details</h6>
+              
+              <form id="memberForm">
+                <input type="hidden" id="editIndex" value="-1">
+
+                <div class="mb-3">
+                  <label class="form-label small fw-medium">Registration Number *</label>
+                  <input type="text" id="regNo" class="form-control form-control-sm" placeholder="21-Arid-091" required>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label small fw-medium">Student Full Name *</label>
+                  <input type="text" id="fullName" class="form-control form-control-sm" placeholder="Ayesha Malik" required>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label small fw-medium">Program & Semester *</label>
+                  <input type="text" id="program" class="form-control form-control-sm" placeholder="BSSE 7th Morning" required>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label small fw-medium">Contact / WhatsApp No. *</label>
+                  <input type="text" id="contact" class="form-control form-control-sm" placeholder="+92 300 1234567" required>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label small fw-medium">Email *</label>
+                  <input type="email" id="email" class="form-control form-control-sm" placeholder="name@gmail.com" required>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label small fw-medium">Group Role *</label>
+                  <select id="role" class="form-select form-select-sm" required>
+                    <option value="Leader">Leader</option>
+                    <option value="Member" selected>Member</option>
+                  </select>
+                </div>
+
+                <div class="d-flex gap-2">
+                  <button type="submit" id="btnSubmit" class="btn btn-primary btn-sm flex-fill">+ Add Member</button>
+                  <button type="button" id="btnClear" class="btn btn-outline-secondary btn-sm">Clear Form</button>
+                </div>
+              </form>
+
+              <div class="alert alert-light border mt-4 mb-0 p-3" style="font-size: 11.5px;">
+                <strong class="text-dark d-block mb-1"><i class="bi bi-info-circle text-primary"></i> Group Formation Rules:</strong>
+                <ul class="mb-0 ps-3 text-muted">
+                  <li>Minimum 1 Member, Maximum <span class="max-limit-text">3</span> Members (Configured by PMO).</li>
+                  <li>Group Leader manages member information.</li>
+                  <li>Changes will be automatically updated for Supervisor verification.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Panel: Table Display -->
+          <div class="col-lg-7">
+            <div class="card card-custom p-4">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h6 class="fw-bold mb-0">Registered Group Members (<span id="currentCount">0</span> / <span class="max-limit-text">3</span>)</h6>
+              </div>
+
+              <div class="table-responsive">
+                <table class="table table-hover align-middle" style="font-size: 12.5px;">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Student Info</th>
+                      <th>Role</th>
+                      <th class="text-end">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="memberTableBody">
+                    <!-- Dynamic JS Content -->
+                  </tbody>
+                </table>
+              </div>
+
+              <div id="slotPlaceholder" class="slot-box mt-2">
+                + Slot Available (Optional)
+              </div>
+              <!-- Preferred Supervisor Selection -->
+             <div class="mb-3">
+            <label class="form-label small fw-medium">Select Preferred Supervisor *</label>
+            <select id="supervisorSelect" class="form-select form-select-sm" required>
+            <option value="" disabled selected>-- Select Supervisor --</option>
+           </select>
+           <small id="supervisorStatusText" class="text-muted d-block mt-1" style="font-size: 11px;"></small>
+           </div>
+
+              <button id="btnSaveGroup" class="btn btn-success w-100 py-2 mt-4 text-white fw-medium" style="font-size: 13px;">
+                Save Group & Proceed &rarr;
+              </button>
+
+            </div>
+          </div>
+         
+
+        </div>
+
+      </main>
+    </div>
+
+  </div>
+
+  <!-- Custom JavaScript File -->
+  <script src="js/group-registration.js"></script>
+</body>
+</html>
